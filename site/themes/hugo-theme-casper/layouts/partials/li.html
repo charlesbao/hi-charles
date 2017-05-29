@@ -10,7 +10,7 @@
         <img class="tags-thumb" src="{{$baseurl}}images/tags.png" alt="Tags image" nopin="nopin" />
         {{if .Params.tags }}
             {{ range $index, $tag := .Params.tags }}
-                <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+                <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">{{ $tag | upper }}</a>
             {{ end }}
         {{end}}
         <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
