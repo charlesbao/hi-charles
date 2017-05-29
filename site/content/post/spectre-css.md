@@ -3,9 +3,11 @@ title: spectre.css 优雅的样式库
 layout: post
 date: 2017-05-29
 ---
+
+
 # Spectre.css
 
-> Spectre.css is a lightweight, responsive and modern CSS framework for faster and extensible development.
+> [Spectre.css](https://picturepan2.github.io/spectre) is a lightweight, responsive and modern CSS framework for faster and extensible development.
 
 - Lightweight (~10KB gzipped) starting point for your projects
 - Flexbox-based, responsive and mobile-friendly layout
