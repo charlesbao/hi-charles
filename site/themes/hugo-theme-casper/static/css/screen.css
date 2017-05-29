@@ -1784,14 +1784,12 @@ body:not(.post-template) .post-title {
     }
 
     .post-footer {
-        padding: 5rem 0 3rem 0;
         text-align: center;
     }
 
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
     }
 
     .post-footer .share {
