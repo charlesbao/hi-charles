@@ -2,7 +2,7 @@
 title: Upterm - Interactive and Autocompletion terminal
 date: 2017-05-29
 layout: post
-tags: [design,terminal,ide,shell]
+tags: [terminal,ide,shell]
 ---
 Upterm is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
 
