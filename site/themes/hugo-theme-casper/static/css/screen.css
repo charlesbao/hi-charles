@@ -942,7 +942,7 @@ body.nav-opened .menu-button .word {
    just for the lolz and stylepoints. */
 .post:after {
     display: block;
-    content: "";
+    content: none;
     width: 7px;
     height: 7px;
     border: #E7EEF2 1px solid;
