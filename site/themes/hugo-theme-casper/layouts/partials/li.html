@@ -7,17 +7,7 @@
         <p>{{ .Summary }}</p>
     </section>
     <footer class="post-meta">
-        {{$author:= .Site.Params.author}}
-        {{if .Params.author }}
-            {{$author:= .Params.author}}
-            {{if isset .Site.Data.authors $author}}
-                {{$author := index .Site.Data.authors .Params.author }}
-            {{end}}
-        {{end}}
-
-        {{ if isset $author "thumbnail" }}
-            <img class="author-thumb" src="{{ .Site.BaseURL }}{{ $author.thumbnail }}" alt="Author image" nopin="nopin" />
-        {{end}}
+        <img class="author-thumb" src="{{$baseurl}}images/tags.png" alt="Author image" nopin="nopin" />
         {{if .Params.tags }}
             {{ range $index, $tag := .Params.tags }}
                 <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">#{{ $tag }}</a>,
