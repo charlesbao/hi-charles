@@ -20,11 +20,6 @@
         {{else if .Site.Params.logo }}
             <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Author image" nopin="nopin" />
         {{end}}
-        {{ if isset $author "name" }}
-            {{$author.name}}
-        {{else if .Site.Params.author}}
-            {{.Site.Params.author}}
-        {{end}}
         {{if .Params.tags }}on
             {{ range $index, $tag := .Params.tags }}
                 <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">#{{ $tag }}</a>,
