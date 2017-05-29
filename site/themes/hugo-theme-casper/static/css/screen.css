@@ -1003,7 +1003,7 @@ body:not(.post-template) .post-title {
     text-decoration: none;
     border: 1px solid #d5dbde;
     padding: 1px 4px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 .post-meta a:hover {
