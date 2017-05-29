@@ -1,7 +1,7 @@
 ---
 title: spectre.css - the excellent style library
 layout: post
-date: 2017-05-29T00:00:00.000Z
+date: {}
 published: true
 tags:
   - flat design
@@ -25,7 +25,7 @@ Spectre is a side project based on years of CSS development work on a large web 
 There are 4 ways to get started with Spectre CSS framework in your projects. You can either manually install or use NPM, Yarn and Bower.
 
 ##### Install manually
-Download the compiled and minified [Spectre CSS file](https://github.com/picturepan2/spectre/tree/master/docs/dist).
+Download from bootcdn website [Spectre CSS file](http://www.bootcdn.cn/spectre.css/).
 
 ##### Install with NPM
 `$ npm install spectre.css --save`
