@@ -3,14 +3,10 @@ title: spectre.css - the excellent style library
 layout: post
 date: 2017-05-29T00:00:00.000Z
 published: true
-summary: null
 tags:
   - flat design
   - css
   - html
-Summary: >-
-  Spectre.css is a lightweight, responsive and modern CSS framework for faster
-  and extensible development.
 ---
 
 
