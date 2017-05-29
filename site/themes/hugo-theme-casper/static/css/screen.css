@@ -1115,18 +1115,12 @@ body:not(.post-template) .post-title {
    text column to break out. */
 .post-content img {
     display: block;
-    max-width: 126%;
+    max-width: 100%;
     height: auto;
-    padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the
-       center of its container and (2) shifting the entire image
-       in the opposite direction by half its own width.
-       Works for images that are larger than their containers. */
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%); /* for Safari and iOS */
-    -ms-transform: translateX(-50%); /* for IE9 */
-    transform: translateX(-50%);
+    padding: 0.6em;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1em;
+    border-radius: 2px;
 }
 
 /* The author credit area after the post */
