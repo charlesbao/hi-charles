@@ -14,10 +14,9 @@ canonifyurls = true
   cover = "images/cover.jpg"
   author = "Charles Bao"
   authorlocation = "Jiangsu, China"
-  authorwebsite = "https://charlesbao.com"
+  authorwebsite = "https://hi.charlesbao.com"
   bio = "Chaos Design and Programming."
-  logo = "images/logo.png"
-  share = false
+  logo = "images/logo.svg"
   # googleAnalyticsUserID = "UA-79101-12"
   # Optional RSS-Link, if not provided it defaults to the standard index.xml
   # RSSLink = "http://feeds.feedburner.com/..."
