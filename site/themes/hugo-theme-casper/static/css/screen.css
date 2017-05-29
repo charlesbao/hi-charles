@@ -983,11 +983,11 @@ body:not(.post-template) .post-title {
 }
 
 .tags-thumb {
-	width: 22px;
-    height: 22px;
-    margin-right: 5px;
+	width: 24px;
+    height: 25px;
+    margin-right: 3px;
     display: inline-block;
-    vertical-align: sub;
+    vertical-align: top;
 }
 
 .author-thumb {
@@ -1000,10 +1000,10 @@ body:not(.post-template) .post-title {
 
 .post-meta a {
     color: #9EABB3;
-    text-decoration: none;
-    border: 1px solid #d5dbde;
-    padding: 1px 4px;
+    border: 1px solid #f0f0f0;
+    padding: 2px 4px;
     border-radius: 2px;
+    margin-left: 5px;
 }
 
 .post-meta a:hover {
