@@ -38,14 +38,13 @@
         <small>{{.Description}}</small>
 
         <section class="post-meta">
-        {{ if eq .Section "post"}}
-          <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-            {{ .Date.Format "Jan 2, 2006" }}
-          </time>
-        {{end}}
-         {{ range .Params.tags }}
-          <span class="post-tag small"><a href="{{ $baseurl }}tags/{{ . | urlize }}/">#{{ . }}</a></span>
-         {{ end }}
+            <img class="tags-thumb" src="{{$baseurl}}images/tags.png" alt="Tags image" nopin="nopin" />
+       {{ range .Params.tags }}
+            <a href="{{$baseurl}}tags/{{ . | urlize }}/">{{ upper . }}</a>
+       {{ end }}
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+            {{ .Date.Format "2 Jan 2006" }}
+        </time>
         </section>
     </header>
 
@@ -64,8 +63,6 @@
     {{end}}
 
     {{ partial "author.html" . }}
-
-    {{ partial "share.html" . }}
 
     {{ partial "disqus.html" . }}
 
