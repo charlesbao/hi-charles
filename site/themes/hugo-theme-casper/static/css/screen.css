@@ -983,8 +983,8 @@ body:not(.post-template) .post-title {
 }
 
 .tags-thumb {
-	width: 20px;
-    height: 20px;
+	width: 22px;
+    height: 22px;
     margin-right: 5px;
     display: inline-block;
     vertical-align: sub;
