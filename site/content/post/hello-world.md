@@ -1,5 +1,7 @@
 ---
 title: hello world
+published: true
+date: 2017-05-28T00:00:00.000Z
 ---
 ## A New Post
 
