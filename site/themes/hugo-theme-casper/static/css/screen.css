@@ -956,7 +956,7 @@ body.nav-opened .menu-button .word {
 }
 
 .content .post {
-	borer-bottom:none;
+	border-bottom:none;
 }
 .read-next .post:after {
 	content: "";
