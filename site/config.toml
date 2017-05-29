@@ -10,12 +10,12 @@ paginate = 8
 canonifyurls = true
 
 [params]
-  description = "不懂电路的设计师不是好程序员"
+  description = "Chaos Design and Programming."
   cover = "images/cover.jpg"
   author = "Charles Bao"
   authorlocation = "Jiangsu, China"
   authorwebsite = "https://charlesbao.com"
-  bio= "my bio"
+  bio= "Chaos Design and Programming."
   logo = "images/logo.png"
   googleAnalyticsUserID = "UA-79101-12"
   # Optional RSS-Link, if not provided it defaults to the standard index.xml
