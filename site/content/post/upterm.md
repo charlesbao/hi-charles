@@ -1,5 +1,5 @@
 ---
-title: upterm - Interactive and Autocompletion terminal
+title: upterm - interactive and autocompletion terminal
 date: 2017-05-29
 layout: post
 tags: [terminal,ide,shell]
