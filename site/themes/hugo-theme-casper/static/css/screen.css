@@ -942,7 +942,7 @@ body.nav-opened .menu-button .word {
    just for the lolz and stylepoints. */
 .post:after {
     display: block;
-    content: none;
+    content: "";
     width: 7px;
     height: 7px;
     border: #E7EEF2 1px solid;
@@ -953,6 +953,10 @@ body.nav-opened .menu-button .word {
     background: #FFF;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
+}
+
+.read-next .post:after {
+	content: "";
 }
 
 body:not(.post-template) .post-title {
