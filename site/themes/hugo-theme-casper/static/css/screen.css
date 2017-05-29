@@ -1471,7 +1471,7 @@ body:not(.post-template) .post-title {
 
 .copyright {
     display: block;
-    width: 45%;
+    width: 100%;
     float: left;
 }
 
