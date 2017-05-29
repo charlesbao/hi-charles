@@ -36,5 +36,5 @@ Download the compiled and minified [Spectre CSS file](https://github.com/picture
 `$ bower install spectre.css --save`
 
 ### Screenshot
-![spectre-1.png](/site/content/post/spectre-1.png)
-![spectre-2.png](/site/content/post/spectre-2.png)
+![spectre-1.png](/post/spectre-1.png)
+![spectre-2.png](/post/spectre-2.png)
