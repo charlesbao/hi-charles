@@ -1,6 +1,6 @@
 ---
 title: upterm - interactive and autocompletion terminal
-date: {}
+date: 2017-05-30T00:00:00.000Z
 layout: post
 tags:
   - terminal
@@ -8,7 +8,7 @@ tags:
   - shell
 published: true
 ---
-[Upterm](https://github.com/railsware/upterm) is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
+Upterm is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
 
 # upterm
 ![upterm-1.png](/post/upterm-1.png)
