@@ -1001,13 +1001,13 @@ body:not(.post-template) .post-title {
 .post-meta a {
     color: #9EABB3;
     text-decoration: none;
-    border: 1px solid;
+    border: 1px solid #d5dbde;
     padding: 1px 4px;
     border-radius: 3px;
 }
 
 .post-meta a:hover {
-    border-color: #999;
+    border-color: #9EABB3;
 }
 
 .user-meta {
