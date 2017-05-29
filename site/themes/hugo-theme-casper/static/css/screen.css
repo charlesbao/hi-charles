@@ -1023,7 +1023,7 @@ body:not(.post-template) .post-title {
     padding-left: 12px;
     border-left: #d5dbde 1px solid;
     text-transform: uppercase;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     white-space: nowrap;
     vertical-align: top;
 }
