@@ -10,7 +10,7 @@ paginate = 8
 canonifyurls = true
 
 [params]
-  description = "Chaos Design and Programming."
+  description = "Chaos. Design. and Programming."
   cover = "images/cover.jpg"
   author = "Charles Bao"
   authorlocation = "Jiangsu, China"
