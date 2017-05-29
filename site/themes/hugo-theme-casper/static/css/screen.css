@@ -955,7 +955,7 @@ body.nav-opened .menu-button .word {
     box-shadow: #FFF 0 0 0 5px;
 }
 
-.content .post {
+.post:last-child {
 	border-bottom:none;
 }
 .read-next .post:after {
