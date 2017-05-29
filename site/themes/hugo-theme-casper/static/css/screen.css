@@ -955,6 +955,10 @@ body.nav-opened .menu-button .word {
     box-shadow: #FFF 0 0 0 5px;
 }
 
+.content:last-child{
+	border-bottom:none;
+}
+
 body:not(.post-template) .post-title {
     font-size: 3.6rem;
 }
