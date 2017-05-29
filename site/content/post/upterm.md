@@ -8,7 +8,7 @@ tags:
   - shell
 published: true
 ---
-Upterm is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
+[Upterm](https://github.com/railsware/upterm) is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
 
 # upterm
 ![upterm-1.png](/post/upterm-1.png)
