@@ -1,11 +1,15 @@
 ---
-title: spectre.css 优雅的样式库
+title: spectre.css - the excellent style library
 layout: post
 date: 2017-05-29T00:00:00.000Z
 published: true
 summary: >-
   Spectre.css is a lightweight, responsive and modern CSS framework for faster
   and extensible development.
+tags:
+  - flat design
+  - css
+  - html
 ---
 
 
