@@ -7,7 +7,7 @@
         <p>{{ .Summary }}</p>
     </section>
     <footer class="post-meta">
-        <img class="author-thumb" src="{{$baseurl}}images/tags.png" alt="Author image" nopin="nopin" />
+        <img class="tags-thumb" src="{{$baseurl}}images/tags.png" alt="Tags image" nopin="nopin" />
         {{if .Params.tags }}
             {{ range $index, $tag := .Params.tags }}
                 <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">#{{ $tag }}</a>,
