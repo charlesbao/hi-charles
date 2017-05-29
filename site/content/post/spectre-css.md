@@ -9,12 +9,9 @@ tags:
   - html
 ---
 
+[Spectre.css](https://picturepan2.github.io/spectre) is a lightweight, responsive and modern CSS framework for faster and extensible development.<!--more-->
 
 # Spectre.css
-
-> [Spectre.css](https://picturepan2.github.io/spectre) is a lightweight, responsive and modern CSS framework for faster and extensible development.
-
-<!--more-->
 
 - Lightweight (~10KB gzipped) starting point for your projects
 - Flexbox-based, responsive and mobile-friendly layout
