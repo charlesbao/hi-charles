@@ -15,4 +15,4 @@ title = "Mausr 在线绘画找特殊符号"
 
 使用方法：打开网站后可以使用鼠标在绘图板画出符号，这样系统会自动识别出绘画的特殊符号，这样你就能出相关特殊符号来使用，即便是你画不出来，也可以利用特殊符号列表来查找。
 
-![www.mausr.com](https://image.thum.io/get/width/600/http://www.mausr.com/Symbols)
+![www.mausr.com](https://image.thum.io/get/width/600/http://www.mausr.com)
