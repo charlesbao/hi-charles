@@ -6,7 +6,7 @@ theme = "hugo-theme-casper"
 # Enable Google Analytics by inserting your tracking code
 # googleAnalytics = ""
 # Define how many posts should appear on a site
-paginate = 5
+paginate = 15
 canonifyurls = true
 
 [params]
