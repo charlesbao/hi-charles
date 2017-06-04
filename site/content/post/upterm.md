@@ -11,8 +11,8 @@ published: true
 [Upterm](https://github.com/railsware/upterm) is an IDE in the world of terminals. it's both a terminal emulator and an *interactive* shell<!--more-->
 
 # upterm
-![upterm-1.png](/post/upterm-1.png)
-![upterm-2.png](/post/upterm-2.png)
+![upterm-1.png](/post_images/upterm-1.png)
+![upterm-2.png](/post_images/upterm-2.png)
 
 ###### Autocompletion
 

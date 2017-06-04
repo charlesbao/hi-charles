@@ -37,5 +37,5 @@ Download from bootcdn website [Spectre CSS file](http://www.bootcdn.cn/spectre.c
 `$ bower install spectre.css --save`
 
 ### Screenshot
-![spectre-1.png](/post/spectre-1.png)
-![spectre-2.png](/post/spectre-2.png)
+![spectre-1.png](/post_images/spectre-1.png)
+![spectre-2.png](/post_images/spectre-2.png)
