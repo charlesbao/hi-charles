@@ -7,8 +7,6 @@ title = "Python 阿里云oss存储 小文件上传下载"
 
 > 阿里云oss对象存储，使用官方api上传下载文件<!--more-->
 
-# Python 阿里云oss存储 小文件上传下载
-
 **阿里云 Python sdk的实践**  
 根据参数配置上传路径、下载路径等
 

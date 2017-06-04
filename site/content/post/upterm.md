@@ -1,8 +1,9 @@
 ---
 title: upterm - interactive and autocompletion terminal
-date: 2017-05-30T00:00:00.000Z
+date: 2017-05-20T00:00:00.000Z
 layout: post
 tags:
+  - github
   - terminal
   - ide
   - shell

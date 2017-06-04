@@ -6,8 +6,6 @@ title = "Nginx 反向代理缓存配置"
 
 > 缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力<!--more-->
 
-#Nginx 反向代理缓存配置
-
 **我的nginx服务配置文件**  
 /etc/nginx/nginx.conf
 ```

@@ -7,8 +7,6 @@ title = "Python 阿里云OSS存储断点续传"
 
 > 阿里云oss对象存储，使用断点续传来上传大文件<!--more-->
 
-# Python 阿里云OSS存储断点续传
-
 **安装阿里云oss2库**
 ```
 pip install oss2

@@ -1,9 +1,10 @@
 ---
 title: spectre.css - the excellent style library
 layout: post
-date: 2017-05-29T00:00:00.000Z
+date: 2017-05-22T00:00:00.000Z
 published: true
 tags:
+  - github
   - flat design
   - css
   - html
