@@ -1,5 +1,5 @@
 +++
-date = "2017-06-26T00:00:00Z"
+date = "2017-05-26T00:00:00Z"
 tags = ["Python","bug","方法"]
 title = "Python pyinstaller打包程序错误解决方案"
 
