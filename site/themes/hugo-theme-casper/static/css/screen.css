@@ -320,7 +320,7 @@ blockquote {
 
 blockquote p {
     margin: 0.8em 0;
-    font-style: italic;
+    font-style: initial;
 }
 
 blockquote small {
@@ -968,6 +968,12 @@ body:not(.post-template) .post-title {
     font-size: 0.9em;
     line-height: 1.7em;
 }
+.post-excerpt blockquote {
+    margin: 0!important;
+    padding: 0!important;
+    border: none!important;
+}
+
 
 .read-more {
     text-decoration: none;

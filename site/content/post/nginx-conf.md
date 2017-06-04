@@ -1,10 +1,10 @@
----
-date = "2017-06-2T10:54:24+02:00"
-tags = [nginx,linux,node,优化]
++++
+date = "2017-06-02"
+tags = ["nginx","linux","node","优化"]
 title = "Nginx 反向代理缓存配置"
----
++++
 
-缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力<!--more-->
+> 缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力<!--more-->
 
 #Nginx 反向代理缓存配置
 
