@@ -5,7 +5,7 @@ title = "HyperApp - 1kb JavaScript library for building frontend applications."
 
 +++
 
-> HyperApp is a JavaScript library for building frontend applications.<!--more-->
+> [HyperApp](https://github.com/hyperapp/hyperapp) is a JavaScript library for building frontend applications.<!--more-->
 
 - Declarative: HyperApp's design is based on the Elm Architecture. Create scalable browser-based applications using a functional paradigm. The twist is you don't have to learn a new language.
 - Custom tags: Build complex user interfaces from custom tags. Custom tags are stateless, framework agnostic and easy to debug.
