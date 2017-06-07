@@ -5,7 +5,7 @@ title = " WebsiteDownloader 网站源码下载工具"
 
 +++
 
-[Website Downloader](https://websitedownloader.io/)是一款支持把任何网站打包并发送到用户邮箱的免费工具。
+[Website Downloader](https://websitedownloader.io/)是一款支持把任何网站打包并发送到用户邮箱的免费工具。<!--more-->
 
 
 用户只需要输入目标网址和接收文件的邮箱即可，系统完成下载后会自动发送压缩到包设定邮箱。
