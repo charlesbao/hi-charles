@@ -1,6 +1,6 @@
 +++
-date = "2017-06-10T16:44:49+08:00"
-tags = ["tag1"]
+date = "2016-06-10T16:44:49+08:00"
+tags = ["作品"]
 title = "跨平台日系游戏 我可以死五十次吗"
 
 +++
@@ -20,5 +20,5 @@ title = "跨平台日系游戏 我可以死五十次吗"
 #### 游戏截图
 
 ![](/post_images/youxi_1.jpg)
-![](/post_images/youxi_2.jpg)
-![](/post_images/youxi_3.jpg)
+![](/post_images/youxi_2.png)
+![](/post_images/youxi_3.png)
