@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Hi!Charles"
+title = "Hi！Charles -- 技术博客，致力于最新技术，前端、后端、移动端开发。涉及html5、react、python、node、qt、linux、vps、ios、android、单片机等多种技术类型"
 theme = "hugo-theme-casper"
 # disqusShortname = "spf13"
 # Enable Google Analytics by inserting your tracking code
