@@ -1,7 +1,7 @@
 +++
 date = "2017-06-10T17:01:59+08:00"
-tags = ["Python","脚本"]
-title = "Python操作windows注册表"
+tags = ["Python","脚本","方法"]
+title = "Python 操作windows注册表"
 
 +++
 
