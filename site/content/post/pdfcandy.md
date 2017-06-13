@@ -5,7 +5,7 @@ title = "PDFCandy 免费PDF文件在线工具"
 
 +++
 
-[PDFCandy](https://pdfcandy.com/) 是一个汇集了许多常用PDF工具的免费在线服务<!--more-->
+> [PDFCandy](https://pdfcandy.com/) 是一个汇集了许多常用PDF工具的免费在线服务<!--more-->
 
 
 PDFCandy 主要分成三大类包括将PDF转成其他格式(Word、JPG、PNG、TIFF和BMP)，将各种格式转为PDF档，还有合并、分离、压缩、解锁、密码保护、旋转、加上浮水印和删除页面等功能。
