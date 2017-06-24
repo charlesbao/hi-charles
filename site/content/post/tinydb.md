@@ -5,7 +5,7 @@ title = "TinyDB - lightweight document oriented database for Python"
 
 +++
 
-> TinyDB is a lightweight document oriented database optimized for your happiness<!--more-->
+> [TinyDB](https://github.com/msiemens/tinydb) is a lightweight document oriented database optimized for your happiness<!--more-->
 
 
 **TinyDB** is written in pure Python and has no external dependencies. The target are
