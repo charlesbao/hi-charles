@@ -22,7 +22,6 @@ PSK='wofan'
 USER_NAME='iwofan'
 USER_PASS='123123'
 
-ROOT_PASSWD='carl86863883'
 SECRETS_PATH=/root/secrets
 
 function rootness(){
@@ -32,7 +31,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 #change root password
-echo root:${ROOT_PASSWD} | chpasswd
+#echo root:${ROOT_PASSWD} | chpasswd
 
 }
 
