@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="faker.js - generate massive amounts of fake data"/>
+<meta name="twitter:description" content="
+faker.js - generate massive amounts of fake data in the browser and node.js"/>
+
+
+
+  	<meta property="og:title" content=" faker.js - generate massive amounts of fake data &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/faker/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-06-23T23:29:23&#43;08:00" />
+
+    
+    <meta property="og:article:tag" content="github" />
+    
+    <meta property="og:article:tag" content="javascript" />
+    
+    
+
+    <title>
+       faker.js - generate massive amounts of fake data &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/faker/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">faker.js - generate massive amounts of fake data</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/github/">GITHUB</a>
+       
+            <a href="/tags/javascript/">JAVASCRIPT</a>
+       
+        <time class="post-date" datetime="2017-06-23T23:29:23&#43;08:00">
+            23 Jun 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p><a href="https://github.com/Marak/faker.js">faker.js</a> - generate massive amounts of fake data in the browser and node.js</p>
+</blockquote>
+
+<h2 id="demo">Demo</h2>
+
+<p><a href="https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html">https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html</a></p>
+
+<h2 id="hosted-api-microservice">Hosted API Microservice</h2>
+
+<p><a href="http://faker.hook.io/">http://faker.hook.io</a>
+ - Supports all Faker API Methods
+ - Full-Featured Microservice
+ - Hosted by <a href="http://hook.io">hook.io</a></p>
+
+<pre><code class="language-bash">curl http://faker.hook.io?property=name.findName&amp;locale=de
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="browser">Browser</h3>
+
+<pre><code>&lt;script src = &quot;faker.js&quot; type = &quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  var randomName = faker.name.findName(); // Caitlyn Kerluke
+  var randomEmail = faker.internet.email(); // Rusty@arne.info
+  var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+&lt;/script&gt;
+</code></pre>
+
+<h3 id="node-js">Node.js</h3>
+
+<pre><code>var faker = require('faker');
+
+var randomName = faker.name.findName(); // Rowan Nikolaus
+var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
+var randomCard = faker.helpers.createCard(); // random contact card containing many properties
+</code></pre>
+
+<h2 id="api">API</h2>
+
+<h3 id="faker-fake">Faker.fake()</h3>
+
+<p>faker.js contains a super useful generator method <code>Faker.fake</code> for combining faker API methods using a mustache string format.</p>
+
+<p><strong>Example:</strong></p>
+
+<pre><code class="language-js">console.log(faker.fake(&quot;{{name.lastName}}, {{name.firstName}} {{name.suffix}}&quot;));
+// outputs: &quot;Marks, Dean Sr.&quot;
+</code></pre>
+
+<p>This will interpolate the format string with the value of methods <code>name.lastName()</code>, <code>name.firstName()</code>, and <code>name.suffix()</code></p>
+
+<h3 id="jsdoc-api-browser">JSDoc API Browser</h3>
+
+<p><a href="http://marak.github.io/faker.js/">http://marak.github.io/faker.js/</a></p>
+
+<h3 id="api-methods">API Methods</h3>
+
+<ul>
+<li>address
+
+<ul>
+<li>zipCode</li>
+<li>city</li>
+<li>cityPrefix</li>
+<li>citySuffix</li>
+<li>streetName</li>
+<li>streetAddress</li>
+<li>streetSuffix</li>
+<li>streetPrefix</li>
+<li>secondaryAddress</li>
+<li>county</li>
+<li>country</li>
+<li>countryCode</li>
+<li>state</li>
+<li>stateAbbr</li>
+<li>latitude</li>
+<li>longitude</li>
+</ul></li>
+<li>commerce
+
+<ul>
+<li>color</li>
+<li>department</li>
+<li>productName</li>
+<li>price</li>
+<li>productAdjective</li>
+<li>productMaterial</li>
+<li>product</li>
+</ul></li>
+<li>company
+
+<ul>
+<li>suffixes</li>
+<li>companyName</li>
+<li>companySuffix</li>
+<li>catchPhrase</li>
+<li>bs</li>
+<li>catchPhraseAdjective</li>
+<li>catchPhraseDescriptor</li>
+<li>catchPhraseNoun</li>
+<li>bsAdjective</li>
+<li>bsBuzz</li>
+<li>bsNoun</li>
+</ul></li>
+<li>database
+
+<ul>
+<li>column</li>
+<li>type</li>
+<li>collation</li>
+<li>engine</li>
+</ul></li>
+<li>date
+
+<ul>
+<li>past</li>
+<li>future</li>
+<li>between</li>
+<li>recent</li>
+<li>month</li>
+<li>weekday</li>
+</ul></li>
+<li>fake</li>
+<li>finance
+
+<ul>
+<li>account</li>
+<li>accountName</li>
+<li>mask</li>
+<li>amount</li>
+<li>transactionType</li>
+<li>currencyCode</li>
+<li>currencyName</li>
+<li>currencySymbol</li>
+<li>bitcoinAddress</li>
+<li>iban</li>
+<li>bic</li>
+</ul></li>
+<li>hacker
+
+<ul>
+<li>abbreviation</li>
+<li>adjective</li>
+<li>noun</li>
+<li>verb</li>
+<li>ingverb</li>
+<li>phrase</li>
+</ul></li>
+<li>helpers
+
+<ul>
+<li>randomize</li>
+<li>slugify</li>
+<li>replaceSymbolWithNumber</li>
+<li>replaceSymbols</li>
+<li>shuffle</li>
+<li>mustache</li>
+<li>createCard</li>
+<li>contextualCard</li>
+<li>userCard</li>
+<li>createTransaction</li>
+</ul></li>
+<li>image
+
+<ul>
+<li>image</li>
+<li>avatar</li>
+<li>imageUrl</li>
+<li>abstract</li>
+<li>animals</li>
+<li>business</li>
+<li>cats</li>
+<li>city</li>
+<li>food</li>
+<li>nightlife</li>
+<li>fashion</li>
+<li>people</li>
+<li>nature</li>
+<li>sports</li>
+<li>technics</li>
+<li>transport</li>
+<li>dataUri</li>
+</ul></li>
+<li>internet
+
+<ul>
+<li>avatar</li>
+<li>email</li>
+<li>exampleEmail</li>
+<li>userName</li>
+<li>protocol</li>
+<li>url</li>
+<li>domainName</li>
+<li>domainSuffix</li>
+<li>domainWord</li>
+<li>ip</li>
+<li>ipv6</li>
+<li>userAgent</li>
+<li>color</li>
+<li>mac</li>
+<li>password</li>
+</ul></li>
+<li>lorem
+
+<ul>
+<li>word</li>
+<li>words</li>
+<li>sentence</li>
+<li>slug</li>
+<li>sentences</li>
+<li>paragraph</li>
+<li>paragraphs</li>
+<li>text</li>
+<li>lines</li>
+</ul></li>
+<li>name
+
+<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>findName</li>
+<li>jobTitle</li>
+<li>prefix</li>
+<li>suffix</li>
+<li>title</li>
+<li>jobDescriptor</li>
+<li>jobArea</li>
+<li>jobType</li>
+</ul></li>
+<li>phone
+
+<ul>
+<li>phoneNumber</li>
+<li>phoneNumberFormat</li>
+<li>phoneFormats</li>
+</ul></li>
+<li>random
+
+<ul>
+<li>number</li>
+<li>arrayElement</li>
+<li>objectElement</li>
+<li>uuid</li>
+<li>boolean</li>
+<li>word</li>
+<li>words</li>
+<li>image</li>
+<li>locale</li>
+<li>alphaNumeric</li>
+</ul></li>
+<li>system
+
+<ul>
+<li>fileName</li>
+<li>commonFileName</li>
+<li>mimeType</li>
+<li>commonFileType</li>
+<li>commonFileExt</li>
+<li>fileType</li>
+<li>fileExt</li>
+<li>directoryPath</li>
+<li>filePath</li>
+<li>semver</li>
+</ul></li>
+</ul>
+
+<h2 id="localization">Localization</h2>
+
+<p>As of version <code>v2.0.0</code> faker.js has support for multiple localities.</p>
+
+<p>The default language locale is set to English.</p>
+
+<p>Setting a new locale is simple:</p>
+
+<pre><code class="language-js">// sets locale to de
+faker.locale = &quot;de&quot;;
+</code></pre>
+
+<ul>
+<li>az</li>
+<li>cz</li>
+<li>de</li>
+<li>de_AT</li>
+<li>de_CH</li>
+<li>en</li>
+<li>en_AU</li>
+<li>en_BORK</li>
+<li>en_CA</li>
+<li>en_GB</li>
+<li>en_IE</li>
+<li>en_IND</li>
+<li>en_US</li>
+<li>en_au_ocker</li>
+<li>es</li>
+<li>es_MX</li>
+<li>fa</li>
+<li>fr</li>
+<li>fr_CA</li>
+<li>ge</li>
+<li>id_ID</li>
+<li>it</li>
+<li>ja</li>
+<li>ko</li>
+<li>nb_NO</li>
+<li>nep</li>
+<li>nl</li>
+<li>pl</li>
+<li>pt_BR</li>
+<li>ru</li>
+<li>sk</li>
+<li>sv</li>
+<li>tr</li>
+<li>uk</li>
+<li>vi</li>
+<li>zh_CN</li>
+<li>zh_TW</li>
+</ul>
+
+<h2 id="setting-a-randomness-seed">Setting a randomness seed</h2>
+
+<p>If you want consistent results, you can set your own seed:</p>
+
+<p>```js
+faker.seed(123);</p>
+
+<p>var firstRandom = faker.random.number();</p>
+
+<p>// Setting the seed again resets the sequence.
+faker.seed(123);</p>
+
+<p>var secondRandom = faker.random.number();</p>
+
+<p>console.log(firstRandom === secondRandom);</p>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/tinydb/">
+          <section class="post">
+              <h2>TinyDB - lightweight document oriented database for Python</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

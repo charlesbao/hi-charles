@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Hi!Charles</title>
+    <link>/tags/github/</link>
+    <description>Recent content in Github on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Jun 2017 23:18:49 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TinyDB - lightweight document oriented database for Python</title>
+      <link>/post/tinydb/</link>
+      <pubDate>Sat, 24 Jun 2017 23:18:49 +0800</pubDate>
+      
+      <guid>/post/tinydb/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>faker.js - generate massive amounts of fake data</title>
+      <link>/post/faker/</link>
+      <pubDate>Fri, 23 Jun 2017 23:29:23 +0800</pubDate>
+      
+      <guid>/post/faker/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>json-server - Get a full fake REST API with zero coding</title>
+      <link>/post/json-server/</link>
+      <pubDate>Thu, 22 Jun 2017 23:32:28 +0800</pubDate>
+      
+      <guid>/post/json-server/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>react-flight - build animation compositions for React</title>
+      <link>/post/react-flight/</link>
+      <pubDate>Wed, 21 Jun 2017 09:57:26 +0800</pubDate>
+      
+      <guid>/post/react-flight/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>remark - A simple, in-browser, markdown-driven slideshow tool.</title>
+      <link>/post/remark-slideshow/</link>
+      <pubDate>Tue, 20 Jun 2017 10:11:53 +0800</pubDate>
+      
+      <guid>/post/remark-slideshow/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HyperApp - 1kb JavaScript library for building frontend applications.</title>
+      <link>/post/hyperapp/</link>
+      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hyperapp/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>jekyll-now - easier to create blog</title>
+      <link>/post/jekyll-now/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/jekyll-now/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/barryclark/jekyll-now&#34;&gt;Jekyll-Now&lt;/a&gt; makes Jekyll easier to create your blog, by eliminating a lot of the up front setup.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>spectre.css - the excellent style library</title>
+      <link>/post/spectre-css/</link>
+      <pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/spectre-css/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://picturepan2.github.io/spectre&#34;&gt;Spectre.css&lt;/a&gt; is a lightweight, responsive and modern CSS framework for faster and extensible development.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>dat - share files with version control</title>
+      <link>/post/dat/</link>
+      <pubDate>Sun, 21 May 2017 10:54:24 +0200</pubDate>
+      
+      <guid>/post/dat/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/datproject/dat&#34;&gt;Dat&lt;/a&gt; is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>upterm - interactive and autocompletion terminal</title>
+      <link>/post/upterm/</link>
+      <pubDate>Sat, 20 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/upterm/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/railsware/upterm&#34;&gt;Upterm&lt;/a&gt; is an IDE in the world of terminals. it&amp;rsquo;s both a terminal emulator and an &lt;em&gt;interactive&lt;/em&gt; shell&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

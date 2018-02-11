@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="使用Python创建ftp服务器"/>
+<meta name="twitter:description" content="
+Python的pyftpdlib可用于创建ftp服务器"/>
+
+
+
+  	<meta property="og:title" content=" 使用Python创建ftp服务器 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/python_ftp/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-06T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="Python" />
+    
+    <meta property="og:article:tag" content="方法" />
+    
+    
+
+    <title>
+       使用Python创建ftp服务器 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/python_ftp/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">使用Python创建ftp服务器</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/python/">PYTHON</a>
+       
+            <a href="/tags/%E6%96%B9%E6%B3%95/">方法</a>
+       
+        <time class="post-date" datetime="2017-05-06T00:00:00Z">
+            6 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>Python的pyftpdlib可用于创建ftp服务器</p>
+</blockquote>
+
+<p>使用Python能够轻易创建一个ftp服务器，并可以使用Pyinstaller打包成可执行程序，在无Python环境的电脑中使用</p>
+
+<pre><code>from pyftpdlib.authorizers import DummyAuthorizer
+from pyftpdlib.handlers import FTPHandler
+from pyftpdlib.servers import ThreadedFTPServer
+
+import os
+
+def getDisk():
+    arr = []
+    for i in range(65,91):
+        vol=chr(i)+':'
+        if os.path.isdir(vol):
+            arr.append(vol)
+    return arr
+
+
+def main(disks):
+    authorizer = DummyAuthorizer()
+    authorizer.add_user('user', '12345', '/')
+    for i in disks:
+        authorizer.add_user(i+'user', '12345', i+'\\')
+    handler = FTPHandler
+    handler.authorizer = authorizer
+    server = ThreadedFTPServer(('0.0.0.0', 21), handler)
+    server.serve_forever()
+
+if __name__ == &quot;__main__&quot;:
+    main(getDisk())
+</code></pre>
+
+<hr />
+
+<p><strong>解释</strong></p>
+
+<pre><code>def getDisk()
+</code></pre>
+
+<ul>
+<li>其作用为遍历Windows所有磁盘，并返回可用磁盘
+<code>
+authorizer.add_user(i+'user', '12345', i+'\\')
+</code></li>
+<li>i为盘符名 如 C:,D:;</li>
+<li>其作用为创建以盘符为首的用户名，密码为12345，默认路径为盘符根目录</li>
+</ul>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/upterm/">
+          <section class="post">
+              <h2>upterm - interactive and autocompletion terminal</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Python 搭建简单文件服务器"/>
+<meta name="twitter:description" content="
+使用Python自带的库而不依赖第三方库，简单的文件服务器实现"/>
+
+
+
+  	<meta property="og:title" content=" Python 搭建简单文件服务器 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/python_filesystem/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-25T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="Python" />
+    
+    <meta property="og:article:tag" content="方法" />
+    
+    
+
+    <title>
+       Python 搭建简单文件服务器 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/python_filesystem/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">Python 搭建简单文件服务器</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/python/">PYTHON</a>
+       
+            <a href="/tags/%E6%96%B9%E6%B3%95/">方法</a>
+       
+        <time class="post-date" datetime="2017-05-25T00:00:00Z">
+            25 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>使用Python自带的库而不依赖第三方库，简单的文件服务器实现</p>
+</blockquote>
+
+<p><strong>基于BaseHTTPServer的文件服务器</strong></p>
+
+<p>能够进行上传下载等操作。</p>
+
+<pre><code>#!/usr/bin/env python
+# coding=utf-8
+
+import os, sys, platform
+import posixpath
+import BaseHTTPServer
+from SocketServer import ThreadingMixIn
+import threading
+import urllib, urllib2
+import cgi
+import shutil
+import mimetypes
+import re
+import time
+
+try:
+    from cStringIO import StringIO
+except ImportError:
+    from StringIO import StringIO
+
+
+def getHomePath():
+    return os.getcwd()
+
+def sizeof_fmt(num):
+    for x in ['bytes', 'KB', 'MB', 'GB']:
+        if num &lt; 1024.0:
+            return &quot;%3.1f%s&quot; % (num, x)
+        num /= 1024.0
+    return &quot;%3.1f%s&quot; % (num, 'TB')
+
+
+def modification_date(filename):
+    return time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, time.localtime(os.path.getmtime(filename)))
+
+
+class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        &quot;&quot;&quot;Serve a GET request.&quot;&quot;&quot;
+        # print &quot;....................&quot;, threading.currentThread().getName()
+        f = self.send_head()
+        if f:
+            self.copyfile(f, self.wfile)
+            f.close()
+
+    def do_HEAD(self):
+        &quot;&quot;&quot;Serve a HEAD request.&quot;&quot;&quot;
+        f = self.send_head()
+        if f:
+            f.close()
+
+    def do_POST(self):
+        &quot;&quot;&quot;Serve a POST request.&quot;&quot;&quot;
+        r, info = self.deal_post_data()
+        print r, info, &quot;by: &quot;, self.client_address
+        f = StringIO()
+        f.write('&lt;!DOCTYPE html&gt;')
+        f.write(&quot;&lt;html&gt;\n&lt;title&gt;Upload Result Page&lt;/title&gt;\n&quot;)
+        f.write(&quot;&lt;body&gt;\n&lt;h2&gt;Upload Result Page&lt;/h2&gt;\n&quot;)
+        f.write(&quot;&lt;hr&gt;\n&quot;)
+        f.write(&quot;&lt;strong&gt;%s&lt;/strong&gt;&quot; % (&quot;Success:&quot; if r else &quot;Failed:&quot;))
+        f.write(info)
+        f.write(&quot;&lt;br&gt;&lt;a href=\&quot;%s\&quot;&gt;back&lt;/a&gt;\n&lt;/body&gt;\n&lt;/html&gt;&quot; % self.headers['referer'])
+        length = f.tell()
+        f.seek(0)
+        self.send_response(200)
+        self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)
+        self.send_header(&quot;Content-Length&quot;, str(length))
+        self.end_headers()
+        if f:
+            self.copyfile(f, self.wfile)
+            f.close()
+
+    def deal_post_data(self):
+        boundary = self.headers.plisttext.split(&quot;=&quot;)[1]
+        remainbytes = int(self.headers['content-length'])
+        line = self.rfile.readline()
+        remainbytes -= len(line)
+        if not boundary in line:
+            return (False, &quot;Content NOT begin with boundary&quot;)
+        line = self.rfile.readline()
+        remainbytes -= len(line)
+        fn = re.findall(r'Content-Disposition.*name=&quot;file&quot;; filename=&quot;(.*)&quot;', line)
+        if not fn:
+            return (False, &quot;Can't find out file name...&quot;)
+        path = self.translate_path(self.path)
+        osType = platform.system()
+        try:
+            if osType == &quot;Linux&quot;:
+                fn = os.path.join(path, fn[0].decode('gbk').encode('utf-8'))
+            else:
+                fn = os.path.join(path, fn[0])
+        except Exception, e:
+            return (False, &quot;文件名请不要用中文，或者使用IE上传中文名的文件。&quot;)
+        while os.path.exists(fn):
+            fn += &quot;_&quot;
+        line = self.rfile.readline()
+        remainbytes -= len(line)
+        line = self.rfile.readline()
+        remainbytes -= len(line)
+        try:
+            out = open(fn, 'wb')
+        except IOError:
+            return (False, &quot;Can't create file to write, do you have permission to write?&quot;)
+
+        preline = self.rfile.readline()
+        remainbytes -= len(preline)
+        while remainbytes &gt; 0:
+            line = self.rfile.readline()
+            remainbytes -= len(line)
+            if boundary in line:
+                preline = preline[0:-1]
+                if preline.endswith('\r'):
+                    preline = preline[0:-1]
+                out.write(preline)
+                out.close()
+                return (True, &quot;File '%s' upload success!&quot; % fn)
+            else:
+                out.write(preline)
+                preline = line
+        return (False, &quot;Unexpect Ends of data.&quot;)
+
+    def send_head(self):
+        path = self.translate_path(self.path)
+        f = None
+        if os.path.isdir(path):
+            if not self.path.endswith('/'):
+                # redirect browser - doing basically what apache does
+                self.send_response(301)
+                self.send_header(&quot;Location&quot;, self.path + &quot;/&quot;)
+                self.end_headers()
+                return None
+            for index in &quot;index.html&quot;, &quot;index.htm&quot;:
+                index = os.path.join(path, index)
+                if os.path.exists(index):
+                    path = index
+                    break
+            else:
+                return self.list_directory(path)
+        ctype = self.guess_type(path)
+        try:
+            f = open(path, 'rb')
+        except IOError:
+            self.send_error(404, &quot;File not found&quot;)
+            return None
+        self.send_response(200)
+        self.send_header(&quot;Content-type&quot;, ctype)
+        fs = os.fstat(f.fileno())
+        self.send_header(&quot;Content-Length&quot;, str(fs[6]))
+        self.send_header(&quot;Last-Modified&quot;, self.date_time_string(fs.st_mtime))
+        self.end_headers()
+        return f
+
+    def list_directory(self, path):
+        try:
+            list = os.listdir(path)
+        except os.error:
+            self.send_error(404, &quot;No permission to list directory&quot;)
+            return None
+        list.sort(key=lambda a: a.lower())
+        f = StringIO()
+        displaypath = cgi.escape(urllib.unquote(self.path))
+        f.write('&lt;!DOCTYPE html')
+        f.write(&quot;&lt;html&gt;\n&lt;title&gt;Directory listing for %s&lt;/title&gt;\n&quot; % displaypath)
+        f.write(&quot;&lt;body&gt;\n&lt;h2&gt;listing for %s&lt;/h2&gt;\n&quot; % displaypath)
+        f.write(&quot;&lt;hr&gt;\n&quot;)
+        f.write(&quot;&lt;form ENCTYPE=\&quot;multipart/form-data\&quot; method=\&quot;post\&quot;&gt;&quot;)
+        f.write(&quot;&lt;input name=\&quot;file\&quot; type=\&quot;file\&quot;/&gt;&quot;)
+        f.write(&quot;&lt;input type=\&quot;submit\&quot; value=\&quot;upload\&quot;/&gt;&quot;)
+        f.write(&quot;&lt;input type=\&quot;button\&quot; value=\&quot;HomePage\&quot; onClick=\&quot;location='/'\&quot;&gt;&quot;)
+        f.write(&quot;&lt;/form&gt;\n&quot;)
+        f.write(&quot;&lt;hr&gt;\n&lt;ul&gt;\n&quot;)
+        for name in list:
+            fullname = os.path.join(path, name)
+            colorName = displayname = linkname = name
+            # Append / for directories or @ for symbolic links
+            if os.path.isdir(fullname):
+                colorName = '&lt;span style=&quot;background-color: #CEFFCE;&quot;&gt;' + name + '/&lt;/span&gt;'
+                displayname = name
+                linkname = name + &quot;/&quot;
+            if os.path.islink(fullname):
+                colorName = '&lt;span style=&quot;background-color: #FFBFFF;&quot;&gt;' + name + '@&lt;/span&gt;'
+                displayname = name
+                # Note: a link to a directory displays with @ and links with /
+            filename = getHomePath() + '/' + displaypath + displayname
+            f.write(
+                '&lt;table&gt;&lt;tr&gt;&lt;td width=&quot;60%%&quot;&gt;&lt;a href=&quot;%s&quot;&gt;%s&lt;/a&gt;&lt;/td&gt;&lt;td width=&quot;20%%&quot;&gt;%s&lt;/td&gt;&lt;td width=&quot;20%%&quot;&gt;%s&lt;/td&gt;&lt;/tr&gt;\n'
+                % (urllib.quote(linkname), colorName,
+                   sizeof_fmt(os.path.getsize(filename)), modification_date(filename)))
+        f.write(&quot;&lt;/table&gt;\n&lt;hr&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n&quot;)
+        length = f.tell()
+        f.seek(0)
+        self.send_response(200)
+        self.send_header(&quot;Content-type&quot;, &quot;text/html&quot;)
+        self.send_header(&quot;Content-Length&quot;, str(length))
+        self.end_headers()
+        return f
+
+    def translate_path(self, path):
+        path = path.split('?', 1)[0]
+        path = path.split('#', 1)[0]
+        path = posixpath.normpath(urllib.unquote(path))
+        words = path.split('/')
+        words = filter(None, words)
+        path = getHomePath()
+        for word in words:
+            drive, word = os.path.splitdrive(word)
+            head, word = os.path.split(word)
+            if word in (os.curdir, os.pardir): continue
+            path = os.path.join(path, word)
+        return path
+
+    def copyfile(self, source, outputfile):
+        shutil.copyfileobj(source, outputfile)
+
+    def guess_type(self, path):
+        base, ext = posixpath.splitext(path)
+        if ext in self.extensions_map:
+            return self.extensions_map[ext]
+        ext = ext.lower()
+        if ext in self.extensions_map:
+            return self.extensions_map[ext]
+        else:
+            return self.extensions_map['']
+
+    if not mimetypes.inited:
+        mimetypes.init()  # try to read system mime.types
+    extensions_map = mimetypes.types_map.copy()
+    extensions_map.update({
+        '': 'application/octet-stream',  # Default
+    })
+
+
+class ThreadingServer(ThreadingMixIn, BaseHTTPServer.HTTPServer):
+    pass
+
+
+if __name__ == '__main__':
+    srvr = ThreadingServer(('', 8080), SimpleHTTPRequestHandler)
+
+    threads = []
+    t = threading.Thread(target=srvr.serve_forever())
+    t.setDaemon(True)
+    t.start()
+    t.join()
+
+
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/centos_http/">
+          <section class="post">
+              <h2>centos6下一键配置http代理</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

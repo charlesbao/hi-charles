@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="搭建shadowsocks 超越翻墙的翻墙方式"/>
+<meta name="twitter:description" content="
+Shadowsocks比PPTP翻墙更加方便稳定，且不会被某些运营商屏蔽，方便又快捷（此篇为搭建翻墙服务器所用）"/>
+
+
+
+  	<meta property="og:title" content=" 搭建shadowsocks 超越翻墙的翻墙方式 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/shadowsocks_setup/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-25T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="vpn" />
+    
+    <meta property="og:article:tag" content="linux" />
+    
+    <meta property="og:article:tag" content="脚本" />
+    
+    
+
+    <title>
+       搭建shadowsocks 超越翻墙的翻墙方式 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/shadowsocks_setup/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">搭建shadowsocks 超越翻墙的翻墙方式</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/vpn/">VPN</a>
+       
+            <a href="/tags/linux/">LINUX</a>
+       
+            <a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+       
+        <time class="post-date" datetime="2017-05-25T00:00:00Z">
+            25 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>Shadowsocks比PPTP翻墙更加方便稳定，且不会被某些运营商屏蔽，方便又快捷（此篇为搭建翻墙服务器所用）</p>
+</blockquote>
+
+<p>以下是linux服务器对shadowsocks的配置shell源码，方便阅读。</p>
+
+<p>或将以下源码复制黏贴于.sh的文件中 777权限 ./运行即可哦</p>
+
+<pre><code>#! /bin/bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+#===============================================================================================
+#   System Required:  CentOS 6,7, Debian, Ubuntu
+#   Description:  One click Install Shadowsocks(Python)
+#===============================================================================================
+
+clear
+echo &quot;&quot;
+echo &quot;#############################################################&quot;
+echo &quot;# One click Install Shadowsocks(Python)&quot;
+echo &quot;# System Required:  CentOS 6,7, Debian, Ubuntu&quot;
+echo &quot;#############################################################&quot;
+echo &quot;&quot;
+
+# Make sure only root can run our script
+function rootness(){
+    if [[ $EUID -ne 0 ]]; then
+       echo &quot;Error:This script must be run as root!&quot; 1&gt;&amp;2
+       exit 1
+    fi
+}
+
+# Check OS
+function checkos(){
+    if [ -f /etc/redhat-release ];then
+        OS=CentOS
+    elif [ ! -z &quot;`cat /etc/issue | grep bian`&quot; ];then
+        OS=Debian
+    elif [ ! -z &quot;`cat /etc/issue | grep Ubuntu`&quot; ];then
+        OS=Ubuntu
+    else
+        echo &quot;Not support OS, Please reinstall OS and retry!&quot;
+        exit 1
+    fi
+}
+
+# Get version
+function getversion(){
+    if [[ -s /etc/redhat-release ]];then
+        grep -oE  &quot;[0-9.]+&quot; /etc/redhat-release
+    else    
+        grep -oE  &quot;[0-9.]+&quot; /etc/issue
+    fi    
+}
+
+# CentOS version
+function centosversion(){
+    local code=$1
+    local version=&quot;`getversion`&quot;
+    local main_ver=${version%%.*}
+    if [ $main_ver == $code ];then
+        return 0
+    else
+        return 1
+    fi        
+}
+
+# Disable selinux
+function disable_selinux(){
+if [ -s /etc/selinux/config ] &amp;&amp; grep 'SELINUX=enforcing' /etc/selinux/config; then
+    sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+    setenforce 0
+fi
+}
+
+# Pre-installation settings
+function pre_install(){
+    # Not support CentOS 5
+    if centosversion 5; then
+        echo &quot;Not support CentOS 5.x, please change to CentOS 6,7 or Debian or Ubuntu and try again.&quot;
+        exit 1
+    fi
+    #Set shadowsocks config password
+    echo &quot;Please input password for shadowsocks:&quot;
+    read -p &quot;(Default password: howhost.me):&quot; shadowsockspwd
+    if [ &quot;$shadowsockspwd&quot; = &quot;&quot; ]; then
+        shadowsockspwd=&quot;howhost.me&quot;
+    fi
+    IP=$(curl -s -4 ipinfo.io | grep &quot;ip&quot; | awk -F\&quot; '{print $4}')
+    echo &quot;Please input IP for shadowsocks:&quot;
+    read -p &quot;(Default IP: ${IP}):&quot; shadowsocksip
+    if [ &quot;$shadowsockspwd&quot; = &quot;&quot; ]; then
+        shadowsocksip=&quot;${IP}&quot;
+    fi
+    echo &quot;password:$shadowsockspwd&quot;
+    echo &quot;####################################&quot;
+    get_char(){
+        SAVEDSTTY=`stty -g`
+        stty -echo
+        stty cbreak
+        dd if=/dev/tty bs=1 count=1 2&gt; /dev/null
+        stty -raw
+        stty echo
+        stty $SAVEDSTTY
+    }
+    echo &quot;&quot;
+    echo &quot;Press any key to start...or Press Ctrl+C to cancel&quot;
+    char=`get_char`
+    #Install necessary dependencies
+    if [ &quot;$OS&quot; == 'CentOS' ]; then
+        yum install -y wget unzip openssl-devel gcc swig python python-devel python-setuptools autoconf libtool libevent
+        yum install -y automake make curl curl-devel zlib-devel perl perl-devel cpio expat-devel gettext-devel
+    else
+        apt-get -y update
+        apt-get -y install python python-dev python-pip curl wget unzip gcc swig automake make perl cpio
+    fi
+    # Get IP address
+    echo &quot;Getting Public IP address, Please wait a moment...&quot;
+    echo -e &quot;Your main public IP is\t\033[32m$IP\033[0m&quot;
+    echo &quot;&quot;
+    #Current folder
+    cur_dir=`pwd`
+    cd $cur_dir
+}
+
+# Download files
+function download_files(){
+    if [ &quot;$OS&quot; == 'CentOS' ]; then
+        if ! wget --no-check-certificate -O ez_setup.py https://bootstrap.pypa.io/ez_setup.py; then
+            echo &quot;Failed to download ez_setup.py!&quot;
+            exit 1
+        fi
+        # Download shadowsocks chkconfig file
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks -O /etc/init.d/shadowsocks; then
+            echo &quot;Failed to download shadowsocks chkconfig file!&quot;
+            exit 1
+        fi
+    else
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-debian -O /etc/init.d/shadowsocks; then
+            echo &quot;Failed to download shadowsocks chkconfig file!&quot;
+            exit 1
+        fi
+    fi
+}
+
+# Config shadowsocks
+function config_shadowsocks(){
+    cat &gt; /etc/shadowsocks.json&lt;&lt;-EOF
+{
+    &quot;server&quot;:&quot;${IP}&quot;,
+    &quot;local_address&quot;:&quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;port_password&quot;:{
+    &quot;8989&quot;:&quot;${shadowsockspwd}&quot;
+    },
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-cfb&quot;,
+    &quot;fast_open&quot;:false
+}
+EOF
+}
+
+# iptables set
+function iptables_set(){
+    echo &quot;iptables start setting...&quot;
+    /sbin/service iptables status 1&gt;/dev/null 2&gt;&amp;1
+    if [ $? -eq 0 ]; then
+        /etc/init.d/iptables status | grep '8989' | grep 'ACCEPT' &gt;/dev/null 2&gt;&amp;1
+        if [ $? -ne 0 ]; then
+            /sbin/iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8989 -j ACCEPT
+            /etc/init.d/iptables save
+            /etc/init.d/iptables restart
+        else
+            echo &quot;port 8989 has been set up.&quot;
+        fi
+    else
+        echo &quot;iptables looks like shutdown, please manually set it if necessary.&quot;
+    fi
+}
+
+# Install Shadowsocks
+function install_ss(){
+    which pip &gt; /dev/null 2&gt;&amp;1
+    if [ $? -ne 0 ]; then
+        if [ &quot;$OS&quot; == 'CentOS' ]; then
+            python ez_setup.py install
+            easy_install pip
+        fi
+    fi
+    if [ -f /usr/bin/pip ]; then
+        pip install M2Crypto
+        pip install greenlet
+        pip install gevent
+        pip install shadowsocks
+        if [ -f /usr/bin/ssserver ] || [ -f /usr/local/bin/ssserver ]; then
+            chmod +x /etc/init.d/shadowsocks
+            # Add run on system start up
+            if [ &quot;$OS&quot; == 'CentOS' ]; then
+                chkconfig --add shadowsocks
+                chkconfig shadowsocks on
+            else
+                update-rc.d shadowsocks defaults
+            fi
+            # Run shadowsocks in the background
+            /etc/init.d/shadowsocks start
+        else
+            echo &quot;&quot;
+            echo &quot;Shadowsocks install failed!&quot;
+            exit 1
+        fi
+        clear
+        echo &quot;&quot;
+        echo &quot;Congratulations, shadowsocks install completed!&quot;
+        cat /etc/shadowsocks.json
+        exit 0
+    else
+        echo &quot;&quot;
+        echo &quot;pip install failed!&quot;
+        exit 1
+    fi
+}
+
+# Uninstall Shadowsocks
+function uninstall_shadowsocks(){
+    printf &quot;Are you sure uninstall Shadowsocks? (y/n) &quot;
+    printf &quot;\n&quot;
+    read -p &quot;(Default: n):&quot; answer
+    if [ -z $answer ]; then
+        answer=&quot;n&quot;
+    fi
+    if [ &quot;$answer&quot; = &quot;y&quot; ]; then
+        ps -ef | grep -v grep | grep -v ps | grep -i &quot;ssserver&quot; &gt; /dev/null 2&gt;&amp;1
+        if [ $? -eq 0 ]; then
+            /etc/init.d/shadowsocks stop
+        fi
+        checkos
+        if [ &quot;$OS&quot; == 'CentOS' ]; then
+            chkconfig --del shadowsocks
+        else
+            update-rc.d -f shadowsocks remove
+        fi
+        # delete config file
+        rm -f /etc/shadowsocks.json
+        rm -f /var/run/shadowsocks.pid
+        rm -f /etc/init.d/shadowsocks
+        pip uninstall -y shadowsocks
+        if [ $? -eq 0 ]; then
+            echo &quot;Shadowsocks uninstall success!&quot;
+        else
+            echo &quot;Shadowsocks uninstall failed!&quot;
+        fi
+    else
+        echo &quot;uninstall cancelled, Nothing to do&quot;
+    fi
+}
+
+# Install Shadowsocks-python
+function install_shadowsocks(){
+    checkos
+    rootness
+    disable_selinux
+    pre_install
+    download_files
+    config_shadowsocks
+    if [ &quot;$OS&quot; == 'CentOS' ]; then
+        if ! centosversion 7; then
+            iptables_set
+        fi
+    fi
+    install_ss
+}
+
+# Initialization step
+action=$1
+[  -z $1 ] &amp;&amp; action=install
+case &quot;$action&quot; in
+install)
+    install_shadowsocks
+    ;;
+uninstall)
+    uninstall_shadowsocks
+    ;;
+*)
+    echo &quot;Arguments error! [${action} ]&quot;
+    echo &quot;Usage: `basename $0` {install|uninstall}&quot;
+    ;;
+esac
+</code></pre>
+
+<ul>
+<li>如果没有报错的话，shadowsocks的安装配置就完成啦。</li>
+<li>端口和密码的配置文件在/etc/shadowsocks.json文件中。</li>
+</ul>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/python27_setup/">
+          <section class="post">
+              <h2>centos 安装Python2.7</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

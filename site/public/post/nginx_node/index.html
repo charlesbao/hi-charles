@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="nginx&#43;nodejs 搭建单端口多站点服务"/>
+<meta name="twitter:description" content="
+PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。"/>
+
+
+
+  	<meta property="og:title" content=" nginx&#43;nodejs 搭建单端口多站点服务 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/nginx_node/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-24T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="node" />
+    
+    <meta property="og:article:tag" content="方法" />
+    
+    
+
+    <title>
+       nginx&#43;nodejs 搭建单端口多站点服务 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/nginx_node/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">nginx&#43;nodejs 搭建单端口多站点服务</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/node/">NODE</a>
+       
+            <a href="/tags/%E6%96%B9%E6%B3%95/">方法</a>
+       
+        <time class="post-date" datetime="2017-05-24T00:00:00Z">
+            24 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。</p>
+</blockquote>
+
+<p><strong>Nginx操作</strong></p>
+
+<p>使用nginx监听8000端口的服务，并转发到80端口前端输出</p>
+
+<pre><code>server {
+   listen 80;
+   server_name test.charlesbao.com test2.charlesbao.com;
+   location / {
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-NginX-Proxy true;
+      proxy_pass http://127.0.0.1:8000/;
+      proxy_redirect off;
+    }
+}
+</code></pre>
+
+<p><strong>NodeJS操作</strong></p>
+
+<p>安装相关库</p>
+
+<pre><code>npm install --save vhost express
+</code></pre>
+
+<p>主入口文件 app.js</p>
+
+<pre><code>var express = require('express');
+var vhost = require('vhost')
+
+var app = express();
+
+// vhost domain
+app.use(vhost('test.charlesbao.com', require('./vhost/test')))
+app.use(vhost('test2.charlesbao.com', require('./vhost/test2')))
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+app.listen(8000);
+
+</code></pre>
+
+<p>【test.charlesbao.com】 主机入口文件 test/index.js</p>
+
+<pre><code>var express = require('express');
+var app = express();
+
+app.use('/', function(req,res,next){
+  res.send(&quot;hello world&quot;);
+})
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+module.exports = app;
+</code></pre>
+
+<p><strong>目录结构</strong></p>
+
+<ul>
+<li>app.js &lt;- 主入口</li>
+<li>vhost [dir]
+
+<ul>
+<li>test [dir]
+
+<ul>
+<li>index.js &lt;- 主机入口</li>
+</ul></li>
+<li>test2 [dir]
+
+<ul>
+<li>index.js &lt;- 主机入口</li>
+</ul></li>
+</ul></li>
+</ul>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/shadowsocks_setup/">
+          <section class="post">
+              <h2>搭建shadowsocks 超越翻墙的翻墙方式</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

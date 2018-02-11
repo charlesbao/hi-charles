@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Python 远程桌面图像对比刷新方法"/>
+<meta name="twitter:description" content="
+Python远程桌面中图像对比刷新以提高效率"/>
+
+
+
+  	<meta property="og:title" content=" Python 远程桌面图像对比刷新方法 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/python_refresh_image/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2016-12-10T17:02:45&#43;08:00" />
+
+    
+    <meta property="og:article:tag" content="Python" />
+    
+    <meta property="og:article:tag" content="脚本" />
+    
+    <meta property="og:article:tag" content="方法" />
+    
+    
+
+    <title>
+       Python 远程桌面图像对比刷新方法 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/python_refresh_image/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">Python 远程桌面图像对比刷新方法</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/python/">PYTHON</a>
+       
+            <a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+       
+            <a href="/tags/%E6%96%B9%E6%B3%95/">方法</a>
+       
+        <time class="post-date" datetime="2016-12-10T17:02:45&#43;08:00">
+            10 Dec 2016
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>Python远程桌面中图像对比刷新以提高效率</p>
+</blockquote>
+
+<p>使用Pil截取屏幕，并切分图像，对比差异，只刷新不相同区块，用于远程桌面的情况下，将大大减少带宽使用率。</p>
+
+<pre><code>from PIL import ImageGrab, Image  
+from base64 import encodestring  
+import time
+
+def takePhoto(cropK,photoSize,im_old):  
+    # 截取屏幕
+    im = ImageGrab.grab()
+    if photoSize != 0:
+        ## 压缩图像 降低CPU压力
+        im.thumbnail((photoSize,photoSize))
+    width,height = im.size
+    eachWidth = width/cropK
+    eachHeight = height/cropK
+    arr = []
+    for each1 in range(0,cropK):
+        ##
+        for each2 in range(0,cropK):
+            ### 依次裁切图像，并与之前图像做对比，如果不相同则输出
+            box = (eachWidth * each1,eachHeight * each2,eachWidth * (each1 + 1),eachHeight * (each2 + 1))
+            region = im.crop(box)
+            if not region.tostring() == im_old[each1][each2]:
+                region.save('tmp.jpg','jpeg')
+                arr.append([each1,each2,encodestring(open('tmp.jpg','rb').read())])
+                im_old[each1][each2] = region.tostring()
+            ####
+    if len(arr) != 0:
+        ## 得到base64编码格式的分割图片list，里面包含 【x轴位置信息，y轴位置信息，base64图像信息】
+        print arr
+
+def init(data):  
+    # 初始化
+    im_old = []
+    for each1 in range(0,data['cropK']):
+        ##
+        imTmp = []
+        for each2 in range(0,data['cropK']):
+            imTmp.append(None)
+        im_old.append(imTmp)
+    #
+    while True:
+        ## 循环截屏
+        takePhoto(data['cropK'],data['photoSize'],im_old)
+        time.sleep(data['sleepTime'])
+    #
+
+if __name__ == '__main__':  
+    #
+    data = {
+        ## 截屏切割段数 此为 5的平方
+        cropK: 5,
+        ## 截屏压缩比率，0 为不压缩，此外数值越高图像质量越好
+        photoSize: 0,
+        ## 截屏刷新频率
+        sleepTime: 0.2
+    }
+    init(data)
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/howimpress/">
+          <section class="post">
+              <h2>How.Impress 在线PPT制作平台</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

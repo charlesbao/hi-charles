@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>写作 on Hi!Charles</title>
+    <link>/tags/%E5%86%99%E4%BD%9C/</link>
+    <description>Recent content in 写作 on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E5%86%99%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Collabpad 在线多人写作云记事本</title>
+      <link>/post/collabpad/</link>
+      <pubDate>Wed, 07 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/collabpad/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://collabpad.io/&#34;&gt;Collabpad&lt;/a&gt; 是一个支持即时在线多人写作的云端记事本工具&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

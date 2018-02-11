@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网站 on Hi!Charles</title>
+    <link>/tags/%E7%BD%91%E7%AB%99/</link>
+    <description>Recent content in 网站 on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E7%BD%91%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title> WebsiteDownloader 网站源码下载工具</title>
+      <link>/post/website_download/</link>
+      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/website_download/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://websitedownloader.io/&#34;&gt;Website Downloader&lt;/a&gt;是一款支持把任何网站打包并发送到用户邮箱的免费工具。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

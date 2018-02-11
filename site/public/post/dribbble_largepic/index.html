@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Dribbble快捷获取大图"/>
+<meta name="twitter:description" content="
+此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。"/>
+
+
+
+  	<meta property="og:title" content=" Dribbble快捷获取大图 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/dribbble_largepic/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-27T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="javascript" />
+    
+    <meta property="og:article:tag" content="脚本" />
+    
+    
+
+    <title>
+       Dribbble快捷获取大图 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/dribbble_largepic/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">Dribbble快捷获取大图</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/javascript/">JAVASCRIPT</a>
+       
+            <a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+       
+        <time class="post-date" datetime="2017-05-27T00:00:00Z">
+            27 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。</p>
+</blockquote>
+
+<p>应用网站：<a href="https://dribbble.com/">https://dribbble.com/</a><br />
+可配合Dribbble New Tab一起食用</p>
+
+<p>Chrome扩展程序地址：<a href="https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn">https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn</a></p>
+
+<hr />
+
+<p>点击某设计页面后，需等待至网页标题已显示时，单击书签栏插件，即可跳转获取此设计页面中的大图。</p>
+
+<p><strong>快捷工具</strong>【拖拽到书签栏】</p>
+
+<p><a href="javascript:(function(){var c=setInterval(function(){var a=document.querySelector('.the-shot');if(a){var b=a.getAttribute('data-img-src');clearInterval(c);window.location.replace(b)}},1000)}())" style="text-decoration: none;border:2px dashed;padding:5px;">catDribbble</a></p>
+
+<p><strong>javascript源码</strong></p>
+
+<pre><code>javascript:(function(){
+	var interval = setInterval(function(){
+		var selector = document.querySelector('.the-shot');
+		if(selector){
+			var src = selector.getAttribute('data-img-src');
+			clearInterval(interval);
+			window.location.replace(src);
+		}
+	},1000)
+}())
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/python_ascii/">
+          <section class="post">
+              <h2>Python 对特殊字符的过滤方法</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

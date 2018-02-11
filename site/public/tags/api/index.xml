@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on Hi!Charles</title>
+    <link>/tags/api/</link>
+    <description>Recent content in Api on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 06 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebScript 云端轻量级API部署工具</title>
+      <link>/post/webscript/</link>
+      <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/webscript/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.webscript.io/&#34;&gt;WebScript&lt;/a&gt; 网站是一个基于云端的脚本服务，用最简单的方式来进行API部署&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

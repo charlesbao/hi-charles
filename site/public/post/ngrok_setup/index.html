@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+
+
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Ngrok 内网穿透安装脚本"/>
+<meta name="twitter:description" content="
+ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道."/>
+
+
+
+  	<meta property="og:title" content=" Ngrok 内网穿透安装脚本 &middot;  Hi!Charles" />
+  	<meta property="og:site_name" content="Hi!Charles" />
+  	<meta property="og:url" content="/post/ngrok_setup/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2017-05-26T00:00:00Z" />
+
+    
+    <meta property="og:article:tag" content="ngrok" />
+    
+    <meta property="og:article:tag" content="linux" />
+    
+    <meta property="og:article:tag" content="vpn" />
+    
+    <meta property="og:article:tag" content="脚本" />
+    
+    
+
+    <title>
+       Ngrok 内网穿透安装脚本 &middot;  Hi!Charles
+    </title>
+
+    <meta name="description" content="Chaos. Design. and Programming." />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Hi!Charles" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.21" />
+
+    <link rel="canonical" href="/post/ngrok_setup/" />
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="/"><img src="/images/logo.svg" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post" style="border:none;">
+
+    <header class="post-header">
+        <h1 class="post-title">Ngrok 内网穿透安装脚本</h1>
+        <small></small>
+
+        <section class="post-meta">
+            <img class="tags-thumb" src="/images/tags.png" alt="Tags image" nopin="nopin" />
+       
+            <a href="/tags/ngrok/">NGROK</a>
+       
+            <a href="/tags/linux/">LINUX</a>
+       
+            <a href="/tags/vpn/">VPN</a>
+       
+            <a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>
+       
+        <time class="post-date" datetime="2017-05-26T00:00:00Z">
+            26 May 2017
+        </time>
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.</p>
+</blockquote>
+
+<p><strong>为方便安装server及生成client，开发以下脚本</strong></p>
+
+<p>Ngrok server&amp;client 安装工具</p>
+
+<pre><code>#!/bin/bash
+# -*- coding: UTF-8 -*-
+
+SELFPATH=$(cd &quot;$(dirname &quot;$0&quot;)&quot;; pwd)
+
+echo 'input a domain'
+read DOMAIN
+install_depends(){
+	yum -y install zlib-devel openssl-devel perl hg cpio expat-devel gettext-devel curl curl-devel perl-ExtUtils-MakeMaker hg wget gcc gcc-c++ build-essential mercurial zip
+}
+
+install_git(){
+	unstall_git
+	if [ ! -f $SELFPATH/git-2.6.0.tar.gz ];then
+		wget https://www.kernel.org/pub/software/scm/git/git-2.6.0.tar.gz
+	fi
+	tar zxvf git-2.6.0.tar.gz
+	cd git-2.6.0
+	./configure --prefix=/usr/local/git
+	make
+	make install
+	ln -s /usr/local/git/bin/* /usr/bin/
+	rm -rf $SELFPATH/git-2.6.0
+}
+
+unstall_git(){
+	rm -rf /usr/local/git
+	rm -rf /usr/local/git/bin/git
+	rm -rf /usr/local/git/bin/git-cvsserver
+	rm -rf /usr/local/git/bin/gitk
+	rm -rf /usr/local/git/bin/git-receive-pack
+	rm -rf /usr/local/git/bin/git-shell
+	rm -rf /usr/local/git/bin/git-upload-archive
+	rm -rf /usr/local/git/bin/git-upload-pack
+}
+
+
+install_go(){
+	cd $SELFPATH
+	uninstall_go
+	ldconfig
+	if [ $(getconf WORD_BIT) = '32' ] &amp;&amp; [ $(getconf LONG_BIT) = '64' ];then
+		if [ ! -f $SELFPATH/go1.4.2.linux-amd64.tar.gz ];then
+			wget http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-amd64.tar.gz
+		fi
+	    tar zxvf go1.4.2.linux-amd64.tar.gz
+	else
+		if [ ! -f $SELFPATH/go1.4.2.linux-386.tar.gz ];then
+			wget http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-386.tar.gz
+		fi
+	    tar zxvf go1.4.2.linux-386.tar.gz
+	fi
+	mv go /usr/local/
+	ln -s /usr/local/go/bin/* /usr/bin/
+}
+
+uninstall_go(){
+	rm -rf /usr/local/go
+	rm -rf /usr/bin/go
+	rm -rf /usr/bin/godoc
+	rm -rf /usr/bin/gofmt
+}
+
+install_ngrok(){
+	uninstall_ngrok
+	cd /usr/local
+	if [ ! -f /usr/local/ngrok ];then
+		cd /usr/local/
+		git clone https://github.com/inconshreveable/ngrok.git ngrok
+	fi
+	export GOPATH=/usr/local/ngrok/
+	export NGROK_DOMAIN=$DOMAIN
+	cd ngrok
+	openssl genrsa -out rootCA.key 2048
+	openssl req -x509 -new -nodes -key rootCA.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -days 5000 -out rootCA.pem
+	openssl genrsa -out server.key 2048
+	openssl req -new -key server.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -out server.csr
+	openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000
+	cp rootCA.pem assets/client/tls/ngrokroot.crt
+	cp server.crt assets/server/tls/snakeoil.crt
+	cp server.key assets/server/tls/snakeoil.key
+	sed -i 's#code.google.com/p/log4go#github.com/keepeye/log4go#' /usr/local/ngrok/src/ngrok/log/logger.go
+	
+	GOOS=`go env | grep GOOS | awk -F\&quot; '{print $2}'`
+	GOARCH=`go env | grep GOARCH | awk -F\&quot; '{print $2}'`
+	cd /usr/local/go/src
+	GOOS=$GOOS GOARCH=$GOARCH ./make.bash
+	cd /usr/local/ngrok
+	GOOS=$GOOS GOARCH=$GOARCH make release-server
+}
+
+# 卸载ngrok
+uninstall_ngrok(){
+	rm -rf /usr/local/ngrok
+}
+
+# 编译客户端
+compile_client(){
+	cd /usr/local/go/src
+	GOOS=$1 GOARCH=$2 ./make.bash
+	cd /usr/local/ngrok/
+	GOOS=$1 GOARCH=$2 make release-client
+	zip -r /root/$1_$2.zip /usr/local/ngrok/bin/$1_$2
+}
+
+# 生成客户端
+client(){
+	echo &quot;1.Linux 32&quot;
+	echo &quot;2.Linux 64&quot;
+	echo &quot;3.Windows 32&quot;
+	echo &quot;4.Windows 64&quot;
+	echo &quot;5.Mac OS 32&quot;
+	echo &quot;6.Mac OS 64&quot;
+	echo &quot;7.Linux ARM&quot;
+
+	read num
+	case &quot;$num&quot; in
+		[1] )
+			compile_client linux 386
+		;;
+		[2] )
+			compile_client linux amd64
+		;;
+		[3] )
+			compile_client windows 386
+		;;
+		[4] ) 
+			compile_client windows amd64
+		;;
+		[5] ) 
+			compile_client darwin 386
+		;;
+		[6] ) 
+			compile_client darwin amd64
+		;;
+		[7] ) 
+			compile_client linux arm
+		;;
+		*) echo &quot;choose error&quot;;;
+	esac
+
+}
+
+echo &quot;------------------------&quot;
+echo &quot;1. install all&quot;
+echo &quot;2. install depends&quot;
+echo &quot;3. install git&quot;
+echo &quot;4. install go&quot;
+echo &quot;5. install ngrok&quot;
+echo &quot;6. export client&quot;
+echo &quot;7. uninstall all&quot;
+echo &quot;8. run ngrok server&quot;
+echo &quot;9. read config&quot;
+echo &quot;------------------------&quot;
+read num
+case &quot;$num&quot; in
+	[1] )
+		install_depends
+		install_git
+		install_go
+		install_ngrok
+	;;
+	[2] )
+		install_depends
+	;;
+	[3] )
+		install_git
+	;;
+	[4] )
+		install_go
+	;;
+	[5] )
+		install_ngrok
+	;;
+	[6] )
+		client
+	;;
+	[7] )
+		unstall_git
+		uninstall_go
+		uninstall_ngrok
+	;;
+	[8] )
+		echo &quot;input port&quot;
+		read port
+		nohup /usr/local/ngrok/bin/ngrokd -domain=$DOMAIN -httpAddr=&quot;:$port&quot; -log=&quot;none&quot; &amp;
+	;;
+	[9] )
+		echo server_addr: '&quot;'$DOMAIN:4443'&quot;'
+		echo &quot;trust_host_root_certs: false&quot;
+
+	;;
+	*) echo &quot;&quot;;;
+esac
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="/">Charles Bao</a></h4>
+  
+  <p>Chaos. Design. and Programming. This is me.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Jiangsu, China</span>
+    <span class="author-link icon-link"><a href="https://charlesbao.com">https://charlesbao.com</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+
+
+  </footer>
+</article>
+
+</main>
+<aside class="read-next">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/node_pm2/">
+          <section class="post">
+              <h2>pm2 为nodejs应用保驾护航</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">Hi!Charles 个人的版权所有</a></section>
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+

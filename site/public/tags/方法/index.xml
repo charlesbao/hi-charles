@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>方法 on Hi!Charles</title>
+    <link>/tags/%E6%96%B9%E6%B3%95/</link>
+    <description>Recent content in 方法 on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jun 2017 22:58:30 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决Python使用requests请求https警告</title>
+      <link>/post/requests_warning/</link>
+      <pubDate>Thu, 08 Jun 2017 22:58:30 +0800</pubDate>
+      
+      <guid>/post/requests_warning/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;现在越来越多的网站使用的是https安全链接，在使用requests请求https网站的时候会提示一大堆的warning.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux使用NFS挂载远程硬盘</title>
+      <link>/post/nfs_setup/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nfs_setup/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;NFS即网络文件系统，可以将多台Linux服务器之间进行硬盘数据共享，使用挂载的方式共享文件&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 阿里云OSS存储断点续传</title>
+      <link>/post/alioss-upload/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/alioss-upload/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阿里云oss对象存储，使用断点续传来上传大文件&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>百度网盘存储资源解决方案</title>
+      <link>/post/baiduyun-upload/</link>
+      <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/baiduyun-upload/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用百度网盘作为存储媒介的Python脚本&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 阿里云oss存储 小文件上传下载</title>
+      <link>/post/alioss-python/</link>
+      <pubDate>Sat, 03 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/alioss-python/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;阿里云oss对象存储，使用官方api上传下载文件&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux Screen 命令</title>
+      <link>/post/screen-conf/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/screen-conf/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Screen看作是窗口管理器的命令行界面版本&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node&amp;Express 创建HTTPS文件服务器</title>
+      <link>/post/node_https/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/node_https/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;利用nginx nodejs express创建一个https服务器&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 对特殊字符的过滤方法</title>
+      <link>/post/python_ascii/</link>
+      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ascii/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python2.x 对中文编码、特殊字符等支持不是很好，但是有一些应对策略&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>pm2 为nodejs应用保驾护航</title>
+      <link>/post/node_pm2/</link>
+      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/node_pm2/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;PM2 是一个带有负载均衡功能的Node应用的进程管理器，其对Node应用的管理能力出众！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python pyinstaller打包程序错误解决方案</title>
+      <link>/post/pytinstaller_bug/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pytinstaller_bug/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Pyinstaller作为最常见的Python打包EXE程序，目前存在一个BUG，会报R6034错误&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 搭建简单文件服务器</title>
+      <link>/post/python_filesystem/</link>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_filesystem/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Python自带的库而不依赖第三方库，简单的文件服务器实现&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>centos 安装Python2.7</title>
+      <link>/post/python27_setup/</link>
+      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python27_setup/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>nginx&#43;nodejs 搭建单端口多站点服务</title>
+      <link>/post/nginx_node/</link>
+      <pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nginx_node/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Python创建ftp服务器</title>
+      <link>/post/python_ftp/</link>
+      <pubDate>Sat, 06 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ftp/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python的pyftpdlib可用于创建ftp服务器&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 远程桌面图像对比刷新方法</title>
+      <link>/post/python_refresh_image/</link>
+      <pubDate>Sat, 10 Dec 2016 17:02:45 +0800</pubDate>
+      
+      <guid>/post/python_refresh_image/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python远程桌面中图像对比刷新以提高效率&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 操作windows注册表</title>
+      <link>/post/python_regedit/</link>
+      <pubDate>Thu, 10 Nov 2016 17:01:59 +0800</pubDate>
+      
+      <guid>/post/python_regedit/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Python操作Windows注册表，进行读取及键值操作&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

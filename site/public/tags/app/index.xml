@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>App on Hi!Charles</title>
+    <link>/tags/app/</link>
+    <description>Recent content in App on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Jun 2017 00:03:14 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/app/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AppIconizer 在线应用图标生成工具</title>
+      <link>/post/appiconer/</link>
+      <pubDate>Thu, 08 Jun 2017 00:03:14 +0800</pubDate>
+      
+      <guid>/post/appiconer/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://appiconizer.com/&#34;&gt;App Iconizer&lt;/a&gt; 是一款帮助APP开发者在线将图片转换为iOS、Android各种尺寸图标的工具&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
