@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on Hi!Charles</title>
+    <title>centos on Hi!Charles</title>
     <link>/tags/centos/</link>
-    <description>Recent content in Centos on Hi!Charles</description>
+    <description>Recent content in centos on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 27 May 2017 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,8 @@
       
       <guid>/post/centos_vpn/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;</description>
+&lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>/post/centos_http/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;</description>
+&lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +40,8 @@
       
       <guid>/post/python27_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;</description>
+&lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

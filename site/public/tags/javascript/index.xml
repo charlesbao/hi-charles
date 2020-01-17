@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on Hi!Charles</title>
+    <title>javascript on Hi!Charles</title>
     <link>/tags/javascript/</link>
-    <description>Recent content in Javascript on Hi!Charles</description>
+    <description>Recent content in javascript on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jun 2017 23:29:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>js前端生成附带信息图片</title>
+      <link>/post/js_info_pic/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/js_info_pic/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用JS和canvas在前端生成带有用户名和密码信息的图片&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dribbble快捷获取大图</title>
+      <link>/post/dribbble_largepic/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dribbble_largepic/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>faker.js - generate massive amounts of fake data</title>
@@ -18,7 +40,8 @@
       
       <guid>/post/faker/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +51,8 @@
       
       <guid>/post/json-server/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +62,8 @@
       
       <guid>/post/react-flight/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -48,7 +73,8 @@
       
       <guid>/post/remark-slideshow/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -58,27 +84,8 @@
       
       <guid>/post/hyperapp/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>js前端生成附带信息图片</title>
-      <link>/post/js_info_pic/</link>
-      <pubDate>Mon, 29 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/js_info_pic/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;使用JS和canvas在前端生成带有用户名和密码信息的图片&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Dribbble快捷获取大图</title>
-      <link>/post/dribbble_largepic/</link>
-      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/dribbble_largepic/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

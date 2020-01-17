@@ -6,10 +6,21 @@
     <description>Recent content in 作品 on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2019 16:57:49 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E4%BD%9C%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How.Impress 在线PPT制作平台</title>
+      <link>/post/howimpress/</link>
+      <pubDate>Fri, 20 Dec 2019 16:57:49 +0800</pubDate>
+      
+      <guid>/post/howimpress/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在线制作3D展示PPT。效果流畅可全平台运行。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>HTTP代理扫描工具</title>
@@ -18,7 +29,8 @@
       
       <guid>/post/http_scan/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;</description>
+&lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +40,8 @@
       
       <guid>/post/wofan_v2/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&amp;gt;&lt;/p&gt;</description>
+&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +51,8 @@
       
       <guid>/post/wofan_v1/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;</description>
+&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -48,7 +62,8 @@
       
       <guid>/post/donttouchme/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&amp;gt;&lt;/p&gt;</description>
+&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -58,7 +73,8 @@
       
       <guid>/post/flappybird/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;</description>
+&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -68,17 +84,8 @@
       
       <guid>/post/howhost/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Howhost主机售卖的是廉价而优质的虚拟主机，服务器位于美国，无需备案，即买即用。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How.Impress 在线PPT制作平台</title>
-      <link>/post/howimpress/</link>
-      <pubDate>Tue, 20 Dec 2016 16:57:49 +0800</pubDate>
-      
-      <guid>/post/howimpress/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;在线制作3D展示PPT。效果流畅可全平台运行。&lt;/p&gt;</description>
+&lt;p&gt;Howhost主机售卖的是廉价而优质的虚拟主机，服务器位于美国，无需备案，即买即用。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -88,7 +95,8 @@
       
       <guid>/post/json/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一款实现自动为JSON校验的平台&lt;/p&gt;</description>
+&lt;p&gt;一款实现自动为JSON校验的平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -98,7 +106,8 @@
       
       <guid>/post/wokeyisi50cima/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;使用Construct2并开发的一款2D游戏，引擎的绝妙之处无非是高效开发和可视界面。&lt;/p&gt;</description>
+&lt;p&gt;使用Construct2并开发的一款2D游戏，引擎的绝妙之处无非是高效开发和可视界面。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

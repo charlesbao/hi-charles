@@ -6,10 +6,98 @@
     <description>Recent content on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Jun 2017 23:18:49 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Dec 2019 16:57:49 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How.Impress 在线PPT制作平台</title>
+      <link>/post/howimpress/</link>
+      <pubDate>Fri, 20 Dec 2019 16:57:49 +0800</pubDate>
+      
+      <guid>/post/howimpress/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在线制作3D展示PPT。效果流畅可全平台运行。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 远程桌面图像对比刷新方法</title>
+      <link>/post/python_refresh_image/</link>
+      <pubDate>Tue, 10 Dec 2019 17:02:45 +0800</pubDate>
+      
+      <guid>/post/python_refresh_image/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python远程桌面中图像对比刷新以提高效率&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 操作windows注册表</title>
+      <link>/post/python_regedit/</link>
+      <pubDate>Sun, 10 Nov 2019 17:01:59 +0800</pubDate>
+      
+      <guid>/post/python_regedit/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Python操作Windows注册表，进行读取及键值操作&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>js前端生成附带信息图片</title>
+      <link>/post/js_info_pic/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/js_info_pic/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用JS和canvas在前端生成带有用户名和密码信息的图片&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 对特殊字符的过滤方法</title>
+      <link>/post/python_ascii/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ascii/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python2.x 对中文编码、特殊字符等支持不是很好，但是有一些应对策略&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dribbble快捷获取大图</title>
+      <link>/post/dribbble_largepic/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/dribbble_largepic/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 搭建简单文件服务器</title>
+      <link>/post/python_filesystem/</link>
+      <pubDate>Sat, 25 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_filesystem/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;使用Python自带的库而不依赖第三方库，简单的文件服务器实现&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Python创建ftp服务器</title>
+      <link>/post/python_ftp/</link>
+      <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ftp/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python的pyftpdlib可用于创建ftp服务器&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>TinyDB - lightweight document oriented database for Python</title>
@@ -18,7 +106,8 @@
       
       <guid>/post/tinydb/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +117,8 @@
       
       <guid>/post/faker/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +128,8 @@
       
       <guid>/post/json-server/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -48,7 +139,8 @@
       
       <guid>/post/react-flight/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -58,7 +150,8 @@
       
       <guid>/post/remark-slideshow/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -68,7 +161,8 @@
       
       <guid>/post/pdfcandy/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://pdfcandy.com/&#34;&gt;PDFCandy&lt;/a&gt; 是一个汇集了许多常用PDF工具的免费在线服务&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://pdfcandy.com/&#34;&gt;PDFCandy&lt;/a&gt; 是一个汇集了许多常用PDF工具的免费在线服务&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -78,7 +172,8 @@
       
       <guid>/post/notepin/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://notepin.co/&#34;&gt;Notepin&lt;/a&gt; 是一个追求极致简化的在线笔记写作平台，无需注册、只需打开网站即可进入写作模式。&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://notepin.co/&#34;&gt;Notepin&lt;/a&gt; 是一个追求极致简化的在线笔记写作平台，无需注册、只需打开网站即可进入写作模式。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -88,7 +183,8 @@
       
       <guid>/post/pingpe/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://ping.pe/&#34;&gt;PingPe&lt;/a&gt; 是一个非常强大的免费站长工具，用处正如其名可以从全国各个节点Ping输入的IP&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;http://ping.pe/&#34;&gt;PingPe&lt;/a&gt; 是一个非常强大的免费站长工具，用处正如其名可以从全国各个节点Ping输入的IP&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -107,7 +203,8 @@
       
       <guid>/post/codelf/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;“计算机科学的两件难事：缓存失效和命名。” &lt;a href=&#34;https://github.com/unbug/codelf&#34;&gt;Codelf&lt;/a&gt;就是帮我们缩短这些步骤的一个变量名搜索工具&lt;/p&gt;</description>
+&lt;p&gt;“计算机科学的两件难事：缓存失效和命名。” &lt;a href=&#34;https://github.com/unbug/codelf&#34;&gt;Codelf&lt;/a&gt;就是帮我们缩短这些步骤的一个变量名搜索工具&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -117,7 +214,8 @@
       
       <guid>/post/requests_warning/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;现在越来越多的网站使用的是https安全链接，在使用requests请求https网站的时候会提示一大堆的warning.&lt;/p&gt;</description>
+&lt;p&gt;现在越来越多的网站使用的是https安全链接，在使用requests请求https网站的时候会提示一大堆的warning.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -136,7 +234,8 @@
       
       <guid>/post/hyperapp/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -146,7 +245,8 @@
       
       <guid>/post/appiconer/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://appiconizer.com/&#34;&gt;App Iconizer&lt;/a&gt; 是一款帮助APP开发者在线将图片转换为iOS、Android各种尺寸图标的工具&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://appiconizer.com/&#34;&gt;App Iconizer&lt;/a&gt; 是一款帮助APP开发者在线将图片转换为iOS、Android各种尺寸图标的工具&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -156,7 +256,8 @@
       
       <guid>/post/collabpad/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://collabpad.io/&#34;&gt;Collabpad&lt;/a&gt; 是一个支持即时在线多人写作的云端记事本工具&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://collabpad.io/&#34;&gt;Collabpad&lt;/a&gt; 是一个支持即时在线多人写作的云端记事本工具&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -166,7 +267,8 @@
       
       <guid>/post/uzerme/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://uzer.me/&#34;&gt;UZER.ME&lt;/a&gt;云端超级应用空间!带给您全新的软件应用方式，提供的全部软件免安装!&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://uzer.me/&#34;&gt;UZER.ME&lt;/a&gt;云端超级应用空间!带给您全新的软件应用方式，提供的全部软件免安装!&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -176,7 +278,8 @@
       
       <guid>/post/nofile/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://nofile.io/&#34;&gt;NoFile&lt;/a&gt; 是国外的一个免费超大文件上传和分享的服务型站点.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://nofile.io/&#34;&gt;NoFile&lt;/a&gt; 是国外的一个免费超大文件上传和分享的服务型站点.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -186,7 +289,8 @@
       
       <guid>/post/webscript/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.webscript.io/&#34;&gt;WebScript&lt;/a&gt; 网站是一个基于云端的脚本服务，用最简单的方式来进行API部署&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.webscript.io/&#34;&gt;WebScript&lt;/a&gt; 网站是一个基于云端的脚本服务，用最简单的方式来进行API部署&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -196,7 +300,8 @@
       
       <guid>/post/mail_bccto/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;担心被垃圾邮件缠身?害怕个人信息会被泄露? &lt;a href=&#34;http://mail.bccto.me/&#34;&gt;10分钟邮箱&lt;/a&gt; 就是你最好的选择&lt;/p&gt;</description>
+&lt;p&gt;担心被垃圾邮件缠身?害怕个人信息会被泄露? &lt;a href=&#34;http://mail.bccto.me/&#34;&gt;10分钟邮箱&lt;/a&gt; 就是你最好的选择&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -206,7 +311,8 @@
       
       <guid>/post/nfs_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;NFS即网络文件系统，可以将多台Linux服务器之间进行硬盘数据共享，使用挂载的方式共享文件&lt;/p&gt;</description>
+&lt;p&gt;NFS即网络文件系统，可以将多台Linux服务器之间进行硬盘数据共享，使用挂载的方式共享文件&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -216,7 +322,8 @@
       
       <guid>/post/alioss-upload/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;阿里云oss对象存储，使用断点续传来上传大文件&lt;/p&gt;</description>
+&lt;p&gt;阿里云oss对象存储，使用断点续传来上传大文件&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -226,7 +333,8 @@
       
       <guid>/post/baiduyun-upload/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;使用百度网盘作为存储媒介的Python脚本&lt;/p&gt;</description>
+&lt;p&gt;使用百度网盘作为存储媒介的Python脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -236,7 +344,8 @@
       
       <guid>/post/alioss-python/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;阿里云oss对象存储，使用官方api上传下载文件&lt;/p&gt;</description>
+&lt;p&gt;阿里云oss对象存储，使用官方api上传下载文件&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -246,7 +355,8 @@
       
       <guid>/post/http_scan/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;</description>
+&lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -256,7 +366,8 @@
       
       <guid>/post/draw_symbol/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;www.mausr.com&#34;&gt;Mausr&lt;/a&gt; 是一个可以用画画的方式来找到你想要的特殊符号的工具.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;www.mausr.com&#34;&gt;Mausr&lt;/a&gt; 是一个可以用画画的方式来找到你想要的特殊符号的工具.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -266,7 +377,8 @@
       
       <guid>/post/nginx-conf/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;</description>
+&lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -276,17 +388,8 @@
       
       <guid>/post/screen-conf/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Screen看作是窗口管理器的命令行界面版本&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>js前端生成附带信息图片</title>
-      <link>/post/js_info_pic/</link>
-      <pubDate>Mon, 29 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/js_info_pic/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;使用JS和canvas在前端生成带有用户名和密码信息的图片&lt;/p&gt;</description>
+&lt;p&gt;Screen看作是窗口管理器的命令行界面版本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -296,27 +399,8 @@
       
       <guid>/post/node_https/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;利用nginx nodejs express创建一个https服务器&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python 对特殊字符的过滤方法</title>
-      <link>/post/python_ascii/</link>
-      <pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python_ascii/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Python2.x 对中文编码、特殊字符等支持不是很好，但是有一些应对策略&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Dribbble快捷获取大图</title>
-      <link>/post/dribbble_largepic/</link>
-      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/dribbble_largepic/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。&lt;/p&gt;</description>
+&lt;p&gt;利用nginx nodejs express创建一个https服务器&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -326,7 +410,8 @@
       
       <guid>/post/centos_vpn/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;</description>
+&lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -336,7 +421,8 @@
       
       <guid>/post/node_pm2/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;PM2 是一个带有负载均衡功能的Node应用的进程管理器，其对Node应用的管理能力出众！&lt;/p&gt;</description>
+&lt;p&gt;PM2 是一个带有负载均衡功能的Node应用的进程管理器，其对Node应用的管理能力出众！&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -346,7 +432,8 @@
       
       <guid>/post/ngrok_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.&lt;/p&gt;</description>
+&lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -356,7 +443,8 @@
       
       <guid>/post/pytinstaller_bug/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Pyinstaller作为最常见的Python打包EXE程序，目前存在一个BUG，会报R6034错误&lt;/p&gt;</description>
+&lt;p&gt;Pyinstaller作为最常见的Python打包EXE程序，目前存在一个BUG，会报R6034错误&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -366,17 +454,8 @@
       
       <guid>/post/centos_http/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python 搭建简单文件服务器</title>
-      <link>/post/python_filesystem/</link>
-      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python_filesystem/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;使用Python自带的库而不依赖第三方库，简单的文件服务器实现&lt;/p&gt;</description>
+&lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -386,17 +465,8 @@
       
       <guid>/post/python27_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>搭建shadowsocks 超越翻墙的翻墙方式</title>
-      <link>/post/shadowsocks_setup/</link>
-      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/shadowsocks_setup/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Shadowsocks比PPTP翻墙更加方便稳定，且不会被某些运营商屏蔽，方便又快捷（此篇为搭建翻墙服务器所用）&lt;/p&gt;</description>
+&lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -406,7 +476,8 @@
       
       <guid>/post/nginx_node/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。&lt;/p&gt;</description>
+&lt;p&gt;PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -446,23 +517,14 @@
     </item>
     
     <item>
-      <title>使用Python创建ftp服务器</title>
-      <link>/post/python_ftp/</link>
-      <pubDate>Sat, 06 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/python_ftp/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Python的pyftpdlib可用于创建ftp服务器&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>移动端页面切换css动画</title>
       <link>/post/mobilde_css/</link>
       <pubDate>Mon, 10 Apr 2017 17:00:01 +0800</pubDate>
       
       <guid>/post/mobilde_css/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;</description>
+&lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -472,7 +534,8 @@
       
       <guid>/post/wofan_v2/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&amp;gt;&lt;/p&gt;</description>
+&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -482,7 +545,8 @@
       
       <guid>/post/wofan_v1/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;</description>
+&lt;p&gt;搭建在微信公众号内平台心得与分析，我翻平台是搭建在微信公众平台上并使用reactJS+node搭建的vpn自助平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -492,7 +556,8 @@
       
       <guid>/post/donttouchme/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&amp;gt;&lt;/p&gt;</description>
+&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -502,7 +567,8 @@
       
       <guid>/post/flappybird/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;</description>
+&lt;p&gt;为搜狗壁纸开发的一款动态游戏壁纸，使用的是ActionScript3进行开发。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -512,27 +578,8 @@
       
       <guid>/post/howhost/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Howhost主机售卖的是廉价而优质的虚拟主机，服务器位于美国，无需备案，即买即用。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>How.Impress 在线PPT制作平台</title>
-      <link>/post/howimpress/</link>
-      <pubDate>Tue, 20 Dec 2016 16:57:49 +0800</pubDate>
-      
-      <guid>/post/howimpress/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;在线制作3D展示PPT。效果流畅可全平台运行。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python 远程桌面图像对比刷新方法</title>
-      <link>/post/python_refresh_image/</link>
-      <pubDate>Sat, 10 Dec 2016 17:02:45 +0800</pubDate>
-      
-      <guid>/post/python_refresh_image/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Python远程桌面中图像对比刷新以提高效率&lt;/p&gt;</description>
+&lt;p&gt;Howhost主机售卖的是廉价而优质的虚拟主机，服务器位于美国，无需备案，即买即用。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -542,17 +589,8 @@
       
       <guid>/post/json/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;一款实现自动为JSON校验的平台&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python 操作windows注册表</title>
-      <link>/post/python_regedit/</link>
-      <pubDate>Thu, 10 Nov 2016 17:01:59 +0800</pubDate>
-      
-      <guid>/post/python_regedit/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;使用Python操作Windows注册表，进行读取及键值操作&lt;/p&gt;</description>
+&lt;p&gt;一款实现自动为JSON校验的平台&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -562,7 +600,8 @@
       
       <guid>/post/wokeyisi50cima/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;使用Construct2并开发的一款2D游戏，引擎的绝妙之处无非是高效开发和可视界面。&lt;/p&gt;</description>
+&lt;p&gt;使用Construct2并开发的一款2D游戏，引擎的绝妙之处无非是高效开发和可视界面。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>

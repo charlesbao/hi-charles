@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Hi!Charles</title>
+    <title>linux on Hi!Charles</title>
     <link>/tags/linux/</link>
-    <description>Recent content in Linux on Hi!Charles</description>
+    <description>Recent content in linux on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jun 2017 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,8 @@
       
       <guid>/post/nfs_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;NFS即网络文件系统，可以将多台Linux服务器之间进行硬盘数据共享，使用挂载的方式共享文件&lt;/p&gt;</description>
+&lt;p&gt;NFS即网络文件系统，可以将多台Linux服务器之间进行硬盘数据共享，使用挂载的方式共享文件&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>/post/nginx-conf/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;</description>
+&lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +40,8 @@
       
       <guid>/post/screen-conf/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;Screen看作是窗口管理器的命令行界面版本&lt;/p&gt;</description>
+&lt;p&gt;Screen看作是窗口管理器的命令行界面版本&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -48,17 +51,8 @@
       
       <guid>/post/ngrok_setup/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>搭建shadowsocks 超越翻墙的翻墙方式</title>
-      <link>/post/shadowsocks_setup/</link>
-      <pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/shadowsocks_setup/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Shadowsocks比PPTP翻墙更加方便稳定，且不会被某些运营商屏蔽，方便又快捷（此篇为搭建翻墙服务器所用）&lt;/p&gt;</description>
+&lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

@@ -2,7 +2,7 @@
 date = "2017-05-25T00:00:00Z"
 tags = ["vpn","linux","脚本"]
 title = "搭建shadowsocks 超越翻墙的翻墙方式"
-
+draft = true
 +++
 
 > Shadowsocks比PPTP翻墙更加方便稳定，且不会被某些运营商屏蔽，方便又快捷（此篇为搭建翻墙服务器所用）<!--more-->

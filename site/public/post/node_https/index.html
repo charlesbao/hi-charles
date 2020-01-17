@@ -16,7 +16,8 @@
 
 <meta name="twitter:title" content="Node&amp;Express 创建HTTPS文件服务器"/>
 <meta name="twitter:description" content="
-利用nginx nodejs express创建一个https服务器"/>
+利用nginx nodejs express创建一个https服务器
+"/>
 
 
 
@@ -59,7 +60,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.21" />
+    <meta name="generator" content="Hugo 0.55.5" />
 
     <link rel="canonical" href="/post/node_https/" />
 
@@ -172,62 +173,63 @@ openssl x509 -req -days 365 -in csr.pem -signkey /path/to/private.pem -out file.
 
 <ul>
 <li>HTTP端口号为 1880</li>
-<li>HTTPS端口号为 1881
-```
-var app = require(&lsquo;express&rsquo;)();
-var fs = require(&lsquo;fs&rsquo;);
-var http = require(&lsquo;http&rsquo;);
-var https = require(&lsquo;https&rsquo;);
-var privateKey = fs.readFileSync(&lsquo;./server.key&rsquo;, &lsquo;utf8&rsquo;);
-var certificate = fs.readFileSync(&lsquo;./server.crt&rsquo;, &lsquo;utf8&rsquo;);
-var credentials = {key: privateKey, cert: certificate};</li>
-</ul>
 
-<p>var httpServer = http.createServer(app);
+<li><p>HTTPS端口号为 1881</p>
+
+<pre><code>var app = require('express')();
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var privateKey = fs.readFileSync('./server.key', 'utf8');
+var certificate = fs.readFileSync('./server.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
+
+var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 var PORT = 1880;
-var SSLPORT = 1881;</p>
+var SSLPORT = 1881;
 
-<p>httpServer.listen(PORT, function() {
-console.log(&lsquo;HTTP Server is running on: <a href="http://localhost:%s'">http://localhost:%s'</a>, PORT);
+httpServer.listen(PORT, function() {
+console.log('HTTP Server is running on: http://localhost:%s', PORT);
 });
 httpsServer.listen(SSLPORT, function() {
-console.log(&lsquo;HTTPS Server is running on: <a href="https://localhost:%s'">https://localhost:%s'</a>, SSLPORT);
-});</p>
+console.log('HTTPS Server is running on: https://localhost:%s', SSLPORT);
+});
 
-<p>// Welcome
-app.get(&lsquo;/&rsquo;, function(req, res) {
-if(req.protocol === &lsquo;https&rsquo;) {
-res.status(200).send(&lsquo;Welcome to Safety Land!&rsquo;);
+// Welcome
+app.get('/', function(req, res) {
+if(req.protocol === 'https') {
+res.status(200).send('Welcome to Safety Land!');
 }
 else {
-res.status(200).send(&lsquo;Welcome!&rsquo;);
+res.status(200).send('Welcome!');
 }
 });
-app.get(&lsquo;/file/:name&rsquo;, function (req, res, next) {</p>
+app.get('/file/:name', function (req, res, next) {
 
-<p>var options = {
-root: __dirname + &lsquo;/public/&rsquo;,
-dotfiles: &lsquo;deny&rsquo;,
+var options = {
+root: __dirname + '/public/',
+dotfiles: 'deny',
 headers: {
-&lsquo;x-timestamp&rsquo;: Date.now(),
-&lsquo;x-sent&rsquo;: true
+'x-timestamp': Date.now(),
+'x-sent': true
 }
 };
-console.log(fileName)</p>
+console.log(fileName)
 
-<p>var fileName = req.params.name;
+var fileName = req.params.name;
 res.sendFile(fileName, options, function (err) {
 if (err) {
 console.log(err);
 res.status(err.status).end();
 }
 else {
-console.log(&lsquo;Sent:&lsquo;, fileName);
+console.log('Sent:', fileName);
 }
 });
 })
-```</p>
+</code></pre></li>
+</ul>
     </section>
 
 
@@ -263,9 +265,9 @@ console.log(&lsquo;Sent:&lsquo;, fileName);
 </main>
 <aside class="read-next">
   
-      <a class="read-next-story prev" style="no-cover" href="/post/js_info_pic/">
+      <a class="read-next-story prev" style="no-cover" href="/post/centos_vpn/">
           <section class="post">
-              <h2>js前端生成附带信息图片</h2>
+              <h2>centos6下一键配置VPN</h2>
           </section>
       </a>
   
@@ -273,7 +275,7 @@ console.log(&lsquo;Sent:&lsquo;, fileName);
 
 
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="http://www.miitbeian.gov.cn">苏ICP备16024813号</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+        <section class="copyright"><a href="http://www.beian.miit.gov.cn">苏ICP备16024813号</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
     </footer>
     </div>
     <script type="text/javascript" src="/js/jquery.js"></script>

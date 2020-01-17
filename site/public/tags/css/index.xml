@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Css on Hi!Charles</title>
+    <title>css on Hi!Charles</title>
     <link>/tags/css/</link>
-    <description>Recent content in Css on Hi!Charles</description>
+    <description>Recent content in css on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate>
@@ -27,7 +27,8 @@
       
       <guid>/post/mobilde_css/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;</description>
+&lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

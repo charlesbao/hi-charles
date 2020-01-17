@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Github on Hi!Charles</title>
+    <title>github on Hi!Charles</title>
     <link>/tags/github/</link>
-    <description>Recent content in Github on Hi!Charles</description>
+    <description>Recent content in github on Hi!Charles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Jun 2017 23:18:49 +0800</lastBuildDate>
@@ -18,7 +18,8 @@
       
       <guid>/post/tinydb/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -28,7 +29,8 @@
       
       <guid>/post/faker/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/Marak/faker.js&#34;&gt;faker.js&lt;/a&gt; - generate massive amounts of fake data in the browser and node.js&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -38,7 +40,8 @@
       
       <guid>/post/json-server/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/typicode/json-server&#34;&gt;json-server&lt;/a&gt; get a full fake REST API with &lt;strong&gt;zero coding&lt;/strong&gt; in &lt;strong&gt;less than 30 seconds&lt;/strong&gt; (seriously)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -48,7 +51,8 @@
       
       <guid>/post/react-flight/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/jondot/react-flight&#34;&gt;react-flight&lt;/a&gt; is the best way to build animation compositions for React.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -58,7 +62,8 @@
       
       <guid>/post/remark-slideshow/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/gnab/remark&#34;&gt;remark&lt;/a&gt; is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -68,7 +73,8 @@
       
       <guid>/post/hyperapp/</guid>
       <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://github.com/hyperapp/hyperapp&#34;&gt;HyperApp&lt;/a&gt; is a JavaScript library for building frontend applications.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
