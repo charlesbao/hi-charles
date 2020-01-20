@@ -1,114 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>脚本 on Hi!Charles</title>
-    <link>/tags/%E8%84%9A%E6%9C%AC/</link>
-    <description>Recent content in 脚本 on Hi!Charles</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 17:02:45 +0800</lastBuildDate>
-    
-	<atom:link href="/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Python 远程桌面图像对比刷新方法</title>
-      <link>/post/python_refresh_image/</link>
-      <pubDate>Tue, 10 Dec 2019 17:02:45 +0800</pubDate>
-      
-      <guid>/post/python_refresh_image/</guid>
-      <description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>脚本 on Hi!Charles</title><link>/tags/%E8%84%9A%E6%9C%AC/</link><description>Recent content in 脚本 on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Dec 2019 17:02:45 +0800</lastBuildDate><atom:link href="/tags/%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml"/><item><title>Python 远程桌面图像对比刷新方法</title><link>/post/python_refresh_image/</link><pubDate>Tue, 10 Dec 2019 17:02:45 +0800</pubDate><guid>/post/python_refresh_image/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;Python远程桌面中图像对比刷新以提高效率&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python 操作windows注册表</title>
-      <link>/post/python_regedit/</link>
-      <pubDate>Sun, 10 Nov 2019 17:01:59 +0800</pubDate>
-      
-      <guid>/post/python_regedit/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>Python 操作windows注册表</title><link>/post/python_regedit/</link><pubDate>Sun, 10 Nov 2019 17:01:59 +0800</pubDate><guid>/post/python_regedit/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;使用Python操作Windows注册表，进行读取及键值操作&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>js前端生成附带信息图片</title>
-      <link>/post/js_info_pic/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/js_info_pic/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>js前端生成附带信息图片</title><link>/post/js_info_pic/</link><pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate><guid>/post/js_info_pic/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;使用JS和canvas在前端生成带有用户名和密码信息的图片&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Dribbble快捷获取大图</title>
-      <link>/post/dribbble_largepic/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/dribbble_largepic/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>Dribbble快捷获取大图</title><link>/post/dribbble_largepic/</link><pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate><guid>/post/dribbble_largepic/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>HTTP代理扫描工具</title>
-      <link>/post/http_scan/</link>
-      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/http_scan/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>HTTP代理扫描工具</title><link>/post/http_scan/</link><pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate><guid>/post/http_scan/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>centos6下一键配置VPN</title>
-      <link>/post/centos_vpn/</link>
-      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/centos_vpn/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>centos6下一键配置VPN</title><link>/post/centos_vpn/</link><pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate><guid>/post/centos_vpn/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Ngrok 内网穿透安装脚本</title>
-      <link>/post/ngrok_setup/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/ngrok_setup/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>Ngrok 内网穿透安装脚本</title><link>/post/ngrok_setup/</link><pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate><guid>/post/ngrok_setup/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>centos6下一键配置http代理</title>
-      <link>/post/centos_http/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/centos_http/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>centos6下一键配置http代理</title><link>/post/centos_http/</link><pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate><guid>/post/centos_http/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>移动端页面切换css动画</title>
-      <link>/post/mobilde_css/</link>
-      <pubDate>Mon, 10 Apr 2017 17:00:01 +0800</pubDate>
-      
-      <guid>/post/mobilde_css/</guid>
-      <description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description></item><item><title>移动端页面切换css动画</title><link>/post/mobilde_css/</link><pubDate>Mon, 10 Apr 2017 17:00:01 +0800</pubDate><guid>/post/mobilde_css/</guid><description>&lt;blockquote&gt;
 &lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/blockquote&gt;</description></item></channel></rss>
