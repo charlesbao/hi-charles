@@ -1,25 +1,237 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="TinyDB - lightweight document oriented database for Python"><meta name=twitter:description content="TinyDB is a lightweight document oriented database optimized for your happiness"><meta property=og:title content="TinyDB - lightweight document oriented database for Python &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/tinydb/><meta property=og:type content=article><meta property=og:article:published_time content=2017-06-24T23:18:49&#43;08:00><meta property=og:article:tag content=github><meta property=og:article:tag content=Python><title>TinyDB - lightweight document oriented database for Python &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/tinydb/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>TinyDB - lightweight document oriented database for Python</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/github/>GITHUB</a>
-<a href=/tags/python/>PYTHON</a>
-<time class=post-date datetime=2017-06-24T23:18:49&#43;08:00>24 Jun 2017</time></section></header><section class=post-content><blockquote><p><a href=https://github.com/msiemens/tinydb>TinyDB</a> is a lightweight document oriented database optimized for your happiness</p></blockquote><p><strong>TinyDB</strong> is written in pure Python and has no external dependencies. The target are
-small apps that would be blown away by a SQL-DB or an external database server.</p><p>TinyDB is:</p><ul><li><p><strong>tiny:</strong> The current source code has 1200 lines of code (with about 40%
-documentation) and 1000 lines tests. For comparison: Buzhug_ has about 2500
-lines of code (w/o tests), CodernityDB_ has about 7000 lines of code
-(w/o tests).</p></li><li><p><strong>document oriented:</strong> Like MongoDB_, you can store any document
-(represented as <code>dict</code>) in TinyDB.</p></li><li><p><strong>optimized for your happiness:</strong> TinyDB is designed to be simple and
-fun to use by providing a simple and clean API.</p></li><li><p><strong>written in pure Python:</strong> TinyDB neither needs an external server (as
-e.g. <code>PyMongo &lt;http://api.mongodb.org/python/current/&gt;</code>_) nor any dependencies
-from PyPI.</p></li><li><p><strong>works on Python 2.6 + 2.7 and 3.3 – 3.5 and PyPy:</strong> TinyDB works on all
-modern versions of Python and PyPy.</p></li><li><p><strong>powerfully extensible:</strong> You can easily extend TinyDB by writing new
-storages or modify the behaviour of storages with Middlewares.</p></li><li><p><strong>100% test coverage:</strong> No explanation needed.</p></li></ul><p>To dive straight into all the details, head over to the <code>TinyDB docs
-&lt;https://tinydb.readthedocs.io/&gt;</code><em>. You can also discuss everything related
-to TinyDB like general development, extensions or showcase your TinyDB-based
-projects on the <code>discussion forum &lt;http://forum.m-siemens.de/.&gt;</code></em>.</p><hr><p>Example Code</p><hr><p>.. code-block:: python</p><pre><code>&gt;&gt;&gt; from tinydb import TinyDB, Query
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>TinyDB - 一种轻量级的面向文档的Python数据库 | Hi!Charles</title>
+<meta name="keywords" content="github, Python">
+<meta name="description" content="
+TinyDB是一个轻量级的面向文档的数据库，为您的幸福而优化
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/tinydb/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="TinyDB - 一种轻量级的面向文档的Python数据库" />
+<meta property="og:description" content="
+TinyDB是一个轻量级的面向文档的数据库，为您的幸福而优化
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/tinydb/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-24T23:18:49+08:00" />
+<meta property="article:modified_time" content="2022-06-24T23:18:49+08:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TinyDB - 一种轻量级的面向文档的Python数据库"/>
+<meta name="twitter:description" content="
+TinyDB是一个轻量级的面向文档的数据库，为您的幸福而优化
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "TinyDB - 一种轻量级的面向文档的Python数据库",
+      "item": "/post/tinydb/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "TinyDB - 一种轻量级的面向文档的Python数据库",
+  "name": "TinyDB - 一种轻量级的面向文档的Python数据库",
+  "description": " TinyDB是一个轻量级的面向文档的数据库，为您的幸福而优化\n",
+  "keywords": [
+    "github", "Python"
+  ],
+  "articleBody": " TinyDB是一个轻量级的面向文档的数据库，为您的幸福而优化\nTinyDB 采用纯Python编写，没有外部依赖。祀标两者 小型应用程序会被SQL-DB或外部数据库服务器吹走。\nTinyDB是：\ntiny： 目前的源代码有1200行代码（约占40%）。 文档）和1000行测试。相比之下：Buzhug_有大约2500个 行代码（无测试），CodernityDB_大约有7000行代码 （无测试）。\n面向文档： 和MongoDB_一样，可以存储任何文档 （表示为\"dict\"）。\n为您的幸福而优化： TinyDB设计简单， 通过提供一个简单而干净的API来有趣地使用。\n纯Python编写： TinyDB不需要外部服务器（如 例如PyMongo _）也没有任何依赖关系 在PyPI\n适用于Python 2.6 + 2.7和3.3 - 3.5以及PyPy： TinyDB适用于所有 现代版本的Python和PyPy。\n强大的可扩展性： 您可以通过编写新的 存储或使用中间件修改存储的行为。\n100%测试覆盖率： 无需解释。\n要深入了解所有细节，请转到TinyDB文档。你也可以讨论一切有关 像TinyDB一般的开发，扩展或展示你的TinyDB的基础在“讨论论坛http://forum.m-siemens.de/”上的项目。\nExample Code\n.. code-block:: python\n\u003e\u003e\u003e from tinydb import TinyDB, Query \u003e\u003e\u003e db = TinyDB('/path/to/db.json') \u003e\u003e\u003e db.insert({'int': 1, 'char': 'a'}) \u003e\u003e\u003e db.insert({'int': 1, 'char': 'b'}) Query Language .. code-block:: python\n\u003e\u003e\u003e User = Query() \u003e\u003e\u003e # Search for a field value \u003e\u003e\u003e db.search(User.name == 'John') [{'name': 'John', 'age': 22}, {'name': 'John', 'age': 37}] \u003e\u003e\u003e # Combine two queries with logical and \u003e\u003e\u003e db.search((User.name == 'John') \u0026 (User.age \u003c= 30)) [{'name': 'John', 'age': 22}] \u003e\u003e\u003e # Combine two queries with logical or \u003e\u003e\u003e db.search((User.name == 'John') | (User.name == 'Bob')) [{'name': 'John', 'age': 22}, {'name': 'John', 'age': 37}, {'name': 'Bob', 'age': 42}] \u003e\u003e\u003e # More possible comparisons: != \u003c \u003e \u003c= \u003e= \u003e\u003e\u003e # More possible checks: where(...).matches(regex), where(...).test(your_test_func) Tables .. code-block:: python\n\u003e\u003e\u003e table = db.table('name') \u003e\u003e\u003e table.insert({'value': True}) \u003e\u003e\u003e table.all() [{'value': True}] Using Middlewares .. code-block:: python\n\u003e\u003e\u003e from tinydb.storages import JSONStorage \u003e\u003e\u003e from tinydb.middlewares import CachingMiddleware \u003e\u003e\u003e db = TinyDB('/path/to/db.json', storage=CachingMiddleware(JSONStorage)) Supported Python Versions\nTinyDB has been tested with Python 2.6, 2.7, 3.3 - 3.5 and PyPy.\n",
+  "wordCount" : "205",
+  "inLanguage": "en",
+  "datePublished": "2022-06-24T23:18:49+08:00",
+  "dateModified": "2022-06-24T23:18:49+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/tinydb/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      TinyDB - 一种轻量级的面向文档的Python数据库
+    </h1>
+    <div class="post-meta"><span title='2022-06-24 23:18:49 +0800 CST'>June 24, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p><a href="https://github.com/msiemens/tinydb">TinyDB</a>是一个轻量级的面向文档的数据库，为您的幸福而优化</p>
+</blockquote>
+<p><strong>TinyDB</strong> 采用纯Python编写，没有外部依赖。祀标两者
+小型应用程序会被SQL-DB或外部数据库服务器吹走。</p>
+<p>TinyDB是：</p>
+<ul>
+<li>
+<p><strong>tiny：</strong> 目前的源代码有1200行代码（约占40%）。
+文档）和1000行测试。相比之下：Buzhug_有大约2500个
+行代码（无测试），CodernityDB_大约有7000行代码
+（无测试）。</p>
+</li>
+<li>
+<p><strong>面向文档：</strong> 和MongoDB_一样，可以存储任何文档
+（表示为&quot;dict&quot;）。</p>
+</li>
+<li>
+<p><strong>为您的幸福而优化：</strong> TinyDB设计简单，
+通过提供一个简单而干净的API来有趣地使用。</p>
+</li>
+<li>
+<p><strong>纯Python编写：</strong> TinyDB不需要外部服务器（如
+例如<code>PyMongo &lt;http://api.mongodb.org/python/current/&gt;</code>_）也没有任何依赖关系
+在PyPI</p>
+</li>
+<li>
+<p><strong>适用于Python 2.6 + 2.7和3.3 - 3.5以及PyPy：</strong> TinyDB适用于所有
+现代版本的Python和PyPy。</p>
+</li>
+<li>
+<p><strong>强大的可扩展性：</strong> 您可以通过编写新的
+存储或使用中间件修改存储的行为。</p>
+</li>
+<li>
+<p><strong>100%测试覆盖率：</strong> 无需解释。</p>
+</li>
+</ul>
+<p>要深入了解所有细节，请转到<code>TinyDB文档&lt;https://tinydb.readthedocs.io/&gt;</code>。你也可以讨论一切有关
+像TinyDB一般的开发，扩展或展示你的TinyDB的基础在“讨论论坛<a href="http://forum.m-siemens.de/">http://forum.m-siemens.de/</a>”上的项目。</p>
+<hr>
+<p>Example Code</p>
+<hr>
+<p>.. code-block:: python</p>
+<pre><code>&gt;&gt;&gt; from tinydb import TinyDB, Query
 &gt;&gt;&gt; db = TinyDB('/path/to/db.json')
 &gt;&gt;&gt; db.insert({'int': 1, 'char': 'a'})
 &gt;&gt;&gt; db.insert({'int': 1, 'char': 'b'})
-</code></pre><h1 id=query-language>Query Language</h1><p>.. code-block:: python</p><pre><code>&gt;&gt;&gt; User = Query()
+</code></pre>
+<h1 id="query-language">Query Language<a hidden class="anchor" aria-hidden="true" href="#query-language">#</a></h1>
+<p>.. code-block:: python</p>
+<pre><code>&gt;&gt;&gt; User = Query()
 &gt;&gt;&gt; # Search for a field value
 &gt;&gt;&gt; db.search(User.name == 'John')
 [{'name': 'John', 'age': 22}, {'name': 'John', 'age': 37}]
@@ -34,12 +246,98 @@ projects on the <code>discussion forum &lt;http://forum.m-siemens.de/.&gt;</code
 
 &gt;&gt;&gt; # More possible comparisons:  !=  &lt;  &gt;  &lt;=  &gt;=
 &gt;&gt;&gt; # More possible checks: where(...).matches(regex), where(...).test(your_test_func)
-</code></pre><h1 id=tables>Tables</h1><p>.. code-block:: python</p><pre><code>&gt;&gt;&gt; table = db.table('name')
+</code></pre>
+<h1 id="tables">Tables<a hidden class="anchor" aria-hidden="true" href="#tables">#</a></h1>
+<p>.. code-block:: python</p>
+<pre><code>&gt;&gt;&gt; table = db.table('name')
 &gt;&gt;&gt; table.insert({'value': True})
 &gt;&gt;&gt; table.all()
 [{'value': True}]
-</code></pre><h1 id=using-middlewares>Using Middlewares</h1><p>.. code-block:: python</p><pre><code>&gt;&gt;&gt; from tinydb.storages import JSONStorage
+</code></pre>
+<h1 id="using-middlewares">Using Middlewares<a hidden class="anchor" aria-hidden="true" href="#using-middlewares">#</a></h1>
+<p>.. code-block:: python</p>
+<pre><code>&gt;&gt;&gt; from tinydb.storages import JSONStorage
 &gt;&gt;&gt; from tinydb.middlewares import CachingMiddleware
 &gt;&gt;&gt; db = TinyDB('/path/to/db.json', storage=CachingMiddleware(JSONStorage))
-</code></pre><p>Supported Python Versions</p><hr><p>TinyDB has been tested with Python 2.6, 2.7, 3.3 - 3.5 and PyPy.</p></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/faker/><section class=post><h2>faker.js - generate massive amounts of fake data</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</code></pre>
+<p>Supported Python Versions</p>
+<hr>
+<p>TinyDB has been tested with Python 2.6, 2.7, 3.3 - 3.5 and PyPy.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/github/">github</a></li>
+      <li><a href="/tags/python/">Python</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

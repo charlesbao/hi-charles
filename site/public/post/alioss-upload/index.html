@@ -1,20 +1,211 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="Python 阿里云OSS存储断点续传"><meta name=twitter:description content=阿里云oss对象存储，使用断点续传来上传大文件><meta property=og:title content="Python 阿里云OSS存储断点续传 &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/alioss-upload/><meta property=og:type content=article><meta property=og:article:published_time content=2017-06-05T00:00:00Z><meta property=og:article:tag content=Python><meta property=og:article:tag content=方法><title>Python 阿里云OSS存储断点续传 &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/alioss-upload/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>Python 阿里云OSS存储断点续传</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/python/>PYTHON</a>
-<a href=/tags/%E6%96%B9%E6%B3%95/>方法</a>
-<time class=post-date datetime=2017-06-05T00:00:00Z>5 Jun 2017</time></section></header><section class=post-content><blockquote><p>阿里云oss对象存储，使用断点续传来上传大文件</p></blockquote><p><strong>安装阿里云oss2库</strong></p><pre><code>pip install oss2
-</code></pre><p><strong>根据命令上传文件到oss</strong></p><p><code>apiKey</code> 　accessKey中的键<br><code>apiSecrets</code> 　accessKey中的密钥<br><code>endPoint</code> 　oss服务公网地址<br><code>bucketName</code> 　存储的bucket名字<br>参数：<br><code>-f &lt;要上传的文件路径&gt;</code> 　上传文件路径<br><code>-d &lt;远程文件存放路径&gt;</code> 　远程文件路径</p><p><code>python upload.py</code> 　运行脚本</p><pre><code>import os
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python 阿里云OSS存储断点续传 | Hi!Charles</title>
+<meta name="keywords" content="Python, 方法">
+<meta name="description" content="
+阿里云oss对象存储，使用断点续传来上传大文件
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/alioss-upload/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Python 阿里云OSS存储断点续传" />
+<meta property="og:description" content="
+阿里云oss对象存储，使用断点续传来上传大文件
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/alioss-upload/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-05T00:00:00+00:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python 阿里云OSS存储断点续传"/>
+<meta name="twitter:description" content="
+阿里云oss对象存储，使用断点续传来上传大文件
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Python 阿里云OSS存储断点续传",
+      "item": "/post/alioss-upload/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 阿里云OSS存储断点续传",
+  "name": "Python 阿里云OSS存储断点续传",
+  "description": " 阿里云oss对象存储，使用断点续传来上传大文件\n",
+  "keywords": [
+    "Python", "方法"
+  ],
+  "articleBody": " 阿里云oss对象存储，使用断点续传来上传大文件\n安装阿里云oss2库\npip install oss2 根据命令上传文件到oss\napiKey accessKey中的键\napiSecrets accessKey中的密钥\nendPoint oss服务公网地址 bucketName 存储的bucket名字 参数：\n-f \u003c要上传的文件路径\u003e 上传文件路径 -d \u003c远程文件存放路径\u003e 远程文件路径\npython upload.py 运行脚本\nimport os from oss2 import SizedFileAdapter, determine_part_size, Bucket, Auth from oss2.models import PartInfo from optparse import OptionParser parser = OptionParser() parser.add_option(\"-f\", \"--files\", dest=\"filenames\", help=\"action for filenames,split by ',',like [1.txt,2.txt]\") parser.add_option(\"-d\", \"--dest\", dest=\"dest\", default=\"\", help=\"remoteFolder for download or upload\") (options, args) = parser.parse_args() key = options.dest filename = options.filenames total_size = os.path.getsize(filename) part_size = determine_part_size(total_size, preferred_size=100 * 1024) END_POINT = endPoint AUTH = Auth(apiKey, apiSecrets) BUCKET_NAME = bucketName bucket = Bucket(AUTH, END_POINT, bucket_name=BUCKET_NAME) upload_id = bucket.init_multipart_upload(key).upload_id parts = [] with open(filename, 'rb') as fileobj: part_number = 1 offset = 0 while offset \u003c total_size: num_to_upload = min(part_size, total_size - offset) result = bucket.upload_part(key, upload_id, part_number, SizedFileAdapter(fileobj, num_to_upload)) parts.append(PartInfo(part_number, result.etag)) offset += num_to_upload part_number += 1 bucket.complete_multipart_upload(key, upload_id, parts) 上传./upload文件夹的所有资源\napiKey accessKey中的键\napiSecrets accessKey中的密钥\nendPoint oss服务公网地址 remotePath 远程存放文件的路径 bucketName 存储的bucket名字\npython ./uploadFromDir.py 运行脚本\nimport os from oss2 import SizedFileAdapter, determine_part_size, Bucket, Auth from oss2.models import PartInfo def upload(filename,key): total_size = os.path.getsize(filename) part_size = determine_part_size(total_size, preferred_size=100 * 1024) END_POINT = endPoint AUTH = Auth(apiKey, apiSecrets) BUCKET_NAME = bucketName bucket = Bucket(AUTH, END_POINT, bucket_name=BUCKET_NAME) upload_id = bucket.init_multipart_upload(key).upload_id parts = [] with open(filename, 'rb') as fileobj: part_number = 1 offset = 0 while offset \u003c total_size: num_to_upload = min(part_size, total_size - offset) result = bucket.upload_part(key, upload_id, part_number, SizedFileAdapter(fileobj, num_to_upload)) parts.append(PartInfo(part_number, result.etag)) offset += num_to_upload part_number += 1 bucket.complete_multipart_upload(key, upload_id, parts) for each in os.listdir('upload'): print 'upload',each upload(os.path.join('upload',each),os.path.join(remotePath,each)) print 'finish',each ",
+  "wordCount" : "248",
+  "inLanguage": "en",
+  "datePublished": "2022-06-05T00:00:00Z",
+  "dateModified": "2022-06-05T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/alioss-upload/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Python 阿里云OSS存储断点续传
+    </h1>
+    <div class="post-meta"><span title='2022-06-05 00:00:00 +0000 UTC'>June 5, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>阿里云oss对象存储，使用断点续传来上传大文件</p>
+</blockquote>
+<p><strong>安装阿里云oss2库</strong></p>
+<pre tabindex="0"><code>pip install oss2
+</code></pre><p><strong>根据命令上传文件到oss</strong></p>
+<p><code>apiKey</code> 　accessKey中的键<br>
+<code>apiSecrets</code> 　accessKey中的密钥<br>
+<code>endPoint</code> 　oss服务公网地址 <br>
+<code>bucketName</code> 　存储的bucket名字 <br>
+参数：<br>
+<code>-f &lt;要上传的文件路径&gt;</code> 　上传文件路径 <br>
+<code>-d &lt;远程文件存放路径&gt;</code> 　远程文件路径</p>
+<p><code>python upload.py</code> 　运行脚本</p>
+<pre tabindex="0"><code>import os
 from oss2 import SizedFileAdapter, determine_part_size, Bucket, Auth
 from oss2.models import PartInfo
 from optparse import OptionParser
 
 parser = OptionParser()
 
-parser.add_option(&quot;-f&quot;, &quot;--files&quot;, dest=&quot;filenames&quot;,
-                  help=&quot;action for filenames,split by ',',like [1.txt,2.txt]&quot;)
-parser.add_option(&quot;-d&quot;, &quot;--dest&quot;,
-                  dest=&quot;dest&quot;, default=&quot;&quot;,
-                  help=&quot;remoteFolder for download or upload&quot;)
+parser.add_option(&#34;-f&#34;, &#34;--files&#34;, dest=&#34;filenames&#34;,
+                  help=&#34;action for filenames,split by &#39;,&#39;,like [1.txt,2.txt]&#34;)
+parser.add_option(&#34;-d&#34;, &#34;--dest&#34;,
+                  dest=&#34;dest&#34;, default=&#34;&#34;,
+                  help=&#34;remoteFolder for download or upload&#34;)
 (options, args) = parser.parse_args()
 
 key = options.dest
@@ -28,7 +219,7 @@ BUCKET_NAME = bucketName
 bucket = Bucket(AUTH, END_POINT, bucket_name=BUCKET_NAME)
 upload_id = bucket.init_multipart_upload(key).upload_id
 parts = []
-with open(filename, 'rb') as fileobj:
+with open(filename, &#39;rb&#39;) as fileobj:
     part_number = 1
     offset = 0
     while offset &lt; total_size:
@@ -40,7 +231,14 @@ with open(filename, 'rb') as fileobj:
         part_number += 1
 
 bucket.complete_multipart_upload(key, upload_id, parts)
-</code></pre><p><strong>上传./upload文件夹的所有资源</strong></p><p><code>apiKey</code> 　accessKey中的键<br><code>apiSecrets</code> 　accessKey中的密钥<br><code>endPoint</code> 　oss服务公网地址<br><code>remotePath</code> 　远程存放文件的路径<br><code>bucketName</code> 　存储的bucket名字</p><p><code>python ./uploadFromDir.py</code> 　运行脚本</p><pre><code>import os
+</code></pre><p><strong>上传./upload文件夹的所有资源</strong></p>
+<p><code>apiKey</code> 　accessKey中的键<br>
+<code>apiSecrets</code> 　accessKey中的密钥<br>
+<code>endPoint</code> 　oss服务公网地址 <br>
+<code>remotePath</code> 　远程存放文件的路径 <br>
+<code>bucketName</code> 　存储的bucket名字</p>
+<p><code>python ./uploadFromDir.py</code> 　运行脚本</p>
+<pre tabindex="0"><code>import os
 from oss2 import SizedFileAdapter, determine_part_size, Bucket, Auth
 from oss2.models import PartInfo
 
@@ -55,7 +253,7 @@ def upload(filename,key):
 
     upload_id = bucket.init_multipart_upload(key).upload_id
     parts = []
-    with open(filename, 'rb') as fileobj:
+    with open(filename, &#39;rb&#39;) as fileobj:
         part_number = 1
         offset = 0
         while offset &lt; total_size:
@@ -68,9 +266,86 @@ def upload(filename,key):
 
     bucket.complete_multipart_upload(key, upload_id, parts)
 
-for each in os.listdir('upload'):
-    print 'upload',each
-    upload(os.path.join('upload',each),os.path.join(remotePath,each))
-    print 'finish',each
-</code></pre></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/baiduyun-upload/><section class=post><h2>百度网盘存储资源解决方案</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+for each in os.listdir(&#39;upload&#39;):
+    print &#39;upload&#39;,each
+    upload(os.path.join(&#39;upload&#39;,each),os.path.join(remotePath,each))
+    print &#39;finish&#39;,each
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/python/">Python</a></li>
+      <li><a href="/tags/%E6%96%B9%E6%B3%95/">方法</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

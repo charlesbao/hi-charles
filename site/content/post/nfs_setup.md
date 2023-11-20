@@ -1,5 +1,5 @@
 +++
-date = "2017-06-05T00:00:00Z"
+date = "2022-06-05T00:00:00Z"
 tags = ["filesystem","linux","方法"]
 title = "Linux使用NFS挂载远程硬盘"
 

@@ -1,5 +1,5 @@
 +++
-date = "2017-06-08T22:58:30+08:00"
+date = "2022-06-08T22:58:30+08:00"
 tags = ["Python","bug","方法"]
 title = "解决Python使用requests请求https警告"
 

@@ -1,3 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>代码 on Hi!Charles</title><link>/tags/%E4%BB%A3%E7%A0%81/</link><description>Recent content in 代码 on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 08 Jun 2017 23:07:41 +0800</lastBuildDate><atom:link href="/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml"/><item><title>Codelf 变量命名神器</title><link>/post/codelf/</link><pubDate>Thu, 08 Jun 2017 23:07:41 +0800</pubDate><guid>/post/codelf/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>代码 on Hi!Charles</title>
+    <link>/tags/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content in 代码 on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2022 23:07:41 +0800</lastBuildDate><atom:link href="/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codelf 变量命名神器</title>
+      <link>/post/codelf/</link>
+      <pubDate>Wed, 08 Jun 2022 23:07:41 +0800</pubDate>
+      
+      <guid>/post/codelf/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;“计算机科学的两件难事：缓存失效和命名。” &lt;a href=&#34;https://github.com/unbug/codelf&#34;&gt;Codelf&lt;/a&gt;就是帮我们缩短这些步骤的一个变量名搜索工具&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

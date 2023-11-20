@@ -1,15 +1,196 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="Ngrok 内网穿透安装脚本"><meta name=twitter:description content="ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道."><meta property=og:title content="Ngrok 内网穿透安装脚本 &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/ngrok_setup/><meta property=og:type content=article><meta property=og:article:published_time content=2017-05-26T00:00:00Z><meta property=og:article:tag content=ngrok><meta property=og:article:tag content=linux><meta property=og:article:tag content=vpn><meta property=og:article:tag content=脚本><title>Ngrok 内网穿透安装脚本 &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/ngrok_setup/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>Ngrok 内网穿透安装脚本</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/ngrok/>NGROK</a>
-<a href=/tags/linux/>LINUX</a>
-<a href=/tags/vpn/>VPN</a>
-<a href=/tags/%E8%84%9A%E6%9C%AC/>脚本</a>
-<time class=post-date datetime=2017-05-26T00:00:00Z>26 May 2017</time></section></header><section class=post-content><blockquote><p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.</p></blockquote><p><strong>为方便安装server及生成client，开发以下脚本</strong></p><p>Ngrok server&amp;client 安装工具</p><pre><code>#!/bin/bash
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ngrok 内网穿透安装脚本 | Hi!Charles</title>
+<meta name="keywords" content="ngrok, linux, vpn, 脚本">
+<meta name="description" content="
+ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/ngrok_setup/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Ngrok 内网穿透安装脚本" />
+<meta property="og:description" content="
+ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ngrok_setup/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-26T00:00:00+00:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ngrok 内网穿透安装脚本"/>
+<meta name="twitter:description" content="
+ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Ngrok 内网穿透安装脚本",
+      "item": "/post/ngrok_setup/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ngrok 内网穿透安装脚本",
+  "name": "Ngrok 内网穿透安装脚本",
+  "description": " ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.\n",
+  "keywords": [
+    "ngrok", "linux", "vpn", "脚本"
+  ],
+  "articleBody": " ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.\n为方便安装server及生成client，开发以下脚本\nNgrok server\u0026client 安装工具\n#!/bin/bash # -*- coding: UTF-8 -*- SELFPATH=$(cd \"$(dirname \"$0\")\"; pwd) echo 'input a domain' read DOMAIN install_depends(){ yum -y install zlib-devel openssl-devel perl hg cpio expat-devel gettext-devel curl curl-devel perl-ExtUtils-MakeMaker hg wget gcc gcc-c++ build-essential mercurial zip } install_git(){ unstall_git if [ ! -f $SELFPATH/git-2.6.0.tar.gz ];then wget https://www.kernel.org/pub/software/scm/git/git-2.6.0.tar.gz fi tar zxvf git-2.6.0.tar.gz cd git-2.6.0 ./configure --prefix=/usr/local/git make make install ln -s /usr/local/git/bin/* /usr/bin/ rm -rf $SELFPATH/git-2.6.0 } unstall_git(){ rm -rf /usr/local/git rm -rf /usr/local/git/bin/git rm -rf /usr/local/git/bin/git-cvsserver rm -rf /usr/local/git/bin/gitk rm -rf /usr/local/git/bin/git-receive-pack rm -rf /usr/local/git/bin/git-shell rm -rf /usr/local/git/bin/git-upload-archive rm -rf /usr/local/git/bin/git-upload-pack } install_go(){ cd $SELFPATH uninstall_go ldconfig if [ $(getconf WORD_BIT) = '32' ] \u0026\u0026 [ $(getconf LONG_BIT) = '64' ];then if [ ! -f $SELFPATH/go1.4.2.linux-amd64.tar.gz ];then wget http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-amd64.tar.gz fi tar zxvf go1.4.2.linux-amd64.tar.gz else if [ ! -f $SELFPATH/go1.4.2.linux-386.tar.gz ];then wget http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-386.tar.gz fi tar zxvf go1.4.2.linux-386.tar.gz fi mv go /usr/local/ ln -s /usr/local/go/bin/* /usr/bin/ } uninstall_go(){ rm -rf /usr/local/go rm -rf /usr/bin/go rm -rf /usr/bin/godoc rm -rf /usr/bin/gofmt } install_ngrok(){ uninstall_ngrok cd /usr/local if [ ! -f /usr/local/ngrok ];then cd /usr/local/ git clone https://github.com/inconshreveable/ngrok.git ngrok fi export GOPATH=/usr/local/ngrok/ export NGROK_DOMAIN=$DOMAIN cd ngrok openssl genrsa -out rootCA.key 2048 openssl req -x509 -new -nodes -key rootCA.key -subj \"/CN=$NGROK_DOMAIN\" -days 5000 -out rootCA.pem openssl genrsa -out server.key 2048 openssl req -new -key server.key -subj \"/CN=$NGROK_DOMAIN\" -out server.csr openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000 cp rootCA.pem assets/client/tls/ngrokroot.crt cp server.crt assets/server/tls/snakeoil.crt cp server.key assets/server/tls/snakeoil.key sed -i 's#code.google.com/p/log4go#github.com/keepeye/log4go#' /usr/local/ngrok/src/ngrok/log/logger.go GOOS=`go env | grep GOOS | awk -F\\\" '{print $2}'` GOARCH=`go env | grep GOARCH | awk -F\\\" '{print $2}'` cd /usr/local/go/src GOOS=$GOOS GOARCH=$GOARCH ./make.bash cd /usr/local/ngrok GOOS=$GOOS GOARCH=$GOARCH make release-server } # 卸载ngrok uninstall_ngrok(){ rm -rf /usr/local/ngrok } # 编译客户端 compile_client(){ cd /usr/local/go/src GOOS=$1 GOARCH=$2 ./make.bash cd /usr/local/ngrok/ GOOS=$1 GOARCH=$2 make release-client zip -r /root/$1_$2.zip /usr/local/ngrok/bin/$1_$2 } # 生成客户端 client(){ echo \"1.Linux 32\" echo \"2.Linux 64\" echo \"3.Windows 32\" echo \"4.Windows 64\" echo \"5.Mac OS 32\" echo \"6.Mac OS 64\" echo \"7.Linux ARM\" read num case \"$num\" in [1] ) compile_client linux 386 ;; [2] ) compile_client linux amd64 ;; [3] ) compile_client windows 386 ;; [4] ) compile_client windows amd64 ;; [5] ) compile_client darwin 386 ;; [6] ) compile_client darwin amd64 ;; [7] ) compile_client linux arm ;; *) echo \"choose error\";; esac } echo \"------------------------\" echo \"1. install all\" echo \"2. install depends\" echo \"3. install git\" echo \"4. install go\" echo \"5. install ngrok\" echo \"6. export client\" echo \"7. uninstall all\" echo \"8. run ngrok server\" echo \"9. read config\" echo \"------------------------\" read num case \"$num\" in [1] ) install_depends install_git install_go install_ngrok ;; [2] ) install_depends ;; [3] ) install_git ;; [4] ) install_go ;; [5] ) install_ngrok ;; [6] ) client ;; [7] ) unstall_git uninstall_go uninstall_ngrok ;; [8] ) echo \"input port\" read port nohup /usr/local/ngrok/bin/ngrokd -domain=$DOMAIN -httpAddr=\":$port\" -log=\"none\" \u0026 ;; [9] ) echo server_addr: '\"'$DOMAIN:4443'\"' echo \"trust_host_root_certs: false\" ;; *) echo \"\";; esac ",
+  "wordCount" : "493",
+  "inLanguage": "en",
+  "datePublished": "2022-05-26T00:00:00Z",
+  "dateModified": "2022-05-26T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/ngrok_setup/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Ngrok 内网穿透安装脚本
+    </h1>
+    <div class="post-meta"><span title='2022-05-26 00:00:00 +0000 UTC'>May 26, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道.</p>
+</blockquote>
+<p><strong>为方便安装server及生成client，开发以下脚本</strong></p>
+<p>Ngrok server&amp;client 安装工具</p>
+<pre tabindex="0"><code>#!/bin/bash
 # -*- coding: UTF-8 -*-
 
-SELFPATH=$(cd &quot;$(dirname &quot;$0&quot;)&quot;; pwd)
+SELFPATH=$(cd &#34;$(dirname &#34;$0&#34;)&#34;; pwd)
 
-echo 'input a domain'
+echo &#39;input a domain&#39;
 read DOMAIN
 install_depends(){
 	yum -y install zlib-devel openssl-devel perl hg cpio expat-devel gettext-devel curl curl-devel perl-ExtUtils-MakeMaker hg wget gcc gcc-c++ build-essential mercurial zip
@@ -45,7 +226,7 @@ install_go(){
 	cd $SELFPATH
 	uninstall_go
 	ldconfig
-	if [ $(getconf WORD_BIT) = '32' ] &amp;&amp; [ $(getconf LONG_BIT) = '64' ];then
+	if [ $(getconf WORD_BIT) = &#39;32&#39; ] &amp;&amp; [ $(getconf LONG_BIT) = &#39;64&#39; ];then
 		if [ ! -f $SELFPATH/go1.4.2.linux-amd64.tar.gz ];then
 			wget http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-amd64.tar.gz
 		fi
@@ -78,17 +259,17 @@ install_ngrok(){
 	export NGROK_DOMAIN=$DOMAIN
 	cd ngrok
 	openssl genrsa -out rootCA.key 2048
-	openssl req -x509 -new -nodes -key rootCA.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -days 5000 -out rootCA.pem
+	openssl req -x509 -new -nodes -key rootCA.key -subj &#34;/CN=$NGROK_DOMAIN&#34; -days 5000 -out rootCA.pem
 	openssl genrsa -out server.key 2048
-	openssl req -new -key server.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -out server.csr
+	openssl req -new -key server.key -subj &#34;/CN=$NGROK_DOMAIN&#34; -out server.csr
 	openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000
 	cp rootCA.pem assets/client/tls/ngrokroot.crt
 	cp server.crt assets/server/tls/snakeoil.crt
 	cp server.key assets/server/tls/snakeoil.key
-	sed -i 's#code.google.com/p/log4go#github.com/keepeye/log4go#' /usr/local/ngrok/src/ngrok/log/logger.go
+	sed -i &#39;s#code.google.com/p/log4go#github.com/keepeye/log4go#&#39; /usr/local/ngrok/src/ngrok/log/logger.go
 	
-	GOOS=`go env | grep GOOS | awk -F\&quot; '{print $2}'`
-	GOARCH=`go env | grep GOARCH | awk -F\&quot; '{print $2}'`
+	GOOS=`go env | grep GOOS | awk -F\&#34; &#39;{print $2}&#39;`
+	GOARCH=`go env | grep GOARCH | awk -F\&#34; &#39;{print $2}&#39;`
 	cd /usr/local/go/src
 	GOOS=$GOOS GOARCH=$GOARCH ./make.bash
 	cd /usr/local/ngrok
@@ -111,16 +292,16 @@ compile_client(){
 
 # 生成客户端
 client(){
-	echo &quot;1.Linux 32&quot;
-	echo &quot;2.Linux 64&quot;
-	echo &quot;3.Windows 32&quot;
-	echo &quot;4.Windows 64&quot;
-	echo &quot;5.Mac OS 32&quot;
-	echo &quot;6.Mac OS 64&quot;
-	echo &quot;7.Linux ARM&quot;
+	echo &#34;1.Linux 32&#34;
+	echo &#34;2.Linux 64&#34;
+	echo &#34;3.Windows 32&#34;
+	echo &#34;4.Windows 64&#34;
+	echo &#34;5.Mac OS 32&#34;
+	echo &#34;6.Mac OS 64&#34;
+	echo &#34;7.Linux ARM&#34;
 
 	read num
-	case &quot;$num&quot; in
+	case &#34;$num&#34; in
 		[1] )
 			compile_client linux 386
 		;;
@@ -142,24 +323,24 @@ client(){
 		[7] ) 
 			compile_client linux arm
 		;;
-		*) echo &quot;choose error&quot;;;
+		*) echo &#34;choose error&#34;;;
 	esac
 
 }
 
-echo &quot;------------------------&quot;
-echo &quot;1. install all&quot;
-echo &quot;2. install depends&quot;
-echo &quot;3. install git&quot;
-echo &quot;4. install go&quot;
-echo &quot;5. install ngrok&quot;
-echo &quot;6. export client&quot;
-echo &quot;7. uninstall all&quot;
-echo &quot;8. run ngrok server&quot;
-echo &quot;9. read config&quot;
-echo &quot;------------------------&quot;
+echo &#34;------------------------&#34;
+echo &#34;1. install all&#34;
+echo &#34;2. install depends&#34;
+echo &#34;3. install git&#34;
+echo &#34;4. install go&#34;
+echo &#34;5. install ngrok&#34;
+echo &#34;6. export client&#34;
+echo &#34;7. uninstall all&#34;
+echo &#34;8. run ngrok server&#34;
+echo &#34;9. read config&#34;
+echo &#34;------------------------&#34;
 read num
-case &quot;$num&quot; in
+case &#34;$num&#34; in
 	[1] )
 		install_depends
 		install_git
@@ -187,16 +368,95 @@ case &quot;$num&quot; in
 		uninstall_ngrok
 	;;
 	[8] )
-		echo &quot;input port&quot;
+		echo &#34;input port&#34;
 		read port
-		nohup /usr/local/ngrok/bin/ngrokd -domain=$DOMAIN -httpAddr=&quot;:$port&quot; -log=&quot;none&quot; &amp;
+		nohup /usr/local/ngrok/bin/ngrokd -domain=$DOMAIN -httpAddr=&#34;:$port&#34; -log=&#34;none&#34; &amp;
 	;;
 	[9] )
-		echo server_addr: '&quot;'$DOMAIN:4443'&quot;'
-		echo &quot;trust_host_root_certs: false&quot;
+		echo server_addr: &#39;&#34;&#39;$DOMAIN:4443&#39;&#34;&#39;
+		echo &#34;trust_host_root_certs: false&#34;
 
 	;;
-	*) echo &quot;&quot;;;
+	*) echo &#34;&#34;;;
 esac
-</code></pre></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/pytinstaller_bug/><section class=post><h2>Python pyinstaller打包程序错误解决方案</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/ngrok/">ngrok</a></li>
+      <li><a href="/tags/linux/">linux</a></li>
+      <li><a href="/tags/vpn/">vpn</a></li>
+      <li><a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

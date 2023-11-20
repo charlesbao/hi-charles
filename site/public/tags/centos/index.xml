@@ -1,7 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>centos on Hi!Charles</title><link>/tags/centos/</link><description>Recent content in centos on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 27 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/centos/index.xml" rel="self" type="application/rss+xml"/><item><title>centos6下一键配置VPN</title><link>/post/centos_vpn/</link><pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate><guid>/post/centos_vpn/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>centos on Hi!Charles</title>
+    <link>/tags/centos/</link>
+    <description>Recent content in centos on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos6下一键配置VPN</title>
+      <link>/post/centos_vpn/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/centos_vpn/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;一键安装PPTP , L2TP , IPSEC , SHADOWSOCKS的SHELL安装脚本&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>centos6下一键配置http代理</title><link>/post/centos_http/</link><pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate><guid>/post/centos_http/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>centos6下一键配置http代理</title>
+      <link>/post/centos_http/</link>
+      <pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/centos_http/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;一键安装squid代理服务器的shell脚本&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>centos 安装Python2.7</title><link>/post/python27_setup/</link><pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate><guid>/post/python27_setup/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>centos 安装Python2.7</title>
+      <link>/post/python27_setup/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python27_setup/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

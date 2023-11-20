@@ -1,51 +1,330 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="remark - A simple, in-browser, markdown-driven slideshow tool."><meta name=twitter:description content="remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS."><meta property=og:title content="remark - A simple, in-browser, markdown-driven slideshow tool. &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/remark-slideshow/><meta property=og:type content=article><meta property=og:article:published_time content=2017-06-20T10:11:53&#43;08:00><meta property=og:article:tag content=github><meta property=og:article:tag content=javascript><title>remark - A simple, in-browser, markdown-driven slideshow tool. &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/remark-slideshow/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>remark - A simple, in-browser, markdown-driven slideshow tool.</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/github/>GITHUB</a>
-<a href=/tags/javascript/>JAVASCRIPT</a>
-<time class=post-date datetime=2017-06-20T10:11:53&#43;08:00>20 Jun 2017</time></section></header><section class=post-content><blockquote><p><a href=https://github.com/gnab/remark>remark</a> is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.</p></blockquote><h3 id=featuring>featuring:</h3><ul><li>Markdown formatting, with smart extensions</li><li>Presenter mode with markdown formatted speaker notes and cloned slideshow view</li><li>Syntax highlighting, supporting a range of languages</li><li>Slide scaling, thus similar appearance on all devices / resolutions</li><li>Simple markdown templates for customized slides</li><li>Touch support for smart phones and pads, i.e. swipe to navigate slides</li></ul><p>Check out <a href=http://gnab.github.com/remark>this remark slideshow</a> for a brief introduction.</p><p>To render your Markdown-based slideshow on the fly, checkout <a href=https://gnab.github.io/remark/remarkise>Remarkise</a>.</p><h3 id=getting-started>Getting Started</h3><p>It takes only a few, simple steps to get up and running with remark:</p><ol><li>Create an HTML file to contain your slideshow (see boilerplate below)</li><li>Open the HTML file in a decent browser</li><li>Edit the Markdown and/or CSS styles as needed, save and refresh!</li><li>Press C to clone a display; then press P to switch to presenter mode</li></ol><p>See any of the boilerplate-*.html files, or just copy the boilerplate HTML below to start:</p><pre><code class=language-html>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;style&gt;
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+<!DOCTYPE html>
+<html lang="en" dir="auto">
 
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
-        font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    &lt;/style&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;textarea id=&quot;source&quot;&gt;
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>remark - A simple, in-browser, markdown-driven slideshow tool. | Hi!Charles</title>
+<meta name="keywords" content="github, javascript">
+<meta name="description" content="
+remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/remark-slideshow/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-class: center, middle
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
-# Title
+            .list {
+                background: var(--theme);
+            }
 
----
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-# Agenda
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-1. Introduction
-2. Deep-dive
-3. ...
+    </style>
+</noscript><meta property="og:title" content="remark - A simple, in-browser, markdown-driven slideshow tool." />
+<meta property="og:description" content="
+remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/remark-slideshow/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-20T10:11:53+08:00" />
+<meta property="article:modified_time" content="2021-06-20T10:11:53+08:00" /><meta property="og:site_name" content="Hi!Charles" />
 
----
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="remark - A simple, in-browser, markdown-driven slideshow tool."/>
+<meta name="twitter:description" content="
+remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.
+"/>
 
-# Introduction
 
-    &lt;/textarea&gt;
-    &lt;script src=&quot;https://remarkjs.com/downloads/remark-latest.min.js&quot;&gt;
-    &lt;/script&gt;
-    &lt;script&gt;
-      var slideshow = remark.create();
-    &lt;/script&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><h3 id=how-to-use-remark>How To Use remark</h3><p>The <a href=http://github.com/gnab/remark/wiki>wiki</a> pages contain all the how-to, templating, and API help.</p></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/pdfcandy/><section class=post><h2>PDFCandy 免费PDF文件在线工具</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "remark - A simple, in-browser, markdown-driven slideshow tool.",
+      "item": "/post/remark-slideshow/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "remark - A simple, in-browser, markdown-driven slideshow tool.",
+  "name": "remark - A simple, in-browser, markdown-driven slideshow tool.",
+  "description": " remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.\n",
+  "keywords": [
+    "github", "javascript"
+  ],
+  "articleBody": " remark is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.\nfeaturing: Markdown formatting, with smart extensions Presenter mode with markdown formatted speaker notes and cloned slideshow view Syntax highlighting, supporting a range of languages Slide scaling, thus similar appearance on all devices / resolutions Simple markdown templates for customized slides Touch support for smart phones and pads, i.e. swipe to navigate slides Check out this remark slideshow for a brief introduction.\nTo render your Markdown-based slideshow on the fly, checkout Remarkise.\nGetting Started It takes only a few, simple steps to get up and running with remark:\nCreate an HTML file to contain your slideshow (see boilerplate below) Open the HTML file in a decent browser Edit the Markdown and/or CSS styles as needed, save and refresh! Press C to clone a display; then press P to switch to presenter mode See any of the boilerplate-*.html files, or just copy the boilerplate HTML below to start:\n\u003c!DOCTYPE html\u003e \u003chtml\u003e \u003chead\u003e \u003ctitle\u003eTitle\u003c/title\u003e \u003cmeta charset=\"utf-8\"\u003e \u003cstyle\u003e @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz); @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic); @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic); body { font-family: 'Droid Serif'; } h1, h2, h3 { font-family: 'Yanone Kaffeesatz'; font-weight: normal; } .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; } \u003c/style\u003e \u003c/head\u003e \u003cbody\u003e \u003ctextarea id=\"source\"\u003e class: center, middle # Title --- # Agenda 1. Introduction 2. Deep-dive 3. ... --- # Introduction \u003c/textarea\u003e \u003cscript src=\"https://remarkjs.com/downloads/remark-latest.min.js\"\u003e \u003c/script\u003e \u003cscript\u003e var slideshow = remark.create(); \u003c/script\u003e \u003c/body\u003e \u003c/html\u003e How To Use remark The wiki pages contain all the how-to, templating, and API help.\n",
+  "wordCount" : "251",
+  "inLanguage": "en",
+  "datePublished": "2021-06-20T10:11:53+08:00",
+  "dateModified": "2021-06-20T10:11:53+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/remark-slideshow/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      remark - A simple, in-browser, markdown-driven slideshow tool.
+    </h1>
+    <div class="post-meta"><span title='2021-06-20 10:11:53 +0800 CST'>June 20, 2021</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p><a href="https://github.com/gnab/remark">remark</a> is a simple, in-browser, markdown-driven slideshow tool targeted at people who know their way around HTML and CSS.</p>
+</blockquote>
+<h3 id="featuring">featuring:<a hidden class="anchor" aria-hidden="true" href="#featuring">#</a></h3>
+<ul>
+<li>Markdown formatting, with smart extensions</li>
+<li>Presenter mode with markdown formatted speaker notes and cloned slideshow view</li>
+<li>Syntax highlighting, supporting a range of languages</li>
+<li>Slide scaling, thus similar appearance on all devices / resolutions</li>
+<li>Simple markdown templates for customized slides</li>
+<li>Touch support for smart phones and pads, i.e. swipe to navigate slides</li>
+</ul>
+<p>Check out <a href="http://gnab.github.com/remark">this remark slideshow</a> for a brief introduction.</p>
+<p>To render your Markdown-based slideshow on the fly, checkout <a href="https://gnab.github.io/remark/remarkise">Remarkise</a>.</p>
+<h3 id="getting-started">Getting Started<a hidden class="anchor" aria-hidden="true" href="#getting-started">#</a></h3>
+<p>It takes only a few, simple steps to get up and running with remark:</p>
+<ol>
+<li>Create an HTML file to contain your slideshow (see boilerplate below)</li>
+<li>Open the HTML file in a decent browser</li>
+<li>Edit the Markdown and/or CSS styles as needed, save and refresh!</li>
+<li>Press C to clone a display; then press P to switch to presenter mode</li>
+</ol>
+<p>See any of the boilerplate-*.html files, or just copy the boilerplate HTML below to start:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Title&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>      @<span style="color:#66d9ef">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">https</span><span style="color:#f92672">://</span><span style="color:#f92672">fonts</span>.<span style="color:#a6e22e">googleapis</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">css</span><span style="color:#f92672">?</span><span style="color:#f92672">family</span><span style="color:#f92672">=</span><span style="color:#f92672">Yanone</span><span style="color:#f92672">+</span><span style="color:#f92672">Kaffeesatz</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>      @<span style="color:#66d9ef">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">https</span><span style="color:#f92672">://</span><span style="color:#f92672">fonts</span>.<span style="color:#a6e22e">googleapis</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">css</span><span style="color:#f92672">?</span><span style="color:#f92672">family</span><span style="color:#f92672">=</span><span style="color:#f92672">Droid</span><span style="color:#f92672">+</span><span style="color:#f92672">Serif</span>:<span style="color:#a6e22e">400</span><span style="color:#f92672">,</span><span style="color:#f92672">700</span><span style="color:#f92672">,</span><span style="color:#f92672">400italic</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>      @<span style="color:#66d9ef">import</span> <span style="color:#f92672">url</span><span style="color:#f92672">(</span><span style="color:#f92672">https</span><span style="color:#f92672">://</span><span style="color:#f92672">fonts</span>.<span style="color:#a6e22e">googleapis</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#f92672">css</span><span style="color:#f92672">?</span><span style="color:#f92672">family</span><span style="color:#f92672">=</span><span style="color:#f92672">Ubuntu</span><span style="color:#f92672">+</span><span style="color:#f92672">Mono</span>:<span style="color:#a6e22e">400</span><span style="color:#f92672">,</span><span style="color:#f92672">700</span><span style="color:#f92672">,</span><span style="color:#f92672">400italic</span><span style="color:#f92672">)</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">body</span> { <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Droid Serif&#39;</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">h1</span><span style="color:#f92672">,</span> <span style="color:#f92672">h2</span><span style="color:#f92672">,</span> <span style="color:#f92672">h3</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Yanone Kaffeesatz&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      .<span style="color:#a6e22e">remark-code</span><span style="color:#f92672">,</span> .<span style="color:#a6e22e">remark-inline-code</span> { <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#39;Ubuntu Mono&#39;</span>; }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;source&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>class: center, middle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Title
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Agenda
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>1. Introduction
+</span></span><span style="display:flex;"><span>2. Deep-dive
+</span></span><span style="display:flex;"><span>3. ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Introduction
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://remarkjs.com/downloads/remark-latest.min.js&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">slideshow</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">remark</span>.<span style="color:#a6e22e">create</span>();
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h3 id="how-to-use-remark">How To Use remark<a hidden class="anchor" aria-hidden="true" href="#how-to-use-remark">#</a></h3>
+<p>The <a href="http://github.com/gnab/remark/wiki">wiki</a> pages contain all the how-to, templating, and API help.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/github/">github</a></li>
+      <li><a href="/tags/javascript/">javascript</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>share data on Hi!Charles</title><link>/tags/share-data/</link><description>Recent content in share data on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 21 May 2017 10:54:24 +0200</lastBuildDate><atom:link href="/tags/share-data/index.xml" rel="self" type="application/rss+xml"/><item><title>dat - share files with version control</title><link>/post/dat/</link><pubDate>Sun, 21 May 2017 10:54:24 +0200</pubDate><guid>/post/dat/</guid><description>&lt;p&gt;&lt;a href=&#34;https://github.com/datproject/dat&#34;&gt;Dat&lt;/a&gt; is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>share data on Hi!Charles</title>
+    <link>/tags/share-data/</link>
+    <description>Recent content in share data on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 May 2022 10:54:24 +0200</lastBuildDate><atom:link href="/tags/share-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dat - share files with version control</title>
+      <link>/post/dat/</link>
+      <pubDate>Sat, 21 May 2022 10:54:24 +0200</pubDate>
+      
+      <guid>/post/dat/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/datproject/dat&#34;&gt;Dat&lt;/a&gt; is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

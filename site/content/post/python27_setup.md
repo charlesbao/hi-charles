@@ -1,5 +1,5 @@
 +++
-date = "2017-05-25T00:00:00Z"
+date = "2022-05-25T00:00:00Z"
 tags = ["Python","centos","方法"]
 title = "centos 安装Python2.7"
 

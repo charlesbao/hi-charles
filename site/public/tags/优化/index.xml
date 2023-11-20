@@ -1,3 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>优化 on Hi!Charles</title><link>/tags/%E4%BC%98%E5%8C%96/</link><description>Recent content in 优化 on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx 反向代理缓存配置</title><link>/post/nginx-conf/</link><pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate><guid>/post/nginx-conf/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>优化 on Hi!Charles</title>
+    <link>/tags/%E4%BC%98%E5%8C%96/</link>
+    <description>Recent content in 优化 on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 反向代理缓存配置</title>
+      <link>/post/nginx-conf/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nginx-conf/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

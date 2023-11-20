@@ -1,5 +1,5 @@
 +++
-date = "2017-06-02"
+date = "2022-06-02"
 tags = ["nginx","linux","node","优化"]
 title = "Nginx 反向代理缓存配置"
 +++

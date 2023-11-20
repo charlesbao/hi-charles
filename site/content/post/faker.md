@@ -1,17 +1,17 @@
 +++
-date = "2017-06-23T23:29:23+08:00"
+date = "2022-06-23T23:29:23+08:00"
 tags = ["github","javascript"]
-title = "faker.js - generate massive amounts of fake data"
+title = "faker.js - 产生大量虚假数据"
 
 +++
 
-> [faker.js](https://github.com/Marak/faker.js) - generate massive amounts of fake data in the browser and node.js<!--more-->
+> [faker.js](https://github.com/Marak/faker.js) - 在浏览器和node.js中生成大量虚假数据<!--more-->
 
 
 ## Demo
 [https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html](https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html)
 
-## Hosted API Microservice
+## 托管API微服务
 
 [http://faker.hook.io](http://faker.hook.io/)
  - Supports all Faker API Methods
@@ -22,9 +22,9 @@ title = "faker.js - generate massive amounts of fake data"
 curl http://faker.hook.io?property=name.findName&locale=de
 ```
 
-## Usage
+## 用法
 
-### Browser
+### 浏览器
 
     <script src = "faker.js" type = "text/javascript"></script>
     <script>
@@ -46,7 +46,7 @@ curl http://faker.hook.io?property=name.findName&locale=de
 
 ### Faker.fake()
 
-faker.js contains a super useful generator method `Faker.fake` for combining faker API methods using a mustache string format.
+Faker.js包含一个非常有用的生成器方法`Faker.fake`，用于使用胡须字符串格式组合faker API方法。
 
 **Example:**
 

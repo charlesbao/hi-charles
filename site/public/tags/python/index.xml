@@ -1,27 +1,143 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Hi!Charles</title><link>/tags/python/</link><description>Recent content in Python on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Dec 2019 17:02:45 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python 远程桌面图像对比刷新方法</title><link>/post/python_refresh_image/</link><pubDate>Tue, 10 Dec 2019 17:02:45 +0800</pubDate><guid>/post/python_refresh_image/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;Python远程桌面中图像对比刷新以提高效率&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python 操作windows注册表</title><link>/post/python_regedit/</link><pubDate>Sun, 10 Nov 2019 17:01:59 +0800</pubDate><guid>/post/python_regedit/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Python on Hi!Charles</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 Nov 2023 17:01:59 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python 操作windows注册表</title>
+      <link>/post/python_regedit/</link>
+      <pubDate>Fri, 10 Nov 2023 17:01:59 +0800</pubDate>
+      
+      <guid>/post/python_regedit/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;使用Python操作Windows注册表，进行读取及键值操作&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python 对特殊字符的过滤方法</title><link>/post/python_ascii/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>/post/python_ascii/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 对特殊字符的过滤方法</title>
+      <link>/post/python_ascii/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ascii/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;Python2.x 对中文编码、特殊字符等支持不是很好，但是有一些应对策略&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python 搭建简单文件服务器</title><link>/post/python_filesystem/</link><pubDate>Sat, 25 May 2019 00:00:00 +0000</pubDate><guid>/post/python_filesystem/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 搭建简单文件服务器</title>
+      <link>/post/python_filesystem/</link>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_filesystem/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;使用Python自带的库而不依赖第三方库，简单的文件服务器实现&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>使用Python创建ftp服务器</title><link>/post/python_ftp/</link><pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate><guid>/post/python_ftp/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;Python的pyftpdlib可用于创建ftp服务器&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>TinyDB - lightweight document oriented database for Python</title><link>/post/tinydb/</link><pubDate>Sat, 24 Jun 2017 23:18:49 +0800</pubDate><guid>/post/tinydb/</guid><description>&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt; is a lightweight document oriented database optimized for your happiness&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>解决Python使用requests请求https警告</title><link>/post/requests_warning/</link><pubDate>Thu, 08 Jun 2017 22:58:30 +0800</pubDate><guid>/post/requests_warning/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>TinyDB - 一种轻量级的面向文档的Python数据库</title>
+      <link>/post/tinydb/</link>
+      <pubDate>Fri, 24 Jun 2022 23:18:49 +0800</pubDate>
+      
+      <guid>/post/tinydb/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/msiemens/tinydb&#34;&gt;TinyDB&lt;/a&gt;是一个轻量级的面向文档的数据库，为您的幸福而优化&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决Python使用requests请求https警告</title>
+      <link>/post/requests_warning/</link>
+      <pubDate>Wed, 08 Jun 2022 22:58:30 +0800</pubDate>
+      
+      <guid>/post/requests_warning/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;现在越来越多的网站使用的是https安全链接，在使用requests请求https网站的时候会提示一大堆的warning.&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python 阿里云OSS存储断点续传</title><link>/post/alioss-upload/</link><pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate><guid>/post/alioss-upload/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 阿里云OSS存储断点续传</title>
+      <link>/post/alioss-upload/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/alioss-upload/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;阿里云oss对象存储，使用断点续传来上传大文件&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>百度网盘存储资源解决方案</title><link>/post/baiduyun-upload/</link><pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate><guid>/post/baiduyun-upload/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>百度网盘存储资源解决方案</title>
+      <link>/post/baiduyun-upload/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/baiduyun-upload/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;使用百度网盘作为存储媒介的Python脚本&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python 阿里云oss存储 小文件上传下载</title><link>/post/alioss-python/</link><pubDate>Sat, 03 Jun 2017 00:00:00 +0000</pubDate><guid>/post/alioss-python/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python 阿里云oss存储 小文件上传下载</title>
+      <link>/post/alioss-python/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/alioss-python/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;阿里云oss对象存储，使用官方api上传下载文件&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>HTTP代理扫描工具</title><link>/post/http_scan/</link><pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate><guid>/post/http_scan/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTTP代理扫描工具</title>
+      <link>/post/http_scan/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/http_scan/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;用Python实现的http代理扫描工具，利用爬虫抓取代理网站，并存储到数据库永久储存。&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Python pyinstaller打包程序错误解决方案</title><link>/post/pytinstaller_bug/</link><pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate><guid>/post/pytinstaller_bug/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python pyinstaller打包程序错误解决方案</title>
+      <link>/post/pytinstaller_bug/</link>
+      <pubDate>Thu, 26 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/pytinstaller_bug/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;Pyinstaller作为最常见的Python打包EXE程序，目前存在一个BUG，会报R6034错误&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>centos 安装Python2.7</title><link>/post/python27_setup/</link><pubDate>Thu, 25 May 2017 00:00:00 +0000</pubDate><guid>/post/python27_setup/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>centos 安装Python2.7</title>
+      <link>/post/python27_setup/</link>
+      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python27_setup/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;centos默认安装的是Python2.6版本，有些模块使用会出错，这里是我安装Python2.7.9的全部过程&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用Python创建ftp服务器</title>
+      <link>/post/python_ftp/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python_ftp/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Python的pyftpdlib可用于创建ftp服务器&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

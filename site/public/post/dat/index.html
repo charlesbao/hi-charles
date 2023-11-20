@@ -1,24 +1,228 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="dat - share files with version control"><meta name=twitter:description content="Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast."><meta property=og:title content="dat - share files with version control &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/dat/><meta property=og:type content=article><meta property=og:article:published_time content=2017-05-21T10:54:24&#43;02:00><meta property=og:article:tag content=github><meta property=og:article:tag content="share data"><meta property=og:article:tag content="package manager"><title>dat - share files with version control &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/dat/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>dat - share files with version control</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/github/>GITHUB</a>
-<a href=/tags/share-data/>SHARE DATA</a>
-<a href=/tags/package-manager/>PACKAGE MANAGER</a>
-<time class=post-date datetime=2017-05-21T10:54:24&#43;02:00>21 May 2017</time></section></header><section class=post-content><p><a href=https://github.com/datproject/dat>Dat</a> is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.</p><h1 id=dat>Dat</h1><h2 id=installation>Installation</h2><p>Visit dat site for an <a href=http://datproject.org/install>installation guide</a> or pick your favorite client application</p><h3 id=command-line-installation>Command Line Installation</h3><p>The Dat command line tool can be installed with <code>npm</code>. Make sure you have <code>node</code> version 4 or above and <code>npm</code> installed. You can run <code>node -v</code> and <code>npm -v</code> to check!</p><p>Need to install Node? <a href=https://nodejs.org/en/download/>Start here</a>.</p><p>Install <code>dat</code> from npm with the <code>--global, -g</code> option:</p><pre><code>npm install -g dat
-</code></pre><p>You should be able to run the <code>dat</code> command now. If not, see the <a href=#troubleshooting>installation troubleshooting</a> for tips.</p><h2 id=getting-started>Getting started</h2><p>We have Dat installed, let&rsquo;s use it! Currently, the Dat command line always moves files from a single source to any number of destinations.
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>dat - share files with version control | Hi!Charles</title>
+<meta name="keywords" content="github, share data, package manager">
+<meta name="description" content="Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.">
+<meta name="author" content="">
+<link rel="canonical" href="/post/dat/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="dat - share files with version control" />
+<meta property="og:description" content="Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/dat/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-05-21T10:54:24+02:00" />
+<meta property="article:modified_time" content="2022-05-21T10:54:24+02:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="dat - share files with version control"/>
+<meta name="twitter:description" content="Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "dat - share files with version control",
+      "item": "/post/dat/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "dat - share files with version control",
+  "name": "dat - share files with version control",
+  "description": "Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.\n",
+  "keywords": [
+    "github", "share data", "package manager"
+  ],
+  "articleBody": "Dat is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.\nDat Installation Visit dat site for an installation guide or pick your favorite client application\nCommand Line Installation The Dat command line tool can be installed with npm. Make sure you have node version 4 or above and npm installed. You can run node -v and npm -v to check!\nNeed to install Node? Start here.\nInstall dat from npm with the --global, -g option:\nnpm install -g dat You should be able to run the dat command now. If not, see the installation troubleshooting for tips.\nGetting started We have Dat installed, let’s use it! Currently, the Dat command line always moves files from a single source to any number of destinations. If you are creating files on your computer to share, you will be the source and will use the share commands. Otherwise, you can clone files from remote Dat archives shared to you with a Dat link.\nYou can mostly get around in the Dat command line world with two commands:\ndat share Use dat share to send files from your computer to any number of other computers or servers. This will share a local and print a dat:// link. Send the printed link to other users so they can download your files.\nDat share will create a .dat directory in the folder you share. The .dat folder allows you to add new files and update old files on the same Dat link.\nMake sure not to share the .dat folder with anyone, it contains a private key that allows you to update and add files.\ndat clone dat:// Use dat clone to download files from a remote computers sharing files with Dat. This will download the files from dat:// to your . The download exits after it completes but you can continue to update the files later after the clone is done.\nA Brief Primer on dat:// links You may have seen Dat links around: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93. What is with the weird long string of characters? Let’s break it down!\ndat:// - the protocol The first part of the link is the link protocol, Dat (read about the Dat protocol at datprotocol.com). The protocol describes what “language” the link is in and what type of applications can open it.\nff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 - the unique identifier The second part of the link is a 64-character hex strings (ed25519 public-keys to be precise). Each Dat archive gets a public key link to identify it. With the hex string as a link we can do two things: 1) encrypt the data transfer and 2) give each archive a persistent identifier, an ID that never changes, even as file are updated (as opposed to a checksum which is based on the file contents).\ndat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 All together, the links can be thought of similarly to a web URL, as a place to get content, but with some extra special properties. Links point to a set of files instead of a specific server. This means when you run dat clone dat:// you do not have to worry about who is hosting the files at that link or if the content has changed. You’ll always get the latest content in the network and the link helps to verify the integrity of the content!\nTry out dat clone with the link above to read more about the protocol!\nDemo File Download To get started using Dat, we can download files via Dat. Similar to git, you do this by running dat clone:\ndat clone dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 datprotocol-website Cloning Dat Archive: /Users/joe/Desktop/datprotocol-website Link: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 Metadata: [==================================================\u003e] 100% Content: [=====\u003e---------------------------------------------] 11% Total size: 8 files (43.3 kB) 2 peers on the Dat Network Downloading: 2.68 kB/s This will download the files shared at that link to a folder named datprotocol-website. These files are being shared by a server over Dat (to ensure high availability) but you may connect to any number of peers also hosting the content.\nGet started using Dat today with the share and clone commands or read below for more details.\nUsage Dat archives have a one to many relationship. There is a single source that can create and write files. There are many peers that can download the files (in future versions there may be several sources).\nSharing: If you want to share files from your computer that you will update, you are the source. Downloading: If your colleague has files they want to share, they will be the source and you’ll be downloading from a remote archive. The first time you run a command, a .dat folder to store the Dat metadata. Once a Dat is created, you can run all the commands inside that folder, similar to git.\nSharing The quickest way to get started sharing files is to share:\n\u003e dat share Syncing Dat Archive: /Users/joe/Desktop/datproject-website Link: dat://b44a53f3dcad90349ba743e21fca4869cd3fb79d9f8b55a556af04e5ad49bb79 Archive update finished! Sharing latest files. Total Size: 51 files (3.23 MB) Looking for connections in Dat Network... You can also do create and sync in separate steps if you’d like more control over the importing.\nCreating a Dat archive dat create [] [--import] Create a new Dat Archive in the current directory (or specify dir). Will automatically import the files in that directory to the archive.\nUse --import to import files after the archive is created. Syncing to Network dat sync [] [--no-import] [--no-watch] Start sharing your Dat Archive over the network. Sync will import new or updated files since you ran create or sync last. Sync watched files for changes and imports updated files.\nUse --no-import to not import any new or updated files. Use --no-watch to not watch directory for changes. --import must be true for --watch to work. Snapshot A snapshot archive shares a folder with specific content. Content can only be added once and then the link is created. Once a snapshot archive has a link, it cannot be updated.\ndat snapshot [] Snapshot will create the archive in snapshot, {live: false}, mode.\nDownloading Start downloading by running the clone command. This will create a folder, download the content and metadata, and create a .dat folder. Once you started the download, you can resume using clone or the other download commands.\ndat clone [] [--temp] Clone a remote Dat Archive to a local folder. This will create a folder with the key name is no folder is specified.\nOptions --temp: Creates a temporary database and does not save the metadata to disk.\nUpdating Downloaded Archives Once a Dat is clone, you can run either dat pull or dat sync in the folder to update the archive.\ndat pull [] Update a cloned Dat Archive to latest files and exit.\ndat sync [] Download latest files and keep connection open to continue updating as remote source is updated.\nShortcut commands dat {dir} will run dat clone for new dats or resume the exiting dat in dir dat {dir} is the same as running dat sync {dir} Dat Registry and Authentication As part of our Knight Foundation grant, we are building a registry for Dat archives. We will be running a Dat registry at datproject.org, but anyone will be able to create their own. Once registered, you will be able to publish Dat archives from our registry. Anyone can clone archives published to a registry without registration:\ndat clone datproject.org/karissa/more-tweets-more-votes Auth (experimental) Other auth commands are still in an experimental status. New registrations on the Dat archive registry are currently limited.\ndat register dat login dat logout dat whoami Once you are logged in to a server. You can publish a Dat archive:\ncd my-data dat create dat publish All authentication requests take the --server option. You can deploy your own compatible registry server if you’d rather use your own service.\nUpgrading from version 11 If you are familiar with the Dat CLI version 11, there will only be minor changes to use dat version 12.\nTo share files with Dat, you’ll need to specify the share command now.\ncd my-folder dat share my-folder After the Dat archive is created, you can run dat sync in the folder to share updates or use the same command as the old dat: dat my-folder.\nTo download files, you can use dat clone which will do the same thing as dat did before:\ndat clone dat:// download-folder Once the initial download is complete, you can use dat pull inside to folder to update or use the same command as the old dat: dat download-folder.\nTroubleshooting We’ve provided some troubleshooting tips based on issues users have seen. Please open an issue or ask us in our chat room if you need help troubleshooting and it is not covered here.\nIf you have trouble sharing/downloading in a directory with a .dat folder, try deleting it and running the command again.\nCheck Your Dat Version Knowing the version is really helpful if you run into any bugs, and will help us troubleshoot your issue.\nCheck your Dat version:\ndat -v You should see the Dat semantic version printed, e.g. 11.1.2.\nInstallation Issues Node \u0026 npm To use the Dat command line tool you will need to have node and npm installed. Make sure those are installed correctly before installing Dat. You can check the version of each:\nnode -v npm -v Global Install The -g option installs Dat globally allowing you to run it as a command. Make sure you installed with that option.\nIf you receive an EACCES error, read this guide on fixing npm permissions. If you receive an EACCES error, you may also install dat with sudo: sudo npm install -g dat. Have other installation issues? Let us know, you can open an issue or ask us in our chat room. Debugging Output If you are having trouble with a specific command, run with the debug environment variable set to dat (and optionally also dat-node). = This will help us debug any issues:\nDEBUG=dat,dat-node dat clone dat:// dir Networking Issues Networking capabilities vary widely with each computer, network, and configuration. Whenever you run a Dat there are several steps to share or download files with peers:\nDiscovering Peers Connecting to Peers Sending \u0026 Receiving Data With successful use, Dat will show Connected to 1 peer after connection. If you never see a peer connected your network may be restricting discovery or connection. Please try using the dat --doctor command (see below) between the two computers not connecting. This will help troubleshoot the networks.\nDat may have issues connecting if you are using iptables. Dat Doctor We’ve included a tool to identify network issues with Dat, the Dat doctor. The Dat doctor will run two tests:\nAttempt to connect to a server running a Dat peer. Attempt a direct connection between two peers. You will need to run the command on both the computers you are trying to share data between. Start the doctor by running:\ndat doctor For direct connection tests, the doctor will print out a command to run on the other computer, dat doctor \u003c64-character-string\u003e. The doctor will run through the key steps in the process of sharing data between computers to help identify the issue.\nJS API You can use Dat in your javascript application:\nvar Dat = require('dat') Dat('/data', function (err, dat) { // use dat }) Read more about the JS usage provided via dat-node.\n",
+  "wordCount" : "1912",
+  "inLanguage": "en",
+  "datePublished": "2022-05-21T10:54:24+02:00",
+  "dateModified": "2022-05-21T10:54:24+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/dat/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      dat - share files with version control
+    </h1>
+    <div class="post-meta"><span title='2022-05-21 10:54:24 +0200 +0200'>May 21, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><a href="https://github.com/datproject/dat">Dat</a> is the package manager for datasets. Share files with version control, back up data to servers, browse remote files on demand, and automate long-term data preservation. Secure, distributed, fast.</p>
+<h1 id="dat">Dat<a hidden class="anchor" aria-hidden="true" href="#dat">#</a></h1>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<p>Visit dat site for an <a href="http://datproject.org/install">installation guide</a> or pick your favorite client application</p>
+<h3 id="command-line-installation">Command Line Installation<a hidden class="anchor" aria-hidden="true" href="#command-line-installation">#</a></h3>
+<p>The Dat command line tool can be installed with <code>npm</code>. Make sure you have <code>node</code> version 4 or above and <code>npm</code> installed. You can run <code>node -v</code> and <code>npm -v</code> to check!</p>
+<p>Need to install Node? <a href="https://nodejs.org/en/download/">Start here</a>.</p>
+<p>Install <code>dat</code> from npm with the <code>--global, -g</code> option:</p>
+<pre tabindex="0"><code>npm install -g dat
+</code></pre><p>You should be able to run the <code>dat</code> command now. If not, see the <a href="#troubleshooting">installation troubleshooting</a> for tips.</p>
+<h2 id="getting-started">Getting started<a hidden class="anchor" aria-hidden="true" href="#getting-started">#</a></h2>
+<p>We have Dat installed, let&rsquo;s use it! Currently, the Dat command line always moves files from a single source to any number of destinations.
 If you are creating files on your computer to share, you will be the source and will use the <em>share</em> commands.
-Otherwise, you can <em>clone</em> files from remote Dat archives shared to you with a Dat link.</p><p>You can mostly get around in the Dat command line world with two commands:</p><h4 id=dat-share-dir><code>dat share &lt;dir&gt;</code></h4><p>Use <code>dat share</code> to send files from your computer to any number of other computers or servers.
+Otherwise, you can <em>clone</em> files from remote Dat archives shared to you with a Dat link.</p>
+<p>You can mostly get around in the Dat command line world with two commands:</p>
+<h4 id="dat-share-dir"><code>dat share &lt;dir&gt;</code><a hidden class="anchor" aria-hidden="true" href="#dat-share-dir">#</a></h4>
+<p>Use <code>dat share</code> to send files from your computer to any number of other computers or servers.
 This will share a local <code>&lt;dir&gt;</code> and print a <code>dat://</code> link.
-Send the printed link to other users so they can download your files.</p><p>Dat share will create a <code>.dat</code> directory in the folder you share.
-The <code>.dat</code> folder allows you to add new files and update old files on the same Dat link.</p><p><strong>Make sure not to share the <code>.dat</code> folder with anyone, it contains a private key that allows you to update and add files.</strong></p><p><img src=https://cloud.githubusercontent.com/assets/684965/22603762/91003186-e9fd-11e6-9138-f5c5045e7273.gif alt=share></p><h4 id=dat-clone-dat-link-download-dir><code>dat clone dat://&lt;link&gt; &lt;download-dir&gt;</code></h4><p>Use <code>dat clone</code> to download files from a remote computers sharing files with Dat.
+Send the printed link to other users so they can download your files.</p>
+<p>Dat share will create a <code>.dat</code> directory in the folder you share.
+The <code>.dat</code> folder allows you to add new files and update old files on the same Dat link.</p>
+<p><strong>Make sure not to share the <code>.dat</code> folder with anyone, it contains a private key that allows you to update and add files.</strong></p>
+<p><img loading="lazy" src="https://cloud.githubusercontent.com/assets/684965/22603762/91003186-e9fd-11e6-9138-f5c5045e7273.gif" alt="share"  />
+</p>
+<h4 id="dat-clone-datlink-download-dir"><code>dat clone dat://&lt;link&gt; &lt;download-dir&gt;</code><a hidden class="anchor" aria-hidden="true" href="#dat-clone-datlink-download-dir">#</a></h4>
+<p>Use <code>dat clone</code> to download files from a remote computers sharing files with Dat.
 This will download the files from <code>dat://&lt;link&gt;</code> to your <code>&lt;download-dir&gt;</code>.
-The download exits after it completes but you can continue to update the files later after the clone is done.</p><p><img src=https://cloud.githubusercontent.com/assets/684965/22602275/67f67be8-e9f7-11e6-889d-40895e50d263.gif alt=clone></p><h4 id=a-brief-primer-on-dat-links>A Brief Primer on <code>dat://</code> links</h4><p>You may have seen Dat links around: <code>dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code>. What is with the weird long string of characters? Let&rsquo;s break it down!</p><h5 id=dat-the-protocol><code>dat://</code> - the protocol</h5><p>The first part of the link is the link protocol, Dat (read about the Dat protocol at <a href=http://www.datprotocol.com>datprotocol.com</a>).
-The protocol describes what &ldquo;language&rdquo; the link is in and what type of applications can open it.</p><h5 id=ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93-the-unique-identifier><code>ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code> - the unique identifier</h5><p>The second part of the link is a 64-character hex strings (<a href=https://ed25519.cr.yp.to/>ed25519 public-keys</a> to be precise).
+The download exits after it completes but you can continue to update the files later after the clone is done.</p>
+<p><img loading="lazy" src="https://cloud.githubusercontent.com/assets/684965/22602275/67f67be8-e9f7-11e6-889d-40895e50d263.gif" alt="clone"  />
+</p>
+<h4 id="a-brief-primer-on-dat-links">A Brief Primer on <code>dat://</code> links<a hidden class="anchor" aria-hidden="true" href="#a-brief-primer-on-dat-links">#</a></h4>
+<p>You may have seen Dat links around: <code>dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code>. What is with the weird long string of characters? Let&rsquo;s break it down!</p>
+<h5 id="dat---the-protocol"><code>dat://</code> - the protocol<a hidden class="anchor" aria-hidden="true" href="#dat---the-protocol">#</a></h5>
+<p>The first part of the link is the link protocol, Dat (read about the Dat protocol at <a href="http://www.datprotocol.com">datprotocol.com</a>).
+The protocol describes what &ldquo;language&rdquo; the link is in and what type of applications can open it.</p>
+<h5 id="ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93---the-unique-identifier"><code>ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code> - the unique identifier<a hidden class="anchor" aria-hidden="true" href="#ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93---the-unique-identifier">#</a></h5>
+<p>The second part of the link is a 64-character hex strings (<a href="https://ed25519.cr.yp.to/">ed25519 public-keys</a> to be precise).
 Each Dat archive gets a public key link to identify it.
-With the hex string as a link we can do two things: 1) encrypt the data transfer and 2) give each archive a persistent identifier, an ID that never changes, even as file are updated (as opposed to a checksum which is based on the file contents).</p><h5 id=dat-ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93><code>dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code></h5><p>All together, the links can be thought of similarly to a web URL, as a place to get content, but with some extra special properties.
+With the hex string as a link we can do two things: 1) encrypt the data transfer and 2) give each archive a persistent identifier, an ID that never changes, even as file are updated (as opposed to a checksum which is based on the file contents).</p>
+<h5 id="datff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93"><code>dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93</code><a hidden class="anchor" aria-hidden="true" href="#datff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93">#</a></h5>
+<p>All together, the links can be thought of similarly to a web URL, as a place to get content, but with some extra special properties.
 Links point to a set of files instead of a specific server.
 This means when you run <code>dat clone dat://&lt;link&gt;</code> you do not have to worry about who is hosting the files at that link or if the content has changed.
-You&rsquo;ll always get the latest content in the network and the link helps to verify the integrity of the content!</p><p>Try out <code>dat clone</code> with the link above to read more about the protocol!</p><h3 id=demo-file-download>Demo File Download</h3><p>To get started using Dat, we can download files via Dat.
-Similar to git, you do this by running <code>dat clone</code>:</p><pre><code>dat clone dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 datprotocol-website
+You&rsquo;ll always get the latest content in the network and the link helps to verify the integrity of the content!</p>
+<p>Try out <code>dat clone</code> with the link above to read more about the protocol!</p>
+<h3 id="demo-file-download">Demo File Download<a hidden class="anchor" aria-hidden="true" href="#demo-file-download">#</a></h3>
+<p>To get started using Dat, we can download files via Dat.
+Similar to git, you do this by running <code>dat clone</code>:</p>
+<pre tabindex="0"><code>dat clone dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93 datprotocol-website
 
 Cloning Dat Archive: /Users/joe/Desktop/datprotocol-website
 Link: dat://ff34725120b2f3c5bd5028e4f61d14a45a22af48a7b12126d5d588becde88a93
@@ -30,8 +234,19 @@ Total size: 8 files (43.3 kB)
 2 peers on the Dat Network
 Downloading: 2.68 kB/s
 </code></pre><p>This will download the files shared at that link to a folder named datprotocol-website.
-These files are being shared by a server over Dat (to ensure high availability) but you may connect to any number of peers also hosting the content.</p><p>Get started using Dat today with the <code>share</code> and <code>clone</code> commands or read below for more details.</p><h2 id=usage>Usage</h2><p>Dat archives have a one to many relationship. There is a single source that can create and write files. There are many peers that can download the files <em>(in future versions there may be several sources)</em>.</p><ul><li><strong>Sharing</strong>: If you want to share files from your computer that you will update, you are the <em>source</em>.</li><li><strong>Downloading</strong>: If your colleague has files they want to share, they will be the source and you&rsquo;ll be downloading from a <em>remote</em> archive.</li></ul><p>The first time you run a command, a <code>.dat</code> folder to store the Dat metadata.
-Once a Dat is created, you can run all the commands inside that folder, similar to git.</p><h3 id=sharing>Sharing</h3><p>The quickest way to get started sharing files is to <code>share</code>:</p><pre><code>&gt; dat share
+These files are being shared by a server over Dat (to ensure high availability) but you may connect to any number of peers also hosting the content.</p>
+<p>Get started using Dat today with the <code>share</code> and <code>clone</code> commands or read below for more details.</p>
+<h2 id="usage">Usage<a hidden class="anchor" aria-hidden="true" href="#usage">#</a></h2>
+<p>Dat archives have a one to many relationship. There is a single source that can create and write files. There are many peers that can download the files <em>(in future versions there may be several sources)</em>.</p>
+<ul>
+<li><strong>Sharing</strong>: If you want to share files from your computer that you will update, you are the <em>source</em>.</li>
+<li><strong>Downloading</strong>: If your colleague has files they want to share, they will be the source and you&rsquo;ll be downloading from a <em>remote</em> archive.</li>
+</ul>
+<p>The first time you run a command, a <code>.dat</code> folder to store the Dat metadata.
+Once a Dat is created, you can run all the commands inside that folder, similar to git.</p>
+<h3 id="sharing">Sharing<a hidden class="anchor" aria-hidden="true" href="#sharing">#</a></h3>
+<p>The quickest way to get started sharing files is to <code>share</code>:</p>
+<pre tabindex="0"><code>&gt; dat share
 
 Syncing Dat Archive: /Users/joe/Desktop/datproject-website
 Link: dat://b44a53f3dcad90349ba743e21fca4869cd3fb79d9f8b55a556af04e5ad49bb79
@@ -40,51 +255,211 @@ Archive update finished! Sharing latest files.
 Total Size: 51 files (3.23 MB)
 
 Looking for connections in Dat Network...
-</code></pre><p>You can also do <code>create</code> and <code>sync</code> in separate steps if you&rsquo;d like more control over the importing.</p><h4 id=creating-a-dat-archive>Creating a Dat archive</h4><pre><code>dat create [&lt;folder&gt;] [--import]
+</code></pre><p>You can also do <code>create</code> and <code>sync</code> in separate steps if you&rsquo;d like more control over the importing.</p>
+<h4 id="creating-a-dat-archive">Creating a Dat archive<a hidden class="anchor" aria-hidden="true" href="#creating-a-dat-archive">#</a></h4>
+<pre tabindex="0"><code>dat create [&lt;folder&gt;] [--import]
 </code></pre><p>Create a new Dat Archive in the current directory (or specify <code>dir</code>).
-Will automatically import the files in that directory to the archive.</p><ul><li>Use <code>--import</code> to import files after the archive is created.</li></ul><h4 id=syncing-to-network>Syncing to Network</h4><pre><code>dat sync [&lt;folder&gt;] [--no-import] [--no-watch]
+Will automatically import the files in that directory to the archive.</p>
+<ul>
+<li>Use <code>--import</code> to import files after the archive is created.</li>
+</ul>
+<h4 id="syncing-to-network">Syncing to Network<a hidden class="anchor" aria-hidden="true" href="#syncing-to-network">#</a></h4>
+<pre tabindex="0"><code>dat sync [&lt;folder&gt;] [--no-import] [--no-watch]
 </code></pre><p>Start sharing your Dat Archive over the network.
 Sync will import new or updated files since you ran <code>create</code> or <code>sync</code> last.
-Sync watched files for changes and imports updated files.</p><ul><li>Use <code>--no-import</code> to not import any new or updated files.</li><li>Use <code>--no-watch</code> to not watch directory for changes. <code>--import</code> must be true for <code>--watch</code> to work.</li></ul><h4 id=snapshot>Snapshot</h4><p>A snapshot archive shares a folder with specific content. Content can only be added once and then the link is created. Once a snapshot archive has a link, it cannot be updated.</p><pre><code>dat snapshot [&lt;folder&gt;]
-</code></pre><p>Snapshot will create the archive in snapshot, <code>{live: false}</code>, mode.</p><h3 id=downloading>Downloading</h3><p>Start downloading by running the <code>clone</code> command. This will create a folder, download the content and metadata, and create a <code>.dat</code> folder. Once you started the download, you can resume using <code>clone</code> or the other download commands.</p><pre><code>dat clone &lt;dat-link&gt; [&lt;folder&gt;] [--temp]
+Sync watched files for changes and imports updated files.</p>
+<ul>
+<li>Use <code>--no-import</code> to not import any new or updated files.</li>
+<li>Use <code>--no-watch</code> to not watch directory for changes. <code>--import</code> must be true for <code>--watch</code> to work.</li>
+</ul>
+<h4 id="snapshot">Snapshot<a hidden class="anchor" aria-hidden="true" href="#snapshot">#</a></h4>
+<p>A snapshot archive shares a folder with specific content. Content can only be added once and then the link is created. Once a snapshot archive has a link, it cannot be updated.</p>
+<pre tabindex="0"><code>dat snapshot [&lt;folder&gt;]
+</code></pre><p>Snapshot will create the archive in snapshot, <code>{live: false}</code>, mode.</p>
+<h3 id="downloading">Downloading<a hidden class="anchor" aria-hidden="true" href="#downloading">#</a></h3>
+<p>Start downloading by running the <code>clone</code> command. This will create a folder, download the content and metadata, and create a <code>.dat</code> folder. Once you started the download, you can resume using <code>clone</code> or the other download commands.</p>
+<pre tabindex="0"><code>dat clone &lt;dat-link&gt; [&lt;folder&gt;] [--temp]
 </code></pre><p>Clone a remote Dat Archive to a local folder.
-This will create a folder with the key name is no folder is specified.</p><h5 id=options>Options</h5><p><code>--temp</code>: Creates a temporary database and does not save the metadata to disk.</p><h4 id=updating-downloaded-archives>Updating Downloaded Archives</h4><p>Once a Dat is clone, you can run either <code>dat pull</code> or <code>dat sync</code> in the folder to update the archive.</p><pre><code>dat pull [&lt;folder&gt;]
-</code></pre><p>Update a cloned Dat Archive to latest files and exit.</p><pre><code>dat sync [&lt;folder&gt;]
-</code></pre><p>Download latest files and keep connection open to continue updating as remote source is updated.</p><h3 id=shortcut-commands>Shortcut commands</h3><ul><li><code>dat &lt;link&gt; {dir}</code> will run <code>dat clone</code> for new dats or resume the exiting dat in <code>dir</code></li><li><code>dat {dir}</code> is the same as running <code>dat sync {dir}</code></li></ul><h3 id=dat-registry-and-authentication>Dat Registry and Authentication</h3><p>As part of our <a href=https://datproject.org/blog/2016-02-01-announcing-publicbits>Knight Foundation grant</a>, we are building a registry for Dat archives.
+This will create a folder with the key name is no folder is specified.</p>
+<h5 id="options">Options<a hidden class="anchor" aria-hidden="true" href="#options">#</a></h5>
+<p><code>--temp</code>: Creates a temporary database and does not save the metadata to disk.</p>
+<h4 id="updating-downloaded-archives">Updating Downloaded Archives<a hidden class="anchor" aria-hidden="true" href="#updating-downloaded-archives">#</a></h4>
+<p>Once a Dat is clone, you can run either <code>dat pull</code> or <code>dat sync</code> in the folder to update the archive.</p>
+<pre tabindex="0"><code>dat pull [&lt;folder&gt;]
+</code></pre><p>Update a cloned Dat Archive to latest files and exit.</p>
+<pre tabindex="0"><code>dat sync [&lt;folder&gt;]
+</code></pre><p>Download latest files and keep connection open to continue updating as remote source is updated.</p>
+<h3 id="shortcut-commands">Shortcut commands<a hidden class="anchor" aria-hidden="true" href="#shortcut-commands">#</a></h3>
+<ul>
+<li><code>dat &lt;link&gt; {dir}</code> will run <code>dat clone</code> for new dats or resume the exiting dat in <code>dir</code></li>
+<li><code>dat {dir}</code> is the same as running <code>dat sync {dir}</code></li>
+</ul>
+<h3 id="dat-registry-and-authentication">Dat Registry and Authentication<a hidden class="anchor" aria-hidden="true" href="#dat-registry-and-authentication">#</a></h3>
+<p>As part of our <a href="https://datproject.org/blog/2021-02-01-announcing-publicbits">Knight Foundation grant</a>, we are building a registry for Dat archives.
 We will be running a Dat registry at datproject.org, but anyone will be able to create their own.
 Once registered, you will be able to publish Dat archives from our registry.
-Anyone can clone archives published to a registry without registration:</p><pre><code>dat clone datproject.org/karissa/more-tweets-more-votes
-</code></pre><h4 id=auth-experimental>Auth (experimental)</h4><p>Other auth commands are still in an experimental status.
-New registrations on the Dat archive registry are currently limited.</p><pre><code>dat register
+Anyone can clone archives published to a registry without registration:</p>
+<pre tabindex="0"><code>dat clone datproject.org/karissa/more-tweets-more-votes
+</code></pre><h4 id="auth-experimental">Auth (experimental)<a hidden class="anchor" aria-hidden="true" href="#auth-experimental">#</a></h4>
+<p>Other auth commands are still in an experimental status.
+New registrations on the Dat archive registry are currently limited.</p>
+<pre tabindex="0"><code>dat register
 dat login
 dat logout
 dat whoami
-</code></pre><p>Once you are logged in to a server. You can publish a Dat archive:</p><pre><code>cd my-data
+</code></pre><p>Once you are logged in to a server. You can publish a Dat archive:</p>
+<pre tabindex="0"><code>cd my-data
 dat create
 dat publish
 </code></pre><p>All authentication requests take the <code>--server</code> option.
-You can deploy your own compatible <a href=https://github.com/datproject/datproject.org>registry server</a> if you&rsquo;d rather use your own service.</p><h3 id=upgrading-from-version-11>Upgrading from version 11</h3><p>If you are familiar with the Dat CLI version 11, there will only be minor changes to use dat version 12.</p><p>To share files with Dat, you&rsquo;ll need to specify the <code>share</code> command now.</p><pre><code>cd my-folder
+You can deploy your own compatible <a href="https://github.com/datproject/datproject.org">registry server</a> if you&rsquo;d rather use your own service.</p>
+<h3 id="upgrading-from-version-11">Upgrading from version 11<a hidden class="anchor" aria-hidden="true" href="#upgrading-from-version-11">#</a></h3>
+<p>If you are familiar with the Dat CLI version 11, there will only be minor changes to use dat version 12.</p>
+<p>To share files with Dat, you&rsquo;ll need to specify the <code>share</code> command now.</p>
+<pre tabindex="0"><code>cd my-folder
 dat share my-folder
-</code></pre><p>After the Dat archive is created, you can run <code>dat sync</code> in the folder to share updates or use the same command as the old dat: <code>dat my-folder</code>.</p><p>To download files, you can use <code>dat clone</code> which will do the same thing as <code>dat &lt;link&gt;</code> did before:</p><pre><code>dat clone dat://&lt;link&gt; download-folder
-</code></pre><p>Once the initial download is complete, you can use <code>dat pull</code> inside to folder to update or use the same command as the old dat: <code>dat download-folder</code>.</p><h2 id=troubleshooting>Troubleshooting</h2><p>We&rsquo;ve provided some troubleshooting tips based on issues users have seen.
-Please <a href=https://github.com/datproject/dat/issues/new>open an issue</a> or ask us in our <a href=https://gitter.im/datproject/discussions>chat room</a> if you need help troubleshooting and it is not covered here.</p><p>If you have trouble sharing/downloading in a directory with a <code>.dat</code> folder, try deleting it and running the command again.</p><h4 id=check-your-dat-version>Check Your Dat Version</h4><p>Knowing the version is really helpful if you run into any bugs, and will help us troubleshoot your issue.</p><p>Check your Dat version:</p><pre><code>dat -v
-</code></pre><p>You should see the Dat semantic version printed, e.g. 11.1.2.</p><h3 id=installation-issues>Installation Issues</h3><h4 id=node-npm>Node &amp; npm</h4><p>To use the Dat command line tool you will need to have <a href=https://docs.npmjs.com/getting-started/installing-node>node and npm installed</a>.
+</code></pre><p>After the Dat archive is created, you can run <code>dat sync</code> in the folder to share updates or use the same command as the old dat: <code>dat my-folder</code>.</p>
+<p>To download files, you can use <code>dat clone</code> which will do the same thing as <code>dat &lt;link&gt;</code> did before:</p>
+<pre tabindex="0"><code>dat clone dat://&lt;link&gt; download-folder
+</code></pre><p>Once the initial download is complete, you can use <code>dat pull</code> inside to folder to update or use the same command as the old dat: <code>dat download-folder</code>.</p>
+<h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
+<p>We&rsquo;ve provided some troubleshooting tips based on issues users have seen.
+Please <a href="https://github.com/datproject/dat/issues/new">open an issue</a> or ask us in our <a href="https://gitter.im/datproject/discussions">chat room</a> if you need help troubleshooting and it is not covered here.</p>
+<p>If you have trouble sharing/downloading in a directory with a <code>.dat</code> folder, try deleting it and running the command again.</p>
+<h4 id="check-your-dat-version">Check Your Dat Version<a hidden class="anchor" aria-hidden="true" href="#check-your-dat-version">#</a></h4>
+<p>Knowing the version is really helpful if you run into any bugs, and will help us troubleshoot your issue.</p>
+<p>Check your Dat version:</p>
+<pre tabindex="0"><code>dat -v
+</code></pre><p>You should see the Dat semantic version printed, e.g. 11.1.2.</p>
+<h3 id="installation-issues">Installation Issues<a hidden class="anchor" aria-hidden="true" href="#installation-issues">#</a></h3>
+<h4 id="node--npm">Node &amp; npm<a hidden class="anchor" aria-hidden="true" href="#node--npm">#</a></h4>
+<p>To use the Dat command line tool you will need to have <a href="https://docs.npmjs.com/getting-started/installing-node">node and npm installed</a>.
 Make sure those are installed correctly before installing Dat.
-You can check the version of each:</p><pre><code>node -v
+You can check the version of each:</p>
+<pre tabindex="0"><code>node -v
 npm -v
-</code></pre><h4 id=global-install>Global Install</h4><p>The <code>-g</code> option installs Dat globally allowing you to run it as a command.
-Make sure you installed with that option.</p><ul><li>If you receive an <code>EACCES</code> error, read <a href=https://docs.npmjs.com/getting-started/fixing-npm-permissions>this guide</a> on fixing npm permissions.</li><li>If you receive an <code>EACCES</code> error, you may also install dat with sudo: <code>sudo npm install -g dat</code>.</li><li>Have other installation issues? Let us know, you can <a href=https://github.com/datproject/dat/issues/new>open an issue</a> or ask us in our <a href=https://gitter.im/datproject/discussions>chat room</a>.</li></ul><h3 id=debugging-output>Debugging Output</h3><p>If you are having trouble with a specific command, run with the debug environment variable set to <code>dat</code> (and optionally also <code>dat-node</code>). =
-This will help us debug any issues:</p><pre><code>DEBUG=dat,dat-node dat clone dat://&lt;link&gt; dir
-</code></pre><h3 id=networking-issues>Networking Issues</h3><p>Networking capabilities vary widely with each computer, network, and configuration.
-Whenever you run a Dat there are several steps to share or download files with peers:</p><ol><li>Discovering Peers</li><li>Connecting to Peers</li><li>Sending &amp; Receiving Data</li></ol><p>With successful use, Dat will show <code>Connected to 1 peer</code> after connection.
+</code></pre><h4 id="global-install">Global Install<a hidden class="anchor" aria-hidden="true" href="#global-install">#</a></h4>
+<p>The <code>-g</code> option installs Dat globally allowing you to run it as a command.
+Make sure you installed with that option.</p>
+<ul>
+<li>If you receive an <code>EACCES</code> error, read <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions">this guide</a> on fixing npm permissions.</li>
+<li>If you receive an <code>EACCES</code> error, you may also install dat with sudo: <code>sudo npm install -g dat</code>.</li>
+<li>Have other installation issues? Let us know, you can <a href="https://github.com/datproject/dat/issues/new">open an issue</a> or ask us in our <a href="https://gitter.im/datproject/discussions">chat room</a>.</li>
+</ul>
+<h3 id="debugging-output">Debugging Output<a hidden class="anchor" aria-hidden="true" href="#debugging-output">#</a></h3>
+<p>If you are having trouble with a specific command, run with the debug environment variable set to <code>dat</code> (and optionally also <code>dat-node</code>). =
+This will help us debug any issues:</p>
+<pre tabindex="0"><code>DEBUG=dat,dat-node dat clone dat://&lt;link&gt; dir
+</code></pre><h3 id="networking-issues">Networking Issues<a hidden class="anchor" aria-hidden="true" href="#networking-issues">#</a></h3>
+<p>Networking capabilities vary widely with each computer, network, and configuration.
+Whenever you run a Dat there are several steps to share or download files with peers:</p>
+<ol>
+<li>Discovering Peers</li>
+<li>Connecting to Peers</li>
+<li>Sending &amp; Receiving Data</li>
+</ol>
+<p>With successful use, Dat will show <code>Connected to 1 peer</code> after connection.
 If you never see a peer connected your network may be restricting discovery or connection.
-Please try using the <code>dat --doctor</code> command (see below) between the two computers not connecting. This will help troubleshoot the networks.</p><ul><li>Dat may <a href=https://github.com/datproject/dat/issues/503>have issues</a> connecting if you are using iptables.</li></ul><h4 id=dat-doctor>Dat Doctor</h4><p>We&rsquo;ve included a tool to identify network issues with Dat, the Dat doctor.
-The Dat doctor will run two tests:</p><ol><li>Attempt to connect to a server running a Dat peer.</li><li>Attempt a direct connection between two peers. You will need to run the command on both the computers you are trying to share data between.</li></ol><p>Start the doctor by running:</p><pre><code>dat doctor
+Please try using the <code>dat --doctor</code> command (see below) between the two computers not connecting. This will help troubleshoot the networks.</p>
+<ul>
+<li>Dat may <a href="https://github.com/datproject/dat/issues/503">have issues</a> connecting if you are using iptables.</li>
+</ul>
+<h4 id="dat-doctor">Dat Doctor<a hidden class="anchor" aria-hidden="true" href="#dat-doctor">#</a></h4>
+<p>We&rsquo;ve included a tool to identify network issues with Dat, the Dat doctor.
+The Dat doctor will run two tests:</p>
+<ol>
+<li>Attempt to connect to a server running a Dat peer.</li>
+<li>Attempt a direct connection between two peers. You will need to run the command on both the computers you are trying to share data between.</li>
+</ol>
+<p>Start the doctor by running:</p>
+<pre tabindex="0"><code>dat doctor
 </code></pre><p>For direct connection tests, the doctor will print out a command to run on the other computer, <code>dat doctor &lt;64-character-string&gt;</code>.
-The doctor will run through the key steps in the process of sharing data between computers to help identify the issue.</p><hr><h2 id=js-api>JS API</h2><p>You can use Dat in your javascript application:</p><pre><code class=language-js>var Dat = require('dat')
+The doctor will run through the key steps in the process of sharing data between computers to help identify the issue.</p>
+<hr>
+<h2 id="js-api">JS API<a hidden class="anchor" aria-hidden="true" href="#js-api">#</a></h2>
+<p>You can use Dat in your javascript application:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Dat</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;dat&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Dat</span>(<span style="color:#e6db74">&#39;/data&#39;</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>, <span style="color:#a6e22e">dat</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// use dat
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>})
+</span></span></code></pre></div><p><strong><a href="https://github.com/datproject/dat-node">Read more</a> about the JS usage provided via <code>dat-node</code>.</strong></p>
 
-Dat('/data', function (err, dat) {
-  // use dat
-})
-</code></pre><p><strong><a href=https://github.com/datproject/dat-node>Read more</a> about the JS usage provided via <code>dat-node</code>.</strong></p></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/upterm/><section class=post><h2>upterm - interactive and autocompletion terminal</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/github/">github</a></li>
+      <li><a href="/tags/share-data/">share data</a></li>
+      <li><a href="/tags/package-manager/">package manager</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

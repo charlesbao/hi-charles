@@ -1,6 +1,6 @@
 ---
 title: jekyll-now - easier to create blog
-date: 2017-05-23
+date: 2022-05-23
 layout: post
 tags: [github,jekyll,static-website]
 ---

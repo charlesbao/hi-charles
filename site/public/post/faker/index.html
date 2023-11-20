@@ -1,27 +1,565 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="faker.js - generate massive amounts of fake data"><meta name=twitter:description content="faker.js - generate massive amounts of fake data in the browser and node.js"><meta property=og:title content="faker.js - generate massive amounts of fake data &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/faker/><meta property=og:type content=article><meta property=og:article:published_time content=2017-06-23T23:29:23&#43;08:00><meta property=og:article:tag content=github><meta property=og:article:tag content=javascript><title>faker.js - generate massive amounts of fake data &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/faker/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>faker.js - generate massive amounts of fake data</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/github/>GITHUB</a>
-<a href=/tags/javascript/>JAVASCRIPT</a>
-<time class=post-date datetime=2017-06-23T23:29:23&#43;08:00>23 Jun 2017</time></section></header><section class=post-content><blockquote><p><a href=https://github.com/Marak/faker.js>faker.js</a> - generate massive amounts of fake data in the browser and node.js</p></blockquote><h2 id=demo>Demo</h2><p><a href=https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html>https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html</a></p><h2 id=hosted-api-microservice>Hosted API Microservice</h2><p><a href=http://faker.hook.io/>http://faker.hook.io</a>
-- Supports all Faker API Methods
-- Full-Featured Microservice
-- Hosted by <a href=http://hook.io>hook.io</a></p><pre><code class=language-bash>curl http://faker.hook.io?property=name.findName&amp;locale=de
-</code></pre><h2 id=usage>Usage</h2><h3 id=browser>Browser</h3><pre><code>&lt;script src = &quot;faker.js&quot; type = &quot;text/javascript&quot;&gt;&lt;/script&gt;
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>faker.js - 产生大量虚假数据 | Hi!Charles</title>
+<meta name="keywords" content="github, javascript">
+<meta name="description" content="
+faker.js - 在浏览器和node.js中生成大量虚假数据
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/faker/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="faker.js - 产生大量虚假数据" />
+<meta property="og:description" content="
+faker.js - 在浏览器和node.js中生成大量虚假数据
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/faker/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-06-23T23:29:23+08:00" />
+<meta property="article:modified_time" content="2022-06-23T23:29:23+08:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="faker.js - 产生大量虚假数据"/>
+<meta name="twitter:description" content="
+faker.js - 在浏览器和node.js中生成大量虚假数据
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "faker.js - 产生大量虚假数据",
+      "item": "/post/faker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "faker.js - 产生大量虚假数据",
+  "name": "faker.js - 产生大量虚假数据",
+  "description": " faker.js - 在浏览器和node.js中生成大量虚假数据\n",
+  "keywords": [
+    "github", "javascript"
+  ],
+  "articleBody": " faker.js - 在浏览器和node.js中生成大量虚假数据\nDemo https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html\n托管API微服务 http://faker.hook.io\nSupports all Faker API Methods Full-Featured Microservice Hosted by hook.io curl http://faker.hook.io?property=name.findName\u0026locale=de 用法 浏览器 Node.js var faker = require('faker'); var randomName = faker.name.findName(); // Rowan Nikolaus var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz var randomCard = faker.helpers.createCard(); // random contact card containing many properties API Faker.fake() Faker.js包含一个非常有用的生成器方法Faker.fake，用于使用胡须字符串格式组合faker API方法。\nExample:\nconsole.log(faker.fake(\"{{name.lastName}}, {{name.firstName}} {{name.suffix}}\")); // outputs: \"Marks, Dean Sr.\" This will interpolate the format string with the value of methods name.lastName(), name.firstName(), and name.suffix()\nJSDoc API Browser http://marak.github.io/faker.js/\nAPI Methods address zipCode city cityPrefix citySuffix streetName streetAddress streetSuffix streetPrefix secondaryAddress county country countryCode state stateAbbr latitude longitude commerce color department productName price productAdjective productMaterial product company suffixes companyName companySuffix catchPhrase bs catchPhraseAdjective catchPhraseDescriptor catchPhraseNoun bsAdjective bsBuzz bsNoun database column type collation engine date past future between recent month weekday fake finance account accountName mask amount transactionType currencyCode currencyName currencySymbol bitcoinAddress iban bic hacker abbreviation adjective noun verb ingverb phrase helpers randomize slugify replaceSymbolWithNumber replaceSymbols shuffle mustache createCard contextualCard userCard createTransaction image image avatar imageUrl abstract animals business cats city food nightlife fashion people nature sports technics transport dataUri internet avatar email exampleEmail userName protocol url domainName domainSuffix domainWord ip ipv6 userAgent color mac password lorem word words sentence slug sentences paragraph paragraphs text lines name firstName lastName findName jobTitle prefix suffix title jobDescriptor jobArea jobType phone phoneNumber phoneNumberFormat phoneFormats random number arrayElement objectElement uuid boolean word words image locale alphaNumeric system fileName commonFileName mimeType commonFileType commonFileExt fileType fileExt directoryPath filePath semver Localization As of version v2.0.0 faker.js has support for multiple localities.\nThe default language locale is set to English.\nSetting a new locale is simple:\n// sets locale to de faker.locale = \"de\"; az cz de de_AT de_CH en en_AU en_BORK en_CA en_GB en_IE en_IND en_US en_au_ocker es es_MX fa fr fr_CA ge id_ID it ja ko nb_NO nep nl pl pt_BR ru sk sv tr uk vi zh_CN zh_TW Setting a randomness seed If you want consistent results, you can set your own seed:\nfaker.seed(123); var firstRandom = faker.random.number(); // Setting the seed again resets the sequence. faker.seed(123); var secondRandom = faker.random.number(); console.log(firstRandom === secondRandom); ",
+  "wordCount" : "384",
+  "inLanguage": "en",
+  "datePublished": "2022-06-23T23:29:23+08:00",
+  "dateModified": "2022-06-23T23:29:23+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/faker/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      faker.js - 产生大量虚假数据
+    </h1>
+    <div class="post-meta"><span title='2022-06-23 23:29:23 +0800 CST'>June 23, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p><a href="https://github.com/Marak/faker.js">faker.js</a> - 在浏览器和node.js中生成大量虚假数据</p>
+</blockquote>
+<h2 id="demo">Demo<a hidden class="anchor" aria-hidden="true" href="#demo">#</a></h2>
+<p><a href="https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html">https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html</a></p>
+<h2 id="托管api微服务">托管API微服务<a hidden class="anchor" aria-hidden="true" href="#托管api微服务">#</a></h2>
+<p><a href="http://faker.hook.io/">http://faker.hook.io</a></p>
+<ul>
+<li>Supports all Faker API Methods</li>
+<li>Full-Featured Microservice</li>
+<li>Hosted by <a href="http://hook.io">hook.io</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://faker.hook.io?property<span style="color:#f92672">=</span>name.findName&amp;locale<span style="color:#f92672">=</span>de
+</span></span></code></pre></div><h2 id="用法">用法<a hidden class="anchor" aria-hidden="true" href="#用法">#</a></h2>
+<h3 id="浏览器">浏览器<a hidden class="anchor" aria-hidden="true" href="#浏览器">#</a></h3>
+<pre><code>&lt;script src = &quot;faker.js&quot; type = &quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   var randomName = faker.name.findName(); // Caitlyn Kerluke
   var randomEmail = faker.internet.email(); // Rusty@arne.info
   var randomCard = faker.helpers.createCard(); // random contact card containing many properties
 &lt;/script&gt;
-</code></pre><h3 id=node-js>Node.js</h3><pre><code>var faker = require('faker');
+</code></pre>
+<h3 id="nodejs">Node.js<a hidden class="anchor" aria-hidden="true" href="#nodejs">#</a></h3>
+<pre><code>var faker = require('faker');
 
 var randomName = faker.name.findName(); // Rowan Nikolaus
 var randomEmail = faker.internet.email(); // Kassandra.Haley@erich.biz
 var randomCard = faker.helpers.createCard(); // random contact card containing many properties
-</code></pre><h2 id=api>API</h2><h3 id=faker-fake>Faker.fake()</h3><p>faker.js contains a super useful generator method <code>Faker.fake</code> for combining faker API methods using a mustache string format.</p><p><strong>Example:</strong></p><pre><code class=language-js>console.log(faker.fake(&quot;{{name.lastName}}, {{name.firstName}} {{name.suffix}}&quot;));
-// outputs: &quot;Marks, Dean Sr.&quot;
-</code></pre><p>This will interpolate the format string with the value of methods <code>name.lastName()</code>, <code>name.firstName()</code>, and <code>name.suffix()</code></p><h3 id=jsdoc-api-browser>JSDoc API Browser</h3><p><a href=http://marak.github.io/faker.js/>http://marak.github.io/faker.js/</a></p><h3 id=api-methods>API Methods</h3><ul><li>address<ul><li>zipCode</li><li>city</li><li>cityPrefix</li><li>citySuffix</li><li>streetName</li><li>streetAddress</li><li>streetSuffix</li><li>streetPrefix</li><li>secondaryAddress</li><li>county</li><li>country</li><li>countryCode</li><li>state</li><li>stateAbbr</li><li>latitude</li><li>longitude</li></ul></li><li>commerce<ul><li>color</li><li>department</li><li>productName</li><li>price</li><li>productAdjective</li><li>productMaterial</li><li>product</li></ul></li><li>company<ul><li>suffixes</li><li>companyName</li><li>companySuffix</li><li>catchPhrase</li><li>bs</li><li>catchPhraseAdjective</li><li>catchPhraseDescriptor</li><li>catchPhraseNoun</li><li>bsAdjective</li><li>bsBuzz</li><li>bsNoun</li></ul></li><li>database<ul><li>column</li><li>type</li><li>collation</li><li>engine</li></ul></li><li>date<ul><li>past</li><li>future</li><li>between</li><li>recent</li><li>month</li><li>weekday</li></ul></li><li>fake</li><li>finance<ul><li>account</li><li>accountName</li><li>mask</li><li>amount</li><li>transactionType</li><li>currencyCode</li><li>currencyName</li><li>currencySymbol</li><li>bitcoinAddress</li><li>iban</li><li>bic</li></ul></li><li>hacker<ul><li>abbreviation</li><li>adjective</li><li>noun</li><li>verb</li><li>ingverb</li><li>phrase</li></ul></li><li>helpers<ul><li>randomize</li><li>slugify</li><li>replaceSymbolWithNumber</li><li>replaceSymbols</li><li>shuffle</li><li>mustache</li><li>createCard</li><li>contextualCard</li><li>userCard</li><li>createTransaction</li></ul></li><li>image<ul><li>image</li><li>avatar</li><li>imageUrl</li><li>abstract</li><li>animals</li><li>business</li><li>cats</li><li>city</li><li>food</li><li>nightlife</li><li>fashion</li><li>people</li><li>nature</li><li>sports</li><li>technics</li><li>transport</li><li>dataUri</li></ul></li><li>internet<ul><li>avatar</li><li>email</li><li>exampleEmail</li><li>userName</li><li>protocol</li><li>url</li><li>domainName</li><li>domainSuffix</li><li>domainWord</li><li>ip</li><li>ipv6</li><li>userAgent</li><li>color</li><li>mac</li><li>password</li></ul></li><li>lorem<ul><li>word</li><li>words</li><li>sentence</li><li>slug</li><li>sentences</li><li>paragraph</li><li>paragraphs</li><li>text</li><li>lines</li></ul></li><li>name<ul><li>firstName</li><li>lastName</li><li>findName</li><li>jobTitle</li><li>prefix</li><li>suffix</li><li>title</li><li>jobDescriptor</li><li>jobArea</li><li>jobType</li></ul></li><li>phone<ul><li>phoneNumber</li><li>phoneNumberFormat</li><li>phoneFormats</li></ul></li><li>random<ul><li>number</li><li>arrayElement</li><li>objectElement</li><li>uuid</li><li>boolean</li><li>word</li><li>words</li><li>image</li><li>locale</li><li>alphaNumeric</li></ul></li><li>system<ul><li>fileName</li><li>commonFileName</li><li>mimeType</li><li>commonFileType</li><li>commonFileExt</li><li>fileType</li><li>fileExt</li><li>directoryPath</li><li>filePath</li><li>semver</li></ul></li></ul><h2 id=localization>Localization</h2><p>As of version <code>v2.0.0</code> faker.js has support for multiple localities.</p><p>The default language locale is set to English.</p><p>Setting a new locale is simple:</p><pre><code class=language-js>// sets locale to de
-faker.locale = &quot;de&quot;;
-</code></pre><ul><li>az</li><li>cz</li><li>de</li><li>de_AT</li><li>de_CH</li><li>en</li><li>en_AU</li><li>en_BORK</li><li>en_CA</li><li>en_GB</li><li>en_IE</li><li>en_IND</li><li>en_US</li><li>en_au_ocker</li><li>es</li><li>es_MX</li><li>fa</li><li>fr</li><li>fr_CA</li><li>ge</li><li>id_ID</li><li>it</li><li>ja</li><li>ko</li><li>nb_NO</li><li>nep</li><li>nl</li><li>pl</li><li>pt_BR</li><li>ru</li><li>sk</li><li>sv</li><li>tr</li><li>uk</li><li>vi</li><li>zh_CN</li><li>zh_TW</li></ul><h2 id=setting-a-randomness-seed>Setting a randomness seed</h2><p>If you want consistent results, you can set your own seed:</p><p>```js
-faker.seed(123);</p><p>var firstRandom = faker.random.number();</p><p>// Setting the seed again resets the sequence.
-faker.seed(123);</p><p>var secondRandom = faker.random.number();</p><p>console.log(firstRandom === secondRandom);</p></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/json-server/><section class=post><h2>json-server - Get a full fake REST API with zero coding</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</code></pre>
+<h2 id="api">API<a hidden class="anchor" aria-hidden="true" href="#api">#</a></h2>
+<h3 id="fakerfake">Faker.fake()<a hidden class="anchor" aria-hidden="true" href="#fakerfake">#</a></h3>
+<p>Faker.js包含一个非常有用的生成器方法<code>Faker.fake</code>，用于使用胡须字符串格式组合faker API方法。</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">fake</span>(<span style="color:#e6db74">&#34;{{name.lastName}}, {{name.firstName}} {{name.suffix}}&#34;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// outputs: &#34;Marks, Dean Sr.&#34;
+</span></span></span></code></pre></div><p>This will interpolate the format string with the value of methods <code>name.lastName()</code>, <code>name.firstName()</code>, and <code>name.suffix()</code></p>
+<h3 id="jsdoc-api-browser">JSDoc API Browser<a hidden class="anchor" aria-hidden="true" href="#jsdoc-api-browser">#</a></h3>
+<p><a href="http://marak.github.io/faker.js/">http://marak.github.io/faker.js/</a></p>
+<h3 id="api-methods">API Methods<a hidden class="anchor" aria-hidden="true" href="#api-methods">#</a></h3>
+<ul>
+<li>address
+<ul>
+<li>zipCode</li>
+<li>city</li>
+<li>cityPrefix</li>
+<li>citySuffix</li>
+<li>streetName</li>
+<li>streetAddress</li>
+<li>streetSuffix</li>
+<li>streetPrefix</li>
+<li>secondaryAddress</li>
+<li>county</li>
+<li>country</li>
+<li>countryCode</li>
+<li>state</li>
+<li>stateAbbr</li>
+<li>latitude</li>
+<li>longitude</li>
+</ul>
+</li>
+<li>commerce
+<ul>
+<li>color</li>
+<li>department</li>
+<li>productName</li>
+<li>price</li>
+<li>productAdjective</li>
+<li>productMaterial</li>
+<li>product</li>
+</ul>
+</li>
+<li>company
+<ul>
+<li>suffixes</li>
+<li>companyName</li>
+<li>companySuffix</li>
+<li>catchPhrase</li>
+<li>bs</li>
+<li>catchPhraseAdjective</li>
+<li>catchPhraseDescriptor</li>
+<li>catchPhraseNoun</li>
+<li>bsAdjective</li>
+<li>bsBuzz</li>
+<li>bsNoun</li>
+</ul>
+</li>
+<li>database
+<ul>
+<li>column</li>
+<li>type</li>
+<li>collation</li>
+<li>engine</li>
+</ul>
+</li>
+<li>date
+<ul>
+<li>past</li>
+<li>future</li>
+<li>between</li>
+<li>recent</li>
+<li>month</li>
+<li>weekday</li>
+</ul>
+</li>
+<li>fake</li>
+<li>finance
+<ul>
+<li>account</li>
+<li>accountName</li>
+<li>mask</li>
+<li>amount</li>
+<li>transactionType</li>
+<li>currencyCode</li>
+<li>currencyName</li>
+<li>currencySymbol</li>
+<li>bitcoinAddress</li>
+<li>iban</li>
+<li>bic</li>
+</ul>
+</li>
+<li>hacker
+<ul>
+<li>abbreviation</li>
+<li>adjective</li>
+<li>noun</li>
+<li>verb</li>
+<li>ingverb</li>
+<li>phrase</li>
+</ul>
+</li>
+<li>helpers
+<ul>
+<li>randomize</li>
+<li>slugify</li>
+<li>replaceSymbolWithNumber</li>
+<li>replaceSymbols</li>
+<li>shuffle</li>
+<li>mustache</li>
+<li>createCard</li>
+<li>contextualCard</li>
+<li>userCard</li>
+<li>createTransaction</li>
+</ul>
+</li>
+<li>image
+<ul>
+<li>image</li>
+<li>avatar</li>
+<li>imageUrl</li>
+<li>abstract</li>
+<li>animals</li>
+<li>business</li>
+<li>cats</li>
+<li>city</li>
+<li>food</li>
+<li>nightlife</li>
+<li>fashion</li>
+<li>people</li>
+<li>nature</li>
+<li>sports</li>
+<li>technics</li>
+<li>transport</li>
+<li>dataUri</li>
+</ul>
+</li>
+<li>internet
+<ul>
+<li>avatar</li>
+<li>email</li>
+<li>exampleEmail</li>
+<li>userName</li>
+<li>protocol</li>
+<li>url</li>
+<li>domainName</li>
+<li>domainSuffix</li>
+<li>domainWord</li>
+<li>ip</li>
+<li>ipv6</li>
+<li>userAgent</li>
+<li>color</li>
+<li>mac</li>
+<li>password</li>
+</ul>
+</li>
+<li>lorem
+<ul>
+<li>word</li>
+<li>words</li>
+<li>sentence</li>
+<li>slug</li>
+<li>sentences</li>
+<li>paragraph</li>
+<li>paragraphs</li>
+<li>text</li>
+<li>lines</li>
+</ul>
+</li>
+<li>name
+<ul>
+<li>firstName</li>
+<li>lastName</li>
+<li>findName</li>
+<li>jobTitle</li>
+<li>prefix</li>
+<li>suffix</li>
+<li>title</li>
+<li>jobDescriptor</li>
+<li>jobArea</li>
+<li>jobType</li>
+</ul>
+</li>
+<li>phone
+<ul>
+<li>phoneNumber</li>
+<li>phoneNumberFormat</li>
+<li>phoneFormats</li>
+</ul>
+</li>
+<li>random
+<ul>
+<li>number</li>
+<li>arrayElement</li>
+<li>objectElement</li>
+<li>uuid</li>
+<li>boolean</li>
+<li>word</li>
+<li>words</li>
+<li>image</li>
+<li>locale</li>
+<li>alphaNumeric</li>
+</ul>
+</li>
+<li>system
+<ul>
+<li>fileName</li>
+<li>commonFileName</li>
+<li>mimeType</li>
+<li>commonFileType</li>
+<li>commonFileExt</li>
+<li>fileType</li>
+<li>fileExt</li>
+<li>directoryPath</li>
+<li>filePath</li>
+<li>semver</li>
+</ul>
+</li>
+</ul>
+<h2 id="localization">Localization<a hidden class="anchor" aria-hidden="true" href="#localization">#</a></h2>
+<p>As of version <code>v2.0.0</code> faker.js has support for multiple localities.</p>
+<p>The default language locale is set to English.</p>
+<p>Setting a new locale is simple:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// sets locale to de
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">locale</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;de&#34;</span>;
+</span></span></code></pre></div><ul>
+<li>az</li>
+<li>cz</li>
+<li>de</li>
+<li>de_AT</li>
+<li>de_CH</li>
+<li>en</li>
+<li>en_AU</li>
+<li>en_BORK</li>
+<li>en_CA</li>
+<li>en_GB</li>
+<li>en_IE</li>
+<li>en_IND</li>
+<li>en_US</li>
+<li>en_au_ocker</li>
+<li>es</li>
+<li>es_MX</li>
+<li>fa</li>
+<li>fr</li>
+<li>fr_CA</li>
+<li>ge</li>
+<li>id_ID</li>
+<li>it</li>
+<li>ja</li>
+<li>ko</li>
+<li>nb_NO</li>
+<li>nep</li>
+<li>nl</li>
+<li>pl</li>
+<li>pt_BR</li>
+<li>ru</li>
+<li>sk</li>
+<li>sv</li>
+<li>tr</li>
+<li>uk</li>
+<li>vi</li>
+<li>zh_CN</li>
+<li>zh_TW</li>
+</ul>
+<h2 id="setting-a-randomness-seed">Setting a randomness seed<a hidden class="anchor" aria-hidden="true" href="#setting-a-randomness-seed">#</a></h2>
+<p>If you want consistent results, you can set your own seed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">seed</span>(<span style="color:#ae81ff">123</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">firstRandom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">number</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Setting the seed again resets the sequence.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">seed</span>(<span style="color:#ae81ff">123</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">secondRandom</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">faker</span>.<span style="color:#a6e22e">random</span>.<span style="color:#a6e22e">number</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">firstRandom</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">secondRandom</span>);
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/github/">github</a></li>
+      <li><a href="/tags/javascript/">javascript</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

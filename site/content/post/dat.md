@@ -1,5 +1,5 @@
 ---
-date: "2017-05-21T10:54:24+02:00"
+date: "2022-05-21T10:54:24+02:00"
 tags: ["github","share data","package manager"]
 title: "dat - share files with version control"
 ---
@@ -203,7 +203,7 @@ Download latest files and keep connection open to continue updating as remote so
 
 ### Dat Registry and Authentication
 
-As part of our [Knight Foundation grant](https://datproject.org/blog/2016-02-01-announcing-publicbits), we are building a registry for Dat archives.
+As part of our [Knight Foundation grant](https://datproject.org/blog/2021-02-01-announcing-publicbits), we are building a registry for Dat archives.
 We will be running a Dat registry at datproject.org, but anyone will be able to create their own.
 Once registered, you will be able to publish Dat archives from our registry.
 Anyone can clone archives published to a registry without registration:

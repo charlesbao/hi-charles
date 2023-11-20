@@ -1,9 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>node on Hi!Charles</title><link>/tags/node/</link><description>Recent content in node on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/node/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx 反向代理缓存配置</title><link>/post/nginx-conf/</link><pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate><guid>/post/nginx-conf/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>node on Hi!Charles</title>
+    <link>/tags/node/</link>
+    <description>Recent content in node on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx 反向代理缓存配置</title>
+      <link>/post/nginx-conf/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nginx-conf/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;缓存Nginx服务器中的文件,便于缓存以减轻服务器的压力&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>Node&amp;Express 创建HTTPS文件服务器</title><link>/post/node_https/</link><pubDate>Sun, 28 May 2017 00:00:00 +0000</pubDate><guid>/post/node_https/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node&amp;Express 创建HTTPS文件服务器</title>
+      <link>/post/node_https/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/node_https/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;利用nginx nodejs express创建一个https服务器&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>pm2 为nodejs应用保驾护航</title><link>/post/node_pm2/</link><pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate><guid>/post/node_pm2/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>pm2 为nodejs应用保驾护航</title>
+      <link>/post/node_pm2/</link>
+      <pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/node_pm2/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;PM2 是一个带有负载均衡功能的Node应用的进程管理器，其对Node应用的管理能力出众！&lt;/p&gt;
-&lt;/blockquote&gt;</description></item><item><title>nginx&#43;nodejs 搭建单端口多站点服务</title><link>/post/nginx_node/</link><pubDate>Wed, 24 May 2017 00:00:00 +0000</pubDate><guid>/post/nginx_node/</guid><description>&lt;blockquote&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>nginx&#43;nodejs 搭建单端口多站点服务</title>
+      <link>/post/nginx_node/</link>
+      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nginx_node/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;PHP可以使用apache或nginx进行多站点搭建，而nodejs也可以实现。&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

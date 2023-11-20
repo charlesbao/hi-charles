@@ -1,5 +1,5 @@
 +++
-date = "2017-06-01T00:00:00Z"
+date = "2022-06-01T00:00:00Z"
 tags = ["linux","方法"]
 title = "Linux Screen 命令"
 +++

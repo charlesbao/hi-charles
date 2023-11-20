@@ -1,5 +1,5 @@
 +++
-date = "2017-05-26T00:00:00Z"
+date = "2022-05-26T00:00:00Z"
 tags = ["ngrok","linux","vpn","脚本"]
 title = "Ngrok 内网穿透安装脚本"
 

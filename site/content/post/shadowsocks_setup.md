@@ -1,5 +1,5 @@
 +++
-date = "2017-05-25T00:00:00Z"
+date = "2022-05-25T00:00:00Z"
 tags = ["vpn","linux","脚本"]
 title = "搭建shadowsocks 超越翻墙的翻墙方式"
 draft = true

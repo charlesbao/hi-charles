@@ -1,93 +1,337 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content="json-server - Get a full fake REST API with zero coding"><meta name=twitter:description content="json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)"><meta property=og:title content="json-server - Get a full fake REST API with zero coding &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/json-server/><meta property=og:type content=article><meta property=og:article:published_time content=2017-06-22T23:32:28&#43;08:00><meta property=og:article:tag content=github><meta property=og:article:tag content=javascript><title>json-server - Get a full fake REST API with zero coding &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/json-server/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>json-server - Get a full fake REST API with zero coding</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/github/>GITHUB</a>
-<a href=/tags/javascript/>JAVASCRIPT</a>
-<time class=post-date datetime=2017-06-22T23:32:28&#43;08:00>22 Jun 2017</time></section></header><section class=post-content><blockquote><p><a href=https://github.com/typicode/json-server>json-server</a> get a full fake REST API with <strong>zero coding</strong> in <strong>less than 30 seconds</strong> (seriously)</p></blockquote><p><strong>json-server</strong> created with &lt;3 for front-end developers who need a quick back-end for prototyping and mocking.</p><h2 id=example>Example</h2><p>Create a <code>db.json</code> file</p><pre><code class=language-json>{
-  &quot;posts&quot;: [
-    { &quot;id&quot;: 1, &quot;title&quot;: &quot;json-server&quot;, &quot;author&quot;: &quot;typicode&quot; }
-  ],
-  &quot;comments&quot;: [
-    { &quot;id&quot;: 1, &quot;body&quot;: &quot;some comment&quot;, &quot;postId&quot;: 1 }
-  ],
-  &quot;profile&quot;: { &quot;name&quot;: &quot;typicode&quot; }
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>json-server - Get a full fake REST API with zero coding | Hi!Charles</title>
+<meta name="keywords" content="github, javascript">
+<meta name="description" content="
+json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/json-server/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="json-server - Get a full fake REST API with zero coding" />
+<meta property="og:description" content="
+json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/json-server/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-22T23:32:28+08:00" />
+<meta property="article:modified_time" content="2021-06-22T23:32:28+08:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="json-server - Get a full fake REST API with zero coding"/>
+<meta name="twitter:description" content="
+json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "json-server - Get a full fake REST API with zero coding",
+      "item": "/post/json-server/"
+    }
+  ]
 }
-</code></pre><p>Start JSON Server</p><pre><code class=language-bash>$ json-server --watch db.json
-</code></pre><p>Now if you go to [<a href=http://localhost:3000/posts/1](>http://localhost:3000/posts/1](</a>), you&rsquo;ll get</p><pre><code class=language-json>{ &quot;id&quot;: 1, &quot;title&quot;: &quot;json-server&quot;, &quot;author&quot;: &quot;typicode&quot; }
-</code></pre><p>Also when doing requests, it&rsquo;s good to know that:</p><ul><li>If you make POST, PUT, PATCH or DELETE requests, changes will be automatically and safely saved to <code>db.json</code> using <a href=https://github.com/typicode/lowdb>lowdb</a>.</li><li>Your request body JSON should be object enclosed, just like the GET output. (for example <code>{&quot;name&quot;: &quot;Foobar&quot;}</code>)</li><li>Id values are not mutable. Any <code>id</code> value in the body of your PUT or PATCH request wil be ignored. Only a value set in a POST request wil be respected, but only if not already taken.</li><li>A POST, PUT or PATCH request should include a <code>Content-Type: application/json</code> header to use the JSON in the request body. Otherwise it will result in a 200 OK but without changes being made to the data.</li></ul><h2 id=install>Install</h2><pre><code class=language-bash>$ npm install -g json-server
-</code></pre><h2 id=routes>Routes</h2><p>Based on the previous <code>db.json</code> file, here are all the default routes. You can also add <a href=#add-custom-routes>other routes</a> using <code>--routes</code>.</p><h3 id=plural-routes>Plural routes</h3><pre><code>GET    /posts
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "json-server - Get a full fake REST API with zero coding",
+  "name": "json-server - Get a full fake REST API with zero coding",
+  "description": " json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)\n",
+  "keywords": [
+    "github", "javascript"
+  ],
+  "articleBody": " json-server get a full fake REST API with zero coding in less than 30 seconds (seriously)\njson-server created with \u003c3 for front-end developers who need a quick back-end for prototyping and mocking.\nExample Create a db.json file\n{ \"posts\": [ { \"id\": 1, \"title\": \"json-server\", \"author\": \"typicode\" } ], \"comments\": [ { \"id\": 1, \"body\": \"some comment\", \"postId\": 1 } ], \"profile\": { \"name\": \"typicode\" } } Start JSON Server\n$ json-server --watch db.json Now if you go to http://localhost:3000/posts/1, you’ll get\n{ \"id\": 1, \"title\": \"json-server\", \"author\": \"typicode\" } Also when doing requests, it’s good to know that:\nIf you make POST, PUT, PATCH or DELETE requests, changes will be automatically and safely saved to db.json using lowdb. Your request body JSON should be object enclosed, just like the GET output. (for example {\"name\": \"Foobar\"}) Id values are not mutable. Any id value in the body of your PUT or PATCH request wil be ignored. Only a value set in a POST request wil be respected, but only if not already taken. A POST, PUT or PATCH request should include a Content-Type: application/json header to use the JSON in the request body. Otherwise it will result in a 200 OK but without changes being made to the data. Install $ npm install -g json-server Routes Based on the previous db.json file, here are all the default routes. You can also add other routes using --routes.\nPlural routes GET /posts GET /posts/1 POST /posts PUT /posts/1 PATCH /posts/1 DELETE /posts/1 Singular routes GET /profile POST /profile PUT /profile PATCH /profile Filter Use . to access deep properties\nGET /posts?title=json-server\u0026author=typicode GET /posts?id=1\u0026id=2 GET /comments?author.name=typicode Paginate Use _page and optionally _limit to paginate returned data.\nIn the Link header you’ll get first, prev, next and last links.\nGET /posts?_page=7 GET /posts?_page=7\u0026_limit=20 10 items are returned by default\nSort Add _sort and _order (ascending order by default)\nGET /posts?_sort=views\u0026_order=asc GET /posts/1/comments?_sort=votes\u0026_order=asc For multiple fields, use the following format:\nGET /posts?_sort=user,views\u0026_order=desc,asc Slice Add _start and _end or _limit (an X-Total-Count header is included in the response)\nGET /posts?_start=20\u0026_end=30 GET /posts/1/comments?_start=20\u0026_end=30 GET /posts/1/comments?_start=20\u0026_limit=10 Works exactly as Array.slice (i.e. _start is inclusive and _end exclusive)\nOperators Add _gte or _lte for getting a range\nGET /posts?views_gte=10\u0026views_lte=20 Add _ne to exclude a value\nGET /posts?id_ne=1 Add _like to filter (RegExp supported)\nGET /posts?title_like=server Full-text search Add q\nGET /posts?q=internet Relationships To include children resources, add _embed\nGET /posts?_embed=comments GET /posts/1?_embed=comments To include parent resource, add _expand\nGET /comments?_expand=post GET /comments/1?_expand=post To get or create nested resources (by default one level, add custom routes for more)\nGET /posts/1/comments POST /posts/1/comments Database GET /db Homepage Returns default index file or serves ./public directory\nGET / Extras Static file server You can use JSON Server to serve your HTML, JS and CSS, simply create a ./public directory or use --static to set a different static files directory.\nmkdir public echo 'hello world' \u003e public/index.html json-server db.json json-server db.json --static ./some-other-dir Alternative port You can start JSON Server on other ports with the --port flag:\n$ json-server --watch db.json --port 3004 Access from anywhere You can access your fake API from anywhere using CORS and JSONP.\nRemote schema You can load remote schemas.\n$ json-server http://example.com/file.json $ json-server http://jsonplaceholder.typicode.com/db Generate random data Using JS instead of a JSON file, you can create data programmatically.\n// index.js module.exports = () =\u003e { const data = { users: [] } // Create 1000 users for (let i = 0; i \u003c 1000; i++) { data.users.push({ id: i, name: `user${i}` }) } return data } $ json-server index.js Tip use modules like Faker, Casual, Chance or JSON Schema Faker.\nHTTPS There’s many way to set up SSL in development. One simple way though is to use hotel.\nAdd custom routes Create a routes.json file. Pay attention to start every route with /.\n{ \"/api/\": \"/\", \"/blog/:resource/:id/show\": \"/:resource/:id\", \"/blog/:category\": \"/posts?category=:category\" } Start JSON Server with --routes option.\njson-server db.json --routes routes.json Now you can access resources using additional routes.\n/api/posts # → /posts /api/posts/1 # → /posts/1 /blog/posts/1/show # → /posts/1 /blog/javascript # → /posts?category=javascript Add middlewares You can add your middlewares from the CLI using --middlewares option:\n// hello.js module.exports = (req, res, next) =\u003e { res.header('X-Hello', 'World') next() } json-server db.json --middlewares ./hello.js json-server db.json --middlewares ./first.js ./second.js CLI usage json-server [options] Options: --config, -c Path to config file [default: \"json-server.json\"] --port, -p Set port [default: 3000] --host, -H Set host [default: \"0.0.0.0\"] --watch, -w Watch file(s) [boolean] --routes, -r Path to routes file --middlewares, -m Paths to middleware files [array] --static, -s Set static files directory --read-only, --ro Allow only GET requests [boolean] --no-cors, --nc Disable Cross-Origin Resource Sharing [boolean] --no-gzip, --ng Disable GZIP Content-Encoding [boolean] --snapshots, -S Set snapshots directory [default: \".\"] --delay, -d Add delay to responses (ms) --id, -i Set database id property (e.g. _id) [default: \"id\"] --quiet, -q Suppress log messages from output [boolean] --help, -h Show help [boolean] --version, -v Show version number [boolean] Examples: json-server db.json json-server file.js json-server http://example.com/db.json https://github.com/typicode/json-server You can also set options in a json-server.json configuration file.\n{ \"port\": 3000 } Module If you need to add authentication, validation, or any behavior, you can use the project as a module in combination with other Express middlewares.\nSimple example $ npm install json-server --save-dev // server.js const jsonServer = require('json-server') const server = jsonServer.create() const router = jsonServer.router('db.json') const middlewares = jsonServer.defaults() server.use(middlewares) server.use(router) server.listen(3000, () =\u003e { console.log('JSON Server is running') }) $ node server.js The path you provide to the jsonServer.router function is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:\nconst path = require('path') const router = jsonServer.router(path.join(__dirname, 'db.json')) For an in-memory database, simply pass an object to jsonServer.router().\nPlease note also that jsonServer.router() can be used in existing Express projects.\nCustom routes example Let’s say you want a route that echoes query parameters and another one that set a timestamp on every resource created.\nconst jsonServer = require('json-server') const server = jsonServer.create() const router = jsonServer.router('db.json') const middlewares = jsonServer.defaults() // Set default middlewares (logger, static, cors and no-cache) server.use(middlewares) // Add custom routes before JSON Server router server.get('/echo', (req, res) =\u003e { res.jsonp(req.query) }) // To handle POST, PUT and PATCH you need to use a body-parser // You can use the one used by JSON Server server.use(jsonServer.bodyParser) server.use((req, res, next) =\u003e { if (req.method === 'POST') { req.body.createdAt = Date.now() } // Continue to JSON Server router next() }) // Use default router server.use(router) server.listen(3000, () =\u003e { console.log('JSON Server is running') }) Access control example const jsonServer = require('json-server') const server = jsonServer.create() const router = jsonServer.router('db.json') const middlewares = jsonServer.defaults() server.use(middlewares) server.use((req, res, next) =\u003e { if (isAuthorized(req)) { // add your authorization logic here next() // continue to JSON Server router } else { res.sendStatus(401) } }) server.use(router) server.listen(3000, () =\u003e { console.log('JSON Server is running') }) Custom output example To modify responses, overwrite router.render method:\n// In this example, returned resources will be wrapped in a body property router.render = (req, res) =\u003e { res.jsonp({ body: res.locals.data }) } Rewriter example To add rewrite rules, use jsonServer.rewriter():\n// Add this before server.use(router) server.use(jsonServer.rewriter({ '/api/': '/', '/blog/:resource/:id/show': '/:resource/:id' })) Mounting JSON Server on another endpoint example Alternatively, you can also mount the router on /api.\nserver.use('/api', router) Deployment You can deploy JSON Server. For example, JSONPlaceholder is an online fake API powered by JSON Server and running on Heroku.\nLinks Video Creating Demo APIs with json-server on egghead.io ",
+  "wordCount" : "1264",
+  "inLanguage": "en",
+  "datePublished": "2021-06-22T23:32:28+08:00",
+  "dateModified": "2021-06-22T23:32:28+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/json-server/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      json-server - Get a full fake REST API with zero coding
+    </h1>
+    <div class="post-meta"><span title='2021-06-22 23:32:28 +0800 CST'>June 22, 2021</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p><a href="https://github.com/typicode/json-server">json-server</a> get a full fake REST API with <strong>zero coding</strong> in <strong>less than 30 seconds</strong> (seriously)</p>
+</blockquote>
+<p><strong>json-server</strong> created with &lt;3 for front-end developers who need a quick back-end for prototyping and mocking.</p>
+<h2 id="example">Example<a hidden class="anchor" aria-hidden="true" href="#example">#</a></h2>
+<p>Create a <code>db.json</code> file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;posts&#34;</span>: [
+</span></span><span style="display:flex;"><span>    { <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;json-server&#34;</span>, <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;typicode&#34;</span> }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;comments&#34;</span>: [
+</span></span><span style="display:flex;"><span>    { <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#e6db74">&#34;some comment&#34;</span>, <span style="color:#f92672">&#34;postId&#34;</span>: <span style="color:#ae81ff">1</span> }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;profile&#34;</span>: { <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;typicode&#34;</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Start JSON Server</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ json-server --watch db.json
+</span></span></code></pre></div><p>Now if you go to <a href="">http://localhost:3000/posts/1</a>, you&rsquo;ll get</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;json-server&#34;</span>, <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;typicode&#34;</span> }
+</span></span></code></pre></div><p>Also when doing requests, it&rsquo;s good to know that:</p>
+<ul>
+<li>If you make POST, PUT, PATCH or DELETE requests, changes will be automatically and safely saved to <code>db.json</code> using <a href="https://github.com/typicode/lowdb">lowdb</a>.</li>
+<li>Your request body JSON should be object enclosed, just like the GET output. (for example <code>{&quot;name&quot;: &quot;Foobar&quot;}</code>)</li>
+<li>Id values are not mutable. Any <code>id</code> value in the body of your PUT or PATCH request wil be ignored. Only a value set in a POST request wil be respected, but only if not already taken.</li>
+<li>A POST, PUT or PATCH request should include a <code>Content-Type: application/json</code> header to use the JSON in the request body. Otherwise it will result in a 200 OK but without changes being made to the data.</li>
+</ul>
+<h2 id="install">Install<a hidden class="anchor" aria-hidden="true" href="#install">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ npm install -g json-server
+</span></span></code></pre></div><h2 id="routes">Routes<a hidden class="anchor" aria-hidden="true" href="#routes">#</a></h2>
+<p>Based on the previous <code>db.json</code> file, here are all the default routes. You can also add <a href="#add-custom-routes">other routes</a> using <code>--routes</code>.</p>
+<h3 id="plural-routes">Plural routes<a hidden class="anchor" aria-hidden="true" href="#plural-routes">#</a></h3>
+<pre tabindex="0"><code>GET    /posts
 GET    /posts/1
 POST   /posts
 PUT    /posts/1
 PATCH  /posts/1
 DELETE /posts/1
-</code></pre><h3 id=singular-routes>Singular routes</h3><pre><code>GET    /profile
+</code></pre><h3 id="singular-routes">Singular routes<a hidden class="anchor" aria-hidden="true" href="#singular-routes">#</a></h3>
+<pre tabindex="0"><code>GET    /profile
 POST   /profile
 PUT    /profile
 PATCH  /profile
-</code></pre><h3 id=filter>Filter</h3><p>Use <code>.</code> to access deep properties</p><pre><code>GET /posts?title=json-server&amp;author=typicode
+</code></pre><h3 id="filter">Filter<a hidden class="anchor" aria-hidden="true" href="#filter">#</a></h3>
+<p>Use <code>.</code> to access deep properties</p>
+<pre tabindex="0"><code>GET /posts?title=json-server&amp;author=typicode
 GET /posts?id=1&amp;id=2
 GET /comments?author.name=typicode
-</code></pre><h3 id=paginate>Paginate</h3><p>Use <code>_page</code> and optionally <code>_limit</code> to paginate returned data.</p><p>In the <code>Link</code> header you&rsquo;ll get <code>first</code>, <code>prev</code>, <code>next</code> and <code>last</code> links.</p><pre><code>GET /posts?_page=7
+</code></pre><h3 id="paginate">Paginate<a hidden class="anchor" aria-hidden="true" href="#paginate">#</a></h3>
+<p>Use <code>_page</code> and optionally <code>_limit</code> to paginate returned data.</p>
+<p>In the <code>Link</code> header you&rsquo;ll get <code>first</code>, <code>prev</code>, <code>next</code> and <code>last</code> links.</p>
+<pre tabindex="0"><code>GET /posts?_page=7
 GET /posts?_page=7&amp;_limit=20
-</code></pre><p><em>10 items are returned by default</em></p><h3 id=sort>Sort</h3><p>Add <code>_sort</code> and <code>_order</code> (ascending order by default)</p><pre><code>GET /posts?_sort=views&amp;_order=asc
+</code></pre><p><em>10 items are returned by default</em></p>
+<h3 id="sort">Sort<a hidden class="anchor" aria-hidden="true" href="#sort">#</a></h3>
+<p>Add <code>_sort</code> and <code>_order</code> (ascending order by default)</p>
+<pre tabindex="0"><code>GET /posts?_sort=views&amp;_order=asc
 GET /posts/1/comments?_sort=votes&amp;_order=asc
-</code></pre><p>For multiple fields, use the following format:</p><pre><code>GET /posts?_sort=user,views&amp;_order=desc,asc
-</code></pre><h3 id=slice>Slice</h3><p>Add <code>_start</code> and <code>_end</code> or <code>_limit</code> (an <code>X-Total-Count</code> header is included in the response)</p><pre><code>GET /posts?_start=20&amp;_end=30
+</code></pre><p>For multiple fields, use the following format:</p>
+<pre tabindex="0"><code>GET /posts?_sort=user,views&amp;_order=desc,asc
+</code></pre><h3 id="slice">Slice<a hidden class="anchor" aria-hidden="true" href="#slice">#</a></h3>
+<p>Add <code>_start</code> and <code>_end</code> or <code>_limit</code> (an <code>X-Total-Count</code> header is included in the response)</p>
+<pre tabindex="0"><code>GET /posts?_start=20&amp;_end=30
 GET /posts/1/comments?_start=20&amp;_end=30
 GET /posts/1/comments?_start=20&amp;_limit=10
-</code></pre><p>_Works exactly as <a href=https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/slice>Array.slice</a> (i.e. <code>_start</code> is inclusive and <code>_end</code> exclusive)_</p><h3 id=operators>Operators</h3><p>Add <code>_gte</code> or <code>_lte</code> for getting a range</p><pre><code>GET /posts?views_gte=10&amp;views_lte=20
-</code></pre><p>Add <code>_ne</code> to exclude a value</p><pre><code>GET /posts?id_ne=1
-</code></pre><p>Add <code>_like</code> to filter (RegExp supported)</p><pre><code>GET /posts?title_like=server
-</code></pre><h3 id=full-text-search>Full-text search</h3><p>Add <code>q</code></p><pre><code>GET /posts?q=internet
-</code></pre><h3 id=relationships>Relationships</h3><p>To include children resources, add <code>_embed</code></p><pre><code>GET /posts?_embed=comments
+</code></pre><p><em>Works exactly as <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">Array.slice</a> (i.e. <code>_start</code> is inclusive and <code>_end</code> exclusive)</em></p>
+<h3 id="operators">Operators<a hidden class="anchor" aria-hidden="true" href="#operators">#</a></h3>
+<p>Add <code>_gte</code> or <code>_lte</code> for getting a range</p>
+<pre tabindex="0"><code>GET /posts?views_gte=10&amp;views_lte=20
+</code></pre><p>Add <code>_ne</code> to exclude a value</p>
+<pre tabindex="0"><code>GET /posts?id_ne=1
+</code></pre><p>Add <code>_like</code> to filter (RegExp supported)</p>
+<pre tabindex="0"><code>GET /posts?title_like=server
+</code></pre><h3 id="full-text-search">Full-text search<a hidden class="anchor" aria-hidden="true" href="#full-text-search">#</a></h3>
+<p>Add <code>q</code></p>
+<pre tabindex="0"><code>GET /posts?q=internet
+</code></pre><h3 id="relationships">Relationships<a hidden class="anchor" aria-hidden="true" href="#relationships">#</a></h3>
+<p>To include children resources, add <code>_embed</code></p>
+<pre tabindex="0"><code>GET /posts?_embed=comments
 GET /posts/1?_embed=comments
-</code></pre><p>To include parent resource, add <code>_expand</code></p><pre><code>GET /comments?_expand=post
+</code></pre><p>To include parent resource, add <code>_expand</code></p>
+<pre tabindex="0"><code>GET /comments?_expand=post
 GET /comments/1?_expand=post
-</code></pre><p>To get or create nested resources (by default one level, <a href=#add-custom-routes>add custom routes</a> for more)</p><pre><code>GET  /posts/1/comments
+</code></pre><p>To get or create nested resources (by default one level, <a href="#add-custom-routes">add custom routes</a> for more)</p>
+<pre tabindex="0"><code>GET  /posts/1/comments
 POST /posts/1/comments
-</code></pre><h3 id=database>Database</h3><pre><code>GET /db
-</code></pre><h3 id=homepage>Homepage</h3><p>Returns default index file or serves <code>./public</code> directory</p><pre><code>GET /
-</code></pre><h2 id=extras>Extras</h2><h3 id=static-file-server>Static file server</h3><p>You can use JSON Server to serve your HTML, JS and CSS, simply create a <code>./public</code> directory
-or use <code>--static</code> to set a different static files directory.</p><pre><code class=language-bash>mkdir public
-echo 'hello world' &gt; public/index.html
-json-server db.json
-</code></pre><pre><code class=language-bash>json-server db.json --static ./some-other-dir
-</code></pre><h3 id=alternative-port>Alternative port</h3><p>You can start JSON Server on other ports with the <code>--port</code> flag:</p><pre><code class=language-bash>$ json-server --watch db.json --port 3004
-</code></pre><h3 id=access-from-anywhere>Access from anywhere</h3><p>You can access your fake API from anywhere using CORS and JSONP.</p><h3 id=remote-schema>Remote schema</h3><p>You can load remote schemas.</p><pre><code class=language-bash>$ json-server http://example.com/file.json
-$ json-server http://jsonplaceholder.typicode.com/db
-</code></pre><h3 id=generate-random-data>Generate random data</h3><p>Using JS instead of a JSON file, you can create data programmatically.</p><pre><code class=language-javascript>// index.js
-module.exports = () =&gt; {
-  const data = { users: [] }
-  // Create 1000 users
-  for (let i = 0; i &lt; 1000; i++) {
-    data.users.push({ id: i, name: `user${i}` })
-  }
-  return data
-}
-</code></pre><pre><code class=language-bash>$ json-server index.js
-</code></pre><p><strong>Tip</strong> use modules like <a href=https://github.com/Marak/faker.js>Faker</a>, <a href=https://github.com/boo1ean/casual>Casual</a>, <a href=https://github.com/victorquinn/chancejs>Chance</a> or <a href=https://github.com/json-schema-faker/json-schema-faker>JSON Schema Faker</a>.</p><h3 id=https>HTTPS</h3><p>There&rsquo;s many way to set up SSL in development. One simple way though is to use <a href=https://github.com/typicode/hotel>hotel</a>.</p><h3 id=add-custom-routes>Add custom routes</h3><p>Create a <code>routes.json</code> file. Pay attention to start every route with <code>/</code>.</p><pre><code class=language-json>{
-  &quot;/api/&quot;: &quot;/&quot;,
-  &quot;/blog/:resource/:id/show&quot;: &quot;/:resource/:id&quot;,
-  &quot;/blog/:category&quot;: &quot;/posts?category=:category&quot;
-}
-</code></pre><p>Start JSON Server with <code>--routes</code> option.</p><pre><code class=language-bash>json-server db.json --routes routes.json
-</code></pre><p>Now you can access resources using additional routes.</p><pre><code class=language-sh>/api/posts # → /posts
-/api/posts/1  # → /posts/1
-/blog/posts/1/show # → /posts/1
-/blog/javascript # → /posts?category=javascript
-</code></pre><h3 id=add-middlewares>Add middlewares</h3><p>You can add your middlewares from the CLI using <code>--middlewares</code> option:</p><pre><code class=language-js>// hello.js
-module.exports = (req, res, next) =&gt; {
-  res.header('X-Hello', 'World')
-  next()
-}
-</code></pre><pre><code class=language-bash>json-server db.json --middlewares ./hello.js
-json-server db.json --middlewares ./first.js ./second.js
-</code></pre><h3 id=cli-usage>CLI usage</h3><pre><code>json-server [options] &lt;source&gt;
+</code></pre><h3 id="database">Database<a hidden class="anchor" aria-hidden="true" href="#database">#</a></h3>
+<pre tabindex="0"><code>GET /db
+</code></pre><h3 id="homepage">Homepage<a hidden class="anchor" aria-hidden="true" href="#homepage">#</a></h3>
+<p>Returns default index file or serves <code>./public</code> directory</p>
+<pre tabindex="0"><code>GET /
+</code></pre><h2 id="extras">Extras<a hidden class="anchor" aria-hidden="true" href="#extras">#</a></h2>
+<h3 id="static-file-server">Static file server<a hidden class="anchor" aria-hidden="true" href="#static-file-server">#</a></h3>
+<p>You can use JSON Server to serve your HTML, JS and CSS, simply create a <code>./public</code> directory
+or use <code>--static</code> to set a different static files directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir public
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;hello world&#39;</span> &gt; public/index.html
+</span></span><span style="display:flex;"><span>json-server db.json
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>json-server db.json --static ./some-other-dir
+</span></span></code></pre></div><h3 id="alternative-port">Alternative port<a hidden class="anchor" aria-hidden="true" href="#alternative-port">#</a></h3>
+<p>You can start JSON Server on other ports with the <code>--port</code> flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ json-server --watch db.json --port <span style="color:#ae81ff">3004</span>
+</span></span></code></pre></div><h3 id="access-from-anywhere">Access from anywhere<a hidden class="anchor" aria-hidden="true" href="#access-from-anywhere">#</a></h3>
+<p>You can access your fake API from anywhere using CORS and JSONP.</p>
+<h3 id="remote-schema">Remote schema<a hidden class="anchor" aria-hidden="true" href="#remote-schema">#</a></h3>
+<p>You can load remote schemas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ json-server http://example.com/file.json
+</span></span><span style="display:flex;"><span>$ json-server http://jsonplaceholder.typicode.com/db
+</span></span></code></pre></div><h3 id="generate-random-data">Generate random data<a hidden class="anchor" aria-hidden="true" href="#generate-random-data">#</a></h3>
+<p>Using JS instead of a JSON file, you can create data programmatically.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// index.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">users</span><span style="color:#f92672">:</span> [] }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Create 1000 users
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">push</span>({ <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`user</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">i</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> })
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ json-server index.js
+</span></span></code></pre></div><p><strong>Tip</strong> use modules like <a href="https://github.com/Marak/faker.js">Faker</a>, <a href="https://github.com/boo1ean/casual">Casual</a>, <a href="https://github.com/victorquinn/chancejs">Chance</a> or <a href="https://github.com/json-schema-faker/json-schema-faker">JSON Schema Faker</a>.</p>
+<h3 id="https">HTTPS<a hidden class="anchor" aria-hidden="true" href="#https">#</a></h3>
+<p>There&rsquo;s many way to set up SSL in development. One simple way though is to use <a href="https://github.com/typicode/hotel">hotel</a>.</p>
+<h3 id="add-custom-routes">Add custom routes<a hidden class="anchor" aria-hidden="true" href="#add-custom-routes">#</a></h3>
+<p>Create a <code>routes.json</code> file. Pay attention to start every route with <code>/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;/api/&#34;</span>: <span style="color:#e6db74">&#34;/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;/blog/:resource/:id/show&#34;</span>: <span style="color:#e6db74">&#34;/:resource/:id&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;/blog/:category&#34;</span>: <span style="color:#e6db74">&#34;/posts?category=:category&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Start JSON Server with <code>--routes</code> option.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>json-server db.json --routes routes.json
+</span></span></code></pre></div><p>Now you can access resources using additional routes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/api/posts <span style="color:#75715e"># → /posts</span>
+</span></span><span style="display:flex;"><span>/api/posts/1  <span style="color:#75715e"># → /posts/1</span>
+</span></span><span style="display:flex;"><span>/blog/posts/1/show <span style="color:#75715e"># → /posts/1</span>
+</span></span><span style="display:flex;"><span>/blog/javascript <span style="color:#75715e"># → /posts?category=javascript</span>
+</span></span></code></pre></div><h3 id="add-middlewares">Add middlewares<a hidden class="anchor" aria-hidden="true" href="#add-middlewares">#</a></h3>
+<p>You can add your middlewares from the CLI using <code>--middlewares</code> option:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// hello.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;X-Hello&#39;</span>, <span style="color:#e6db74">&#39;World&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">next</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>json-server db.json --middlewares ./hello.js
+</span></span><span style="display:flex;"><span>json-server db.json --middlewares ./first.js ./second.js
+</span></span></code></pre></div><h3 id="cli-usage">CLI usage<a hidden class="anchor" aria-hidden="true" href="#cli-usage">#</a></h3>
+<pre tabindex="0"><code>json-server [options] &lt;source&gt;
 
 Options:
-  --config, -c       Path to config file           [default: &quot;json-server.json&quot;]
+  --config, -c       Path to config file           [default: &#34;json-server.json&#34;]
   --port, -p         Set port                                    [default: 3000]
-  --host, -H         Set host                               [default: &quot;0.0.0.0&quot;]
+  --host, -H         Set host                               [default: &#34;0.0.0.0&#34;]
   --watch, -w        Watch file(s)                                     [boolean]
   --routes, -r       Path to routes file
   --middlewares, -m  Paths to middleware files                           [array]
@@ -95,9 +339,9 @@ Options:
   --read-only, --ro  Allow only GET requests                           [boolean]
   --no-cors, --nc    Disable Cross-Origin Resource Sharing             [boolean]
   --no-gzip, --ng    Disable GZIP Content-Encoding                     [boolean]
-  --snapshots, -S    Set snapshots directory                      [default: &quot;.&quot;]
+  --snapshots, -S    Set snapshots directory                      [default: &#34;.&#34;]
   --delay, -d        Add delay to responses (ms)
-  --id, -i           Set database id property (e.g. _id)         [default: &quot;id&quot;]
+  --id, -i           Set database id property (e.g. _id)         [default: &#34;id&#34;]
   --quiet, -q        Suppress log messages from output                 [boolean]
   --help, -h         Show help                                         [boolean]
   --version, -v      Show version number                               [boolean]
@@ -108,81 +352,180 @@ Examples:
   json-server http://example.com/db.json
 
 https://github.com/typicode/json-server
-</code></pre><p>You can also set options in a <code>json-server.json</code> configuration file.</p><pre><code class=language-json>{
-  &quot;port&quot;: 3000
-}
-</code></pre><h3 id=module>Module</h3><p>If you need to add authentication, validation, or <strong>any behavior</strong>, you can use the project as a module in combination with other Express middlewares.</p><h4 id=simple-example>Simple example</h4><pre><code class=language-sh>$ npm install json-server --save-dev
-</code></pre><pre><code class=language-js>// server.js
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+</code></pre><p>You can also set options in a <code>json-server.json</code> configuration file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="module">Module<a hidden class="anchor" aria-hidden="true" href="#module">#</a></h3>
+<p>If you need to add authentication, validation, or <strong>any behavior</strong>, you can use the project as a module in combination with other Express middlewares.</p>
+<h4 id="simple-example">Simple example<a hidden class="anchor" aria-hidden="true" href="#simple-example">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ npm install json-server --save-dev
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// server.js
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">jsonServer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;json-server&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">create</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">router</span>(<span style="color:#e6db74">&#39;db.json&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">middlewares</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">defaults</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">middlewares</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">router</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;JSON Server is running&#39;</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ node server.js
+</span></span></code></pre></div><p>The path you provide to the <code>jsonServer.router</code> function  is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">router</span>(<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;db.json&#39;</span>))
+</span></span></code></pre></div><p>For an in-memory database, simply pass an object to <code>jsonServer.router()</code>.</p>
+<p>Please note also that <code>jsonServer.router()</code> can be used in existing Express projects.</p>
+<h4 id="custom-routes-example">Custom routes example<a hidden class="anchor" aria-hidden="true" href="#custom-routes-example">#</a></h4>
+<p>Let&rsquo;s say you want a route that echoes query parameters and another one that set a timestamp on every resource created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">jsonServer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;json-server&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">create</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">router</span>(<span style="color:#e6db74">&#39;db.json&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">middlewares</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">defaults</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Set default middlewares (logger, static, cors and no-cache)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">middlewares</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Add custom routes before JSON Server router
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/echo&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">jsonp</span>(<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">query</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// To handle POST, PUT and PATCH you need to use a body-parser
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// You can use the one used by JSON Server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">bodyParser</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;POST&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">createdAt</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Continue to JSON Server router
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">next</span>()
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Use default router
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">router</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;JSON Server is running&#39;</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h4 id="access-control-example">Access control example<a hidden class="anchor" aria-hidden="true" href="#access-control-example">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">jsonServer</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;json-server&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">server</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">create</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">router</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">router</span>(<span style="color:#e6db74">&#39;db.json&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">middlewares</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">defaults</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">middlewares</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>((<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">next</span>) =&gt; {
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isAuthorized</span>(<span style="color:#a6e22e">req</span>)) { <span style="color:#75715e">// add your authorization logic here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#a6e22e">next</span>() <span style="color:#75715e">// continue to JSON Server router
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">sendStatus</span>(<span style="color:#ae81ff">401</span>)
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">router</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;JSON Server is running&#39;</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span></code></pre></div><h4 id="custom-output-example">Custom output example<a hidden class="anchor" aria-hidden="true" href="#custom-output-example">#</a></h4>
+<p>To modify responses, overwrite <code>router.render</code> method:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// In this example, returned resources will be wrapped in a body property
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">render</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">jsonp</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">locals</span>.<span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>  })
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="rewriter-example">Rewriter example<a hidden class="anchor" aria-hidden="true" href="#rewriter-example">#</a></h4>
+<p>To add rewrite rules, use <code>jsonServer.rewriter()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Add this before server.use(router)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">jsonServer</span>.<span style="color:#a6e22e">rewriter</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;/api/&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;/blog/:resource/:id/show&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;/:resource/:id&#39;</span>
+</span></span><span style="display:flex;"><span>}))
+</span></span></code></pre></div><h4 id="mounting-json-server-on-another-endpoint-example">Mounting JSON Server on another endpoint example<a hidden class="anchor" aria-hidden="true" href="#mounting-json-server-on-another-endpoint-example">#</a></h4>
+<p>Alternatively, you can also mount the router on <code>/api</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">server</span>.<span style="color:#a6e22e">use</span>(<span style="color:#e6db74">&#39;/api&#39;</span>, <span style="color:#a6e22e">router</span>)
+</span></span></code></pre></div><h3 id="deployment">Deployment<a hidden class="anchor" aria-hidden="true" href="#deployment">#</a></h3>
+<p>You can deploy JSON Server. For example, <a href="http://jsonplaceholder.typicode.com">JSONPlaceholder</a> is an online fake API powered by JSON Server and running on Heroku.</p>
+<h2 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h2>
+<h3 id="video">Video<a hidden class="anchor" aria-hidden="true" href="#video">#</a></h3>
+<ul>
+<li><a href="https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server">Creating Demo APIs with json-server on egghead.io</a></li>
+</ul>
 
-server.use(middlewares)
-server.use(router)
-server.listen(3000, () =&gt; {
-  console.log('JSON Server is running')
-})
-</code></pre><pre><code class=language-sh>$ node server.js
-</code></pre><p>The path you provide to the <code>jsonServer.router</code> function is relative to the directory from where you launch your node process. If you run the above code from another directory, it’s better to use an absolute path:</p><pre><code class=language-js>const path = require('path')
-const router = jsonServer.router(path.join(__dirname, 'db.json'))
-</code></pre><p>For an in-memory database, simply pass an object to <code>jsonServer.router()</code>.</p><p>Please note also that <code>jsonServer.router()</code> can be used in existing Express projects.</p><h4 id=custom-routes-example>Custom routes example</h4><p>Let&rsquo;s say you want a route that echoes query parameters and another one that set a timestamp on every resource created.</p><pre><code class=language-js>const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+  </div>
 
-// Set default middlewares (logger, static, cors and no-cache)
-server.use(middlewares)
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/github/">github</a></li>
+      <li><a href="/tags/javascript/">javascript</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) =&gt; {
-  res.jsonp(req.query)
-})
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-// To handle POST, PUT and PATCH you need to use a body-parser
-// You can use the one used by JSON Server
-server.use(jsonServer.bodyParser)
-server.use((req, res, next) =&gt; {
-  if (req.method === 'POST') {
-    req.body.createdAt = Date.now()
-  }
-  // Continue to JSON Server router
-  next()
-})
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
-// Use default router
-server.use(router)
-server.listen(3000, () =&gt; {
-  console.log('JSON Server is running')
-})
-</code></pre><h4 id=access-control-example>Access control example</h4><pre><code class=language-js>const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
-server.use(middlewares)
-server.use((req, res, next) =&gt; {
- if (isAuthorized(req)) { // add your authorization logic here
-   next() // continue to JSON Server router
- } else {
-   res.sendStatus(401)
- }
-})
-server.use(router)
-server.listen(3000, () =&gt; {
-  console.log('JSON Server is running')
-})
-</code></pre><h4 id=custom-output-example>Custom output example</h4><p>To modify responses, overwrite <code>router.render</code> method:</p><pre><code class=language-javascript>// In this example, returned resources will be wrapped in a body property
-router.render = (req, res) =&gt; {
-  res.jsonp({
-    body: res.locals.data
-  })
-}
-</code></pre><h4 id=rewriter-example>Rewriter example</h4><p>To add rewrite rules, use <code>jsonServer.rewriter()</code>:</p><pre><code class=language-javascript>// Add this before server.use(router)
-server.use(jsonServer.rewriter({
-  '/api/': '/',
-  '/blog/:resource/:id/show': '/:resource/:id'
-}))
-</code></pre><h4 id=mounting-json-server-on-another-endpoint-example>Mounting JSON Server on another endpoint example</h4><p>Alternatively, you can also mount the router on <code>/api</code>.</p><pre><code class=language-javascript>server.use('/api', router)
-</code></pre><h3 id=deployment>Deployment</h3><p>You can deploy JSON Server. For example, <a href=http://jsonplaceholder.typicode.com>JSONPlaceholder</a> is an online fake API powered by JSON Server and running on Heroku.</p><h2 id=links>Links</h2><h3 id=video>Video</h3><ul><li><a href=https://egghead.io/lessons/nodejs-creating-demo-apis-with-json-server>Creating Demo APIs with json-server on egghead.io</a></li></ul></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/react-flight/><section class=post><h2>react-flight - build animation compositions for React</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

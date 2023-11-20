@@ -1,10 +1,194 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content=移动端页面切换css动画><meta name=twitter:description content=页面左右切换，上下切换的css代码><meta property=og:title content="移动端页面切换css动画 &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/mobilde_css/><meta property=og:type content=article><meta property=og:article:published_time content=2017-04-10T17:00:01&#43;08:00><meta property=og:article:tag content=css><meta property=og:article:tag content=脚本><title>移动端页面切换css动画 &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/mobilde_css/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>移动端页面切换css动画</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/css/>CSS</a>
-<a href=/tags/%E8%84%9A%E6%9C%AC/>脚本</a>
-<time class=post-date datetime=2017-04-10T17:00:01&#43;08:00>10 Apr 2017</time></section></header><section class=post-content><blockquote><p>页面左右切换，上下切换的css代码</p></blockquote><p>过渡的页面需要使用绝对定位否则页面会在跳转时错位
-- push是页面向下一层跳转时的过渡效果
-- pop是页面向上一层跳转时的过渡效果</p><pre><code>Hi！Charles -- 技术博客，致力于最新技术，前端、后端、移动端开发。涉及html5、react、python、node、qt、linux、vps、ios、android、单片机等多种技术类型
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>移动端页面切换css动画 | Hi!Charles</title>
+<meta name="keywords" content="css, 脚本">
+<meta name="description" content="
+页面左右切换，上下切换的css代码
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/mobilde_css/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="移动端页面切换css动画" />
+<meta property="og:description" content="
+页面左右切换，上下切换的css代码
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/mobilde_css/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-04-10T17:00:01+08:00" />
+<meta property="article:modified_time" content="2022-04-10T17:00:01+08:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="移动端页面切换css动画"/>
+<meta name="twitter:description" content="
+页面左右切换，上下切换的css代码
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "移动端页面切换css动画",
+      "item": "/post/mobilde_css/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "移动端页面切换css动画",
+  "name": "移动端页面切换css动画",
+  "description": " 页面左右切换，上下切换的css代码\n",
+  "keywords": [
+    "css", "脚本"
+  ],
+  "articleBody": " 页面左右切换，上下切换的css代码\n过渡的页面需要使用绝对定位否则页面会在跳转时错位\npush是页面向下一层跳转时的过渡效果 pop是页面向上一层跳转时的过渡效果 Hi！Charles -- 技术博客，致力于最新技术，前端、后端、移动端开发。涉及html5、react、python、node、qt、linux、vps、ios、android、单片机等多种技术类型 移动端页面切换css动画 CSS 页面左右切换，上下切换的css代码 过渡的页面需要使用绝对定位否则页面会在跳转时错位 push是页面向下一层跳转时的过渡效果 pop是页面向上一层跳转时的过渡效果 .page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } .push-enter { -webkit-animation: moveInUp 0.6s both; animation: moveInUp 0.6s both; } .push-leave { -webkit-animation: moveOutDown 0.6s both; animation: moveOutDown 0.6s both; } .pop-enter { -webkit-animation: moveInDown 0.6s both; animation: moveInDown 0.6s both; } .pop-leave { -webkit-animation: moveOutUp 0.6s both; animation: moveOutUp 0.6s both; } @-webkit-keyframes moveInLeft { 0% { z-index: 10; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); } 80%, 100% { z-index: 10; -webkit-transform: translateX(none); -moz-transform: translateX(none); -o-transform: translateX(none); transform: translateX(none); } } @-webkit-keyframes moveInRight { 0% { z-index: 20; -webkit-transform: translateX(100%); -moz-transform: translateX(100%); -o-transform: translateX(100%); transform: translateX(100%); } 80%, 100% { z-index: 20; -webkit-transform: translateX(none); -moz-transform: translateX(none); -o-transform: translateX(none); transform: translateX(none); } } @-webkit-keyframes moveOutLeft { 0% { z-index: 10; display: block; } 80% { -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); opacity: 1; } 100% { z-index: 10; display: none; opacity: 0; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); } } @-webkit-keyframes moveOutRight { 0% { z-index: 20; display: block; } 80% { opacity: 1; -webkit-transform: translateX(100%); -moz-transform: translateX(100%); -o-transform: translateX(100%); transform: translateX(100%); } 100% { z-index: 20; opacity: 0; display: none; -webkit-transform: translateX(100%); -moz-transform: translateX(100%); -o-transform: translateX(100%); transform: translateX(100%); } } @-webkit-keyframes moveInUp { 0% { z-index: 20; -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -o-transform: translateY(100%); transform: translateY(100%); } 80%, 100% { z-index: 20; -webkit-transform: translateY(none); -moz-transform: translateY(none); -o-transform: translateY(none); transform: translateY(none); } } @-webkit-keyframes moveOutDown { 0% { z-index: 10; display: block; } 80% { opacity: 1; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } 100% { z-index: 10; opacity: 0; display: none; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } } @-webkit-keyframes moveInDown { 0% { z-index: 10; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); } 80%, 100% { -webkit-transform: translateY(none); -moz-transform: translateY(none); -o-transform: translateY(none); transform: translateY(none); } } @-webkit-keyframes moveOutUp { 0% { z-index: 20; display: block; } 80% { opacity: 1; -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -o-transform: translateY(100%); transform: translateY(100%); } 100% { opacity: 0; display: none; -webkit-transform: translateY(100%); -moz-transform: translateY(100%); -o-transform: translateY(100%); transform: translateY(100%); } } ",
+  "wordCount" : "354",
+  "inLanguage": "en",
+  "datePublished": "2022-04-10T17:00:01+08:00",
+  "dateModified": "2022-04-10T17:00:01+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/mobilde_css/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      移动端页面切换css动画
+    </h1>
+    <div class="post-meta"><span title='2022-04-10 17:00:01 +0800 CST'>April 10, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>页面左右切换，上下切换的css代码</p>
+</blockquote>
+<p>过渡的页面需要使用绝对定位否则页面会在跳转时错位</p>
+<ul>
+<li>push是页面向下一层跳转时的过渡效果</li>
+<li>pop是页面向上一层跳转时的过渡效果</li>
+</ul>
+<pre tabindex="0"><code>Hi！Charles -- 技术博客，致力于最新技术，前端、后端、移动端开发。涉及html5、react、python、node、qt、linux、vps、ios、android、单片机等多种技术类型
 移动端页面切换css动画
 CSS
 页面左右切换，上下切换的css代码
@@ -190,5 +374,82 @@ pop是页面向上一层跳转时的过渡效果
     transform: translateY(100%);
   }
 }
-</code></pre></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/wofan_v2/><section class=post><h2>我翻VPN平台2.0</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/css/">css</a></li>
+      <li><a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

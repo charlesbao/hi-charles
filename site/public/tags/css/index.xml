@@ -1,3 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>css on Hi!Charles</title><link>/tags/css/</link><description>Recent content in css on Hi!Charles</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/css/index.xml" rel="self" type="application/rss+xml"/><item><title>spectre.css - the excellent style library</title><link>/post/spectre-css/</link><pubDate>Mon, 22 May 2017 00:00:00 +0000</pubDate><guid>/post/spectre-css/</guid><description>&lt;p&gt;&lt;a href=&#34;https://picturepan2.github.io/spectre&#34;&gt;Spectre.css&lt;/a&gt; is a lightweight, responsive and modern CSS framework for faster and extensible development.&lt;/p&gt;</description></item><item><title>移动端页面切换css动画</title><link>/post/mobilde_css/</link><pubDate>Mon, 10 Apr 2017 17:00:01 +0800</pubDate><guid>/post/mobilde_css/</guid><description>&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>css on Hi!Charles</title>
+    <link>/tags/css/</link>
+    <description>Recent content in css on Hi!Charles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>spectre.css - the excellent style library</title>
+      <link>/post/spectre-css/</link>
+      <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/spectre-css/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://picturepan2.github.io/spectre&#34;&gt;Spectre.css&lt;/a&gt; is a lightweight, responsive and modern CSS framework for faster and extensible development.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>移动端页面切换css动画</title>
+      <link>/post/mobilde_css/</link>
+      <pubDate>Sun, 10 Apr 2022 17:00:01 +0800</pubDate>
+      
+      <guid>/post/mobilde_css/</guid>
+      <description>&lt;blockquote&gt;
 &lt;p&gt;页面左右切换，上下切换的css代码&lt;/p&gt;
-&lt;/blockquote&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

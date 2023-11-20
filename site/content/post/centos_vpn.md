@@ -1,5 +1,5 @@
 +++
-date = "2017-05-27T00:00:00Z"
+date = "2022-05-27T00:00:00Z"
 tags = ["vpn","centos","脚本"]
 title = "centos6下一键配置VPN"
 

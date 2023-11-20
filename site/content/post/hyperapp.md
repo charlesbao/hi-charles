@@ -1,5 +1,5 @@
 +++
-date = "2017-06-08T00:00:00Z"
+date = "2021-06-08T00:00:00Z"
 tags = ["github","javascript"]
 title = "HyperApp - 1kb JavaScript library for building frontend applications."
 

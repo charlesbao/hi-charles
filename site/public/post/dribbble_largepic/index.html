@@ -1,16 +1,282 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content=summary><meta name=twitter:title content=Dribbble快捷获取大图><meta name=twitter:description content=此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。><meta property=og:title content="Dribbble快捷获取大图 &middot;  Hi!Charles"><meta property=og:site_name content=Hi!Charles><meta property=og:url content=/post/dribbble_largepic/><meta property=og:type content=article><meta property=og:article:published_time content=2019-05-27T00:00:00Z><meta property=og:article:tag content=javascript><meta property=og:article:tag content=脚本><title>Dribbble快捷获取大图 &middot; Hi!Charles</title><meta name=description content="Chaos. Design. and Programming."><meta name=HandheldFriendly content=True><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=/images/favicon.ico><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=stylesheet type=text/css href=/css/screen.css><link rel=stylesheet type=text/css href=/css/nav.css><link rel=stylesheet type=text/css href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata"><link href=/index.xml rel=alternate type=application/rss+xml title=Hi!Charles><meta name=generator content="Hugo 0.55.5"><link rel=canonical href=/post/dribbble_largepic/></head><body class=nav-closed><div class=nav><h3 class=nav-title>Menu</h3><a href=# class=nav-close><span class=hidden>Close</span></a><ul></ul><a class="subscribe-button icon-feed" href=/index.xml>Subscribe</a></div><span class=nav-cover></span><div class=site-wrapper><header class="main-header post-head no-cover"><nav class="main-nav clearfix"><a class=blog-logo href=/><img src=/images/logo.svg alt=Home></a>
-<a class="menu-button icon-feed" href=/index.xml>&nbsp;&nbsp;Subscribe</a></nav></header><main class=content role=main><article class="post post" style=border:none><header class=post-header><h1 class=post-title>Dribbble快捷获取大图</h1><small></small><section class=post-meta><img class=tags-thumb src=/images/tags.png alt="Tags image" nopin=nopin>
-<a href=/tags/javascript/>JAVASCRIPT</a>
-<a href=/tags/%E8%84%9A%E6%9C%AC/>脚本</a>
-<time class=post-date datetime=2019-05-27T00:00:00Z>27 May 2019</time></section></header><section class=post-content><blockquote><p>此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。</p></blockquote><p>应用网站：<a href=https://dribbble.com/>https://dribbble.com/</a><br>可配合Dribbble New Tab一起食用</p><p>Chrome扩展程序地址：<a href=https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn>https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn</a></p><hr><p>点击某设计页面后，需等待至网页标题已显示时，单击书签栏插件，即可跳转获取此设计页面中的大图。</p><p><strong>快捷工具</strong>【拖拽到书签栏】</p><p><a href="javascript:(function(){var c=setInterval(function(){var a=document.querySelector('.the-shot');if(a){var b=a.getAttribute('data-img-src');clearInterval(c);window.location.replace(b)}},1000)}())" style="text-decoration:none;border:2px dashed;padding:5px">catDribbble</a></p><p><strong>javascript源码</strong></p><pre><code>javascript:(function(){
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Dribbble快捷获取大图 | Hi!Charles</title>
+<meta name="keywords" content="javascript, 脚本">
+<meta name="description" content="
+此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。
+">
+<meta name="author" content="">
+<link rel="canonical" href="/post/dribbble_largepic/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="mask-icon" href="/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Dribbble快捷获取大图" />
+<meta property="og:description" content="
+此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/dribbble_largepic/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-09-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-27T00:00:00+00:00" /><meta property="og:site_name" content="Hi!Charles" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dribbble快捷获取大图"/>
+<meta name="twitter:description" content="
+此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。
+"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "/post/"
+    }
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dribbble快捷获取大图",
+      "item": "/post/dribbble_largepic/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dribbble快捷获取大图",
+  "name": "Dribbble快捷获取大图",
+  "description": " 此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。\n",
+  "keywords": [
+    "javascript", "脚本"
+  ],
+  "articleBody": " 此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。\n应用网站：https://dribbble.com/\n可配合Dribbble New Tab一起食用\nChrome扩展程序地址：https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn\n点击某设计页面后，需等待至网页标题已显示时，单击书签栏插件，即可跳转获取此设计页面中的大图。\n快捷工具【拖拽到书签栏】\ncatDribbble\njavascript源码\njavascript:(function(){ var interval = setInterval(function(){ var selector = document.querySelector('.the-shot'); if(selector){ var src = selector.getAttribute('data-img-src'); clearInterval(interval); window.location.replace(src); } },1000) }()) ",
+  "wordCount" : "29",
+  "inLanguage": "en",
+  "datePublished": "2023-09-27T00:00:00Z",
+  "dateModified": "2023-09-27T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/dribbble_largepic/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hi!Charles",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/" accesskey="h" title="Hi!Charles (Alt + H)">Hi!Charles</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Dribbble快捷获取大图
+    </h1>
+    <div class="post-meta"><span title='2023-09-27 00:00:00 +0000 UTC'>September 27, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>此书签插件将运用于dribbble网站单个页面中一键获取大图的操作，省去了大量等待加载的时间。</p>
+</blockquote>
+<p>应用网站：https://dribbble.com/<br>
+可配合Dribbble New Tab一起食用</p>
+<p>Chrome扩展程序地址：https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn</p>
+<hr>
+<p>点击某设计页面后，需等待至网页标题已显示时，单击书签栏插件，即可跳转获取此设计页面中的大图。</p>
+<p><strong>快捷工具</strong>【拖拽到书签栏】</p>
+<p><!-- raw HTML omitted -->catDribbble<!-- raw HTML omitted --></p>
+<p><strong>javascript源码</strong></p>
+<pre tabindex="0"><code>javascript:(function(){
 	var interval = setInterval(function(){
-		var selector = document.querySelector('.the-shot');
+		var selector = document.querySelector(&#39;.the-shot&#39;);
 		if(selector){
-			var src = selector.getAttribute('data-img-src');
+			var src = selector.getAttribute(&#39;data-img-src&#39;);
 			clearInterval(interval);
 			window.location.replace(src);
 		}
 	},1000)
 }())
-</code></pre></section><footer class=post-footer><section class=author><h4><a href=/>Charles Bao</a></h4><p>Chaos. Design. and Programming. This is me.</p><div class=author-meta><span class="author-location icon-location">Jiangsu, China</span>
-<span class="author-link icon-link"><a href=https://charlesbao.com>https://charlesbao.com</a></span></div></section></footer></article></main><aside class=read-next><a class="read-next-story prev" style=no-cover href=/post/python_filesystem/><section class=post><h2>Python 搭建简单文件服务器</h2></section></a></aside><footer class="site-footer clearfix"><section class=copyright><a href=http://www.beian.miit.gov.cn>苏ICP备16024813号</a> | <a href=/>"Hi!Charles"为包涵个人的版权所有</a></section></footer></div><script type=text/javascript src=/js/jquery.js></script><script type=text/javascript src=/js/jquery.fitvids.js></script><script type=text/javascript src=/js/index.js></script></body></html>
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="/tags/javascript/">javascript</a></li>
+      <li><a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <section class="copyright"><a href="https://beian.miit.gov.cn">苏ICP备16024813号-3</a> | <a href="/">"Hi!Charles"为包涵个人的版权所有</a></section>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
